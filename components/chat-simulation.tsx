@@ -105,8 +105,8 @@ export function ChatSimulation() {
                             )}
                             <div
                                 className={`max-w-[75%] px-4 py-2.5 text-sm shadow-sm ${msg.sender === "me"
-                                        ? "bg-primary text-primary-foreground rounded-[20px] rounded-br-[4px]"
-                                        : "bg-card border border-border/50 text-card-foreground rounded-[20px] rounded-bl-[4px]"
+                                    ? "bg-primary text-primary-foreground rounded-[20px] rounded-br-[4px]"
+                                    : "bg-card border border-border/50 text-card-foreground rounded-[20px] rounded-bl-[4px]"
                                     }`}
                             >
                                 {msg.text}
@@ -190,7 +190,7 @@ export function ChatSimulation() {
                     <Button
                         size="icon"
                         variant="ghost"
-                        className="absolute right-1 top-1 h-8 w-8 text-muted-foreground hover:bg-transparent hover:text-foreground"
+                        className="absolute right-1 top-1 h-8 w-8 rounded-full text-muted-foreground hover:bg-secondary/20 hover:text-foreground"
                     >
                         <Smile className="h-5 w-5" />
                     </Button>

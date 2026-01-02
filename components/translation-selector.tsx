@@ -9,7 +9,7 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
-import { Loader2, Globe } from "lucide-react"
+import { Loader2 } from "lucide-react"
 
 export function TranslationSelector() {
     const { language, setLanguage, isTranslating } = useTranslation()
@@ -21,18 +21,16 @@ export function TranslationSelector() {
 
     if (!mounted) {
         return (
-            <div className="flex items-center gap-2">
-                <Globe className="h-4 w-4 text-muted-foreground" />
-                <div className="w-[140px] h-9 border rounded-md bg-muted/10 animate-pulse" />
+            <div className="flex items-center">
+                <div className="w-[120px] h-9 rounded-lg bg-muted/10 animate-pulse" />
             </div>
         )
     }
 
     return (
-        <div className="flex items-center gap-2">
-            <Globe className="h-4 w-4 text-muted-foreground" />
+        <div className="flex items-center">
             <Select value={language} onValueChange={setLanguage} disabled={isTranslating}>
-                <SelectTrigger className="w-[140px] h-9">
+                <SelectTrigger className="w-[120px] h-9 border-none shadow-none bg-transparent hover:bg-muted/50 focus:ring-0 rounded-lg text-muted-foreground hover:text-foreground transition-colors">
                     <SelectValue placeholder="Langue" />
                     {isTranslating && <Loader2 className="ml-2 h-3 w-3 animate-spin" />}
                 </SelectTrigger>
