@@ -1,39 +1,39 @@
 # No Hello
 
-**No Hello** is a modern web application designed to educate users about productive chat etiquette. It encourages people to ask their questions immediately rather than just saying "Hello" and waiting for a response.
+**No Hello** est une application web moderne conçue pour éduquer les utilisateurs sur l'étiquette de discussion productive. Elle encourage les gens à poser leurs questions immédiatement plutôt que de simplement dire "Bonjour" et d'attendre une réponse.
 
-## Features
+## Fonctionnalités
 
--   **Full Site Translation**: Powered by Google Gemini API, the specific concept explanation and chat simulation can be translated into multiple languages dynamically.
--   **Interactive Chat Simulation**: A realistic, modern chat interface demonstrating the "Bad" vs "Good" way to start a conversation.
--   **Gamification**: A "Correct the Message" quiz to test your understanding of the concept.
--   **Privacy Focused**: Includes a transparent Cookie Policy widget with a detailed privacy modal.
+-   **Traduction Complète du Site** : Propulsée par l'API Google Gemini, l'explication spécifique du concept et la simulation de chat peuvent être traduites dynamiquement en plusieurs langues.
+-   **Simulation de Chat Interactive** : Une interface de chat réaliste et moderne démontrant la "Mauvaise" vs la "Bonne" façon de commencer une conversation.
+-   **Gamification** : Un quiz "Corrigez le Message" pour tester votre compréhension du concept.
+-   **Respect de la Vie Privée** : Inclut un widget de Politique de Cookies transparent avec une modale de confidentialité détaillée.
 
-## Tech Stack
+## Stack Technique
 
--   **Framework**: Next.js 14 (App Router)
--   **Styling**: Tailwind CSS & Shadcn/ui
--   **Animations**: Framer Motion
--   **AI**: Google Gemini API (for translations)
+-   **Framework** : Next.js 14 (App Router)
+-   **Style** : Tailwind CSS & Shadcn/ui
+-   **Animations** : Framer Motion
+-   **IA** : Google Gemini API (pour les traductions)
 
-## Getting Started
+## Commencer
 
-1.  Clone the repository:
+1.  Cloner le dépôt :
     ```bash
     git clone https://github.com/Kaysuto/no-hello.git
     ```
-2.  Install dependencies:
+2.  Installer les dépendances :
     ```bash
     npm install
     ```
-3.  Set up environment variables:
-    Create a `.env.local` file and add your Google Gemini API key:
+3.  Configurer les variables d'environnement :
+    Créez un fichier `.env.local` et ajoutez votre clé API Google Gemini :
     ```env
-    GEMINI_API_KEY=your_api_key_here
+    GEMINI_API_KEY=votre_cle_api_ici
     ```
-4.  Run the development server:
+4.  Lancer le serveur de développement :
     ```bash
     npm run dev
     ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrez [http://localhost:3000](http://localhost:3000) avec votre navigateur pour voir le résultat.
