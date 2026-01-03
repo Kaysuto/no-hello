@@ -47,9 +47,6 @@ export const metadata: Metadata = {
     images: ["/icon.png"],
     creator: "@Kaysuto",
   },
-  icons: {
-    icon: "/icon.png",
-  },
 };
 
 export default function RootLayout({
