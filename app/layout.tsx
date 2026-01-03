@@ -18,8 +18,40 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "No Hello",
-  description: "Don't just say hello. Say hello and explain why you're messaging.",
+  title: {
+    default: "No Hello - Efficient Communication",
+    template: "%s | No Hello"
+  },
+  description: "Stop saying just 'Hello' in chat. Learn why it's counter-productive and how to communicate more effectively.",
+  keywords: ["no hello", "communication", "etiquette", "chat", "productivity", "remote work", "slack etiquette", "discord etiquette"],
+  authors: [{ name: "Kaysuto Kimiya", url: "https://github.com/Kaysuto" }],
+  creator: "Kaysuto Kimiya",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://nohello.net",
+    title: "No Hello - Efficient Communication",
+    description: "Stop saying just 'Hello' in chat. Learn why it's counter-productive.",
+    siteName: "No Hello",
+    images: [
+      {
+        url: "/icon.png",
+        width: 1200,
+        height: 630,
+        alt: "No Hello",
+      }
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "No Hello - Efficient Communication",
+    description: "Stop saying just 'Hello' in chat. Save time for everyone.",
+    images: ["/icon.png"],
+    creator: "@Kaysuto",
+  },
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({
