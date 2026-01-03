@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { CookieWidget } from "@/components/cookie-widget";
 import { ExternalLink } from "@/components/external-link";
 import { ScrollProgress } from "@/components/scroll-progress";
+import { AnimatedHeart } from "@/components/animated-heart";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -82,7 +83,7 @@ export default function RootLayout({
               Attention : Si vous voyez ce site dans une bio, préparez-vous à être ignoré au prochain "Salut" ! 👻
             </p>
             <p className="flex items-center justify-center gap-1">
-              Fait avec ❤️ par
+              Fait avec <AnimatedHeart /> par
               <ExternalLink href="https://github.com/Kaysuto" label="Kaysuto Kimiya">Kaysuto Kimiya</ExternalLink>
             </p>
           </footer>
