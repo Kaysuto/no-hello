@@ -8,7 +8,7 @@
 
 -   **⚡ Performance & Optimisation** : Traduction instantanée grâce à un système hybride (Traductions statiques + Cache LocalStorage + Fallback IA).
 -   **🌐 Internationalisation** : Support natif de 5 langues (FR, EN, ES, DE, JA) et extension infinie via l'API **Google Gemini**.
--   **💬 Simulation de Chat Interactive** : "Sarah", votre collègue virtuelle, vous montre la bonne et la mauvaise façon de communiquer.
+-   **💬 Simulation de Chat** : "Sarah", votre collègue virtuelle, vous montre la bonne et la mauvaise façon de communiquer.
 -   **🎨 UI/UX Premium** : Animations fluides (Framer Motion), barre de progression de défilement, et design soigné (Shadcn/UI). Avatars par [DiceBear](https://www.dicebear.com/).
 -   **🔍 SEO Optimisé** : Métadonnées complètes, OpenGraph, sitemap.xml et robots.txt générés automatiquement.
 -   **🎮 Gamification** : Un quiz interactif pour valider vos connaissances.
