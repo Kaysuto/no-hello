@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { CookieWidget } from "@/components/cookie-widget";
 import { ExternalLink } from "@/components/external-link";
+import { ScrollProgress } from "@/components/scroll-progress";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -37,6 +38,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <ScrollProgress />
           {children}
           <CookieWidget />
           <Toaster />

@@ -1,6 +1,7 @@
 "use client"
 import { TranslationSelector } from "@/components/translation-selector"
 import { ShareButton } from "@/components/share-button"
+import { ExternalLink } from "@/components/external-link"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Github } from "lucide-react"
@@ -54,7 +55,7 @@ export function Navbar() {
                         className="h-9 w-9 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
                         asChild
                     >
-                        <a href="https://github.com/Kaysuto/no-hello" target="_blank" rel="noopener noreferrer">
+                        <ExternalLink href="https://github.com/Kaysuto/no-hello" label="GitHub/Kaysuto">
                             <motion.div
                                 whileHover={{ rotate: [0, -10, 10, -10, 0] }}
                                 transition={{ duration: 0.5 }}
@@ -62,7 +63,7 @@ export function Navbar() {
                                 <Github className="h-4 w-4" />
                             </motion.div>
                             <span className="sr-only">GitHub</span>
-                        </a>
+                        </ExternalLink>
                     </Button>
                 </div>
             </div>
