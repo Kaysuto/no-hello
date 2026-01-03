@@ -4,6 +4,8 @@
 
 💡 Inspiré par [nohello.net](https://www.nohello.net/).
 
+> ⚠️ **Note** : Ce projet n'est pas à prendre trop au sérieux ! Cependant, si vous voyez l'URL de ce site dans le statut ou la bio de quelqu'un, **préparez-vous à être ignoré** si vous lui envoyez seulement "Bonjour !". 👻
+
 ## ✨ Fonctionnalités
 
 -   **⚡ Performance & Optimisation** : Traduction instantanée grâce à un système hybride (Traductions statiques + Cache LocalStorage + Fallback IA).
@@ -29,6 +31,11 @@
 -   **Animations** : Framer Motion
 -   **IA** : Google Gemini API
 -   **Déploiement** : Vercel
+
+## 🤝 Open Source
+
+Ce projet est **Open Source** ! Le code est disponible librement pour apprendre, modifier ou contribuer.
+Les Pull Requests et Issues sont les bienvenues sur GitHub.
 
 ## 🚀 Commencer
 

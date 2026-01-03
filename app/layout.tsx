@@ -78,6 +78,9 @@ export default function RootLayout({
               &
               <ExternalLink href="https://ui.shadcn.com" label="Shadcn/ui">Shadcn</ExternalLink>
             </p>
+            <p className="text-xs text-muted-foreground/60 italic max-w-md mx-auto mb-4">
+              Attention : Si vous voyez ce site dans une bio, préparez-vous à être ignoré au prochain "Salut" ! 👻
+            </p>
             <p className="flex items-center justify-center gap-1">
               Fait avec ❤️ par
               <ExternalLink href="https://github.com/Kaysuto" label="Kaysuto Kimiya">Kaysuto Kimiya</ExternalLink>
