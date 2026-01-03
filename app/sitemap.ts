@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
     return [
         {
-            url: 'https://nohello.net',
+            url: 'https://no-hello-wine.vercel.app',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 1,

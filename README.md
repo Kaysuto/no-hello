@@ -6,10 +6,12 @@
 
 ## ✨ Fonctionnalités
 
--   **🌐 Traduction Complète du Site** : Propulsée par l'API **Google Gemini**, l'explication spécifique du concept et la simulation de chat peuvent être traduites dynamiquement en plusieurs langues.
--   **💬 Simulation de Chat Interactive** : Une interface de chat réaliste et démontrant la "**Mauvaise**" vs la "**Bonne**" façon de commencer une conversation.
--   **🎮 Gamification** : Un quiz "**Corrigez le Message**" pour tester votre compréhension du concept.
--   **🔒 Respect de la Vie Privée** : Inclut un widget de **Politique de Cookies** transparent avec une modale de confidentialité détaillée.
+-   **⚡ Performance & Optimisation** : Traduction instantanée grâce à un système hybride (Traductions statiques + Cache LocalStorage + Fallback IA).
+-   **🌐 Internationalisation** : Support natif de 5 langues (FR, EN, ES, DE, JA) et extension infinie via l'API **Google Gemini**.
+-   **💬 Simulation de Chat Interactive** : "Sarah", votre collègue virtuelle, vous montre la bonne et la mauvaise façon de communiquer.
+-   **🎨 UI/UX Premium** : Animations fluides (Framer Motion), barre de progression de défilement, et design soigné (Shadcn/UI). Avatars par [DiceBear](https://www.dicebear.com/).
+-   **🔍 SEO Optimisé** : Métadonnées complètes, OpenGraph, sitemap.xml et robots.txt générés automatiquement.
+-   **🎮 Gamification** : Un quiz interactif pour valider vos connaissances.
 
 ## 🛠️ Stack Technique
 
@@ -20,11 +22,13 @@
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Gemini API](https://img.shields.io/badge/Google%20Gemini-8E75B2?style=for-the-badge&logo=google&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
--   **Framework** : Next.js 14 (App Router)
--   **Style** : Tailwind CSS & Shadcn/ui
+-   **Framework** : Next.js 16 (App Router)
+-   **Style** : Tailwind CSS 4 & Shadcn/ui
 -   **Animations** : Framer Motion
--   **IA** : Google Gemini API (pour les traductions)
+-   **IA** : Google Gemini API
+-   **Déploiement** : Vercel
 
 ## 🚀 Commencer
 
