@@ -67,14 +67,14 @@ export function ChatSimulation() {
             <div className="bg-secondary/10 backdrop-blur-md p-4 border-b border-border/50 flex items-center gap-3 z-10 sticky top-0">
                 <div className="relative">
                     <Avatar className="h-10 w-10 border border-background shadow-sm">
-                        <AvatarImage src="https://api.dicebear.com/7.x/notionists/svg?seed=Felix" />
+                        <AvatarImage src="https://api.dicebear.com/7.x/notionists/svg?seed=Bella" />
                         <AvatarFallback>C</AvatarFallback>
                     </Avatar>
                     <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-500 border-2 border-background"></span>
                 </div>
                 <div className="flex flex-col leading-tight">
                     <span className="font-semibold text-base">{t.chatColleague}</span>
-                    <span className="text-xs text-muted-foreground font-medium">Active now</span>
+                    <span className="text-xs text-muted-foreground font-medium">{t.chatActive}</span>
                 </div>
                 <div className="ml-auto">
                     <Button variant="ghost" size="icon" className="text-muted-foreground h-8 w-8 hover:bg-secondary/20">
@@ -86,7 +86,7 @@ export function ChatSimulation() {
             {/* Chat Area */}
             <div ref={scrollRef} className="flex-1 p-4 overflow-y-auto space-y-4 bg-secondary/5 relative scroll-smooth">
                 <div className="text-center">
-                    <span className="text-[10px] font-medium text-muted-foreground/60 bg-secondary/30 px-2 py-1 rounded-full">Today 9:41 AM</span>
+                    <span className="text-[10px] font-medium text-muted-foreground/60 bg-secondary/30 px-2 py-1 rounded-full">{t.chatDate}</span>
                 </div>
 
                 <AnimatePresence mode="popLayout">
@@ -99,7 +99,7 @@ export function ChatSimulation() {
                         >
                             {msg.sender === "them" && (
                                 <Avatar className="h-6 w-6 mt-auto shrink-0 mb-1">
-                                    <AvatarImage src="https://api.dicebear.com/7.x/notionists/svg?seed=Felix" />
+                                    <AvatarImage src="https://api.dicebear.com/7.x/notionists/svg?seed=Bella" />
                                     <AvatarFallback>C</AvatarFallback>
                                 </Avatar>
                             )}
@@ -123,7 +123,7 @@ export function ChatSimulation() {
                         className="flex gap-2 items-end pl-2"
                     >
                         <Avatar className="h-6 w-6 shrink-0 mb-1">
-                            <AvatarImage src="https://api.dicebear.com/7.x/notionists/svg?seed=Felix" />
+                            <AvatarImage src="https://api.dicebear.com/7.x/notionists/svg?seed=Bella" />
                             <AvatarFallback>C</AvatarFallback>
                         </Avatar>
                         <div className="bg-card border border-border/50 px-4 py-3 rounded-[20px] rounded-bl-[4px] shadow-sm flex items-center gap-1 min-w-[3rem]">

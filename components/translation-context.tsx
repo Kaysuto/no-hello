@@ -10,7 +10,9 @@ const defaultTranslations = {
     headerDesc: "Pourquoi dire bonjour sans poser votre question est une perte de temps.",
 
     chatMe: "Salut !",
-    chatColleague: "Collègue Chat",
+    chatColleague: "Sarah",
+    chatDate: "Aujourd'hui 09:41",
+    chatActive: "En ligne",
     chatTyping: "est en train d'écrire",
     chatInterruption: "⚠️ Interruption de concentration en cours...",
 
@@ -85,21 +87,55 @@ interface TranslationContextType {
 
 const TranslationContext = createContext<TranslationContextType | undefined>(undefined)
 
+
+import { STATIC_TRANSLATIONS } from "@/lib/translations"
+
 export function TranslationProvider({ children }: { children: ReactNode }) {
     const [language, setInternalLanguage] = useState("fr")
     const [t, setT] = useState<TranslationMap>(defaultTranslations)
     const [isTranslating, setIsTranslating] = useState(false)
 
+    // Load initial language from localStorage if available
+    React.useEffect(() => {
+        const savedLang = localStorage.getItem("nohello-lang")
+        if (savedLang && savedLang !== "fr") {
+            setLanguage(savedLang)
+        }
+    }, [])
+
     const setLanguage = async (lang: string) => {
         if (lang === language) return
 
         setInternalLanguage(lang)
+        localStorage.setItem("nohello-lang", lang)
 
+        // 1. Check for 'fr' (default)
         if (lang === "fr") {
             setT(defaultTranslations)
             return
         }
 
+        // 2. Check Static Translations (Instant)
+        // @ts-ignore - Indexing string into specific keys
+        if (STATIC_TRANSLATIONS[lang as keyof typeof STATIC_TRANSLATIONS]) {
+            // @ts-ignore
+            setT(STATIC_TRANSLATIONS[lang as keyof typeof STATIC_TRANSLATIONS])
+            return
+        }
+
+        // 3. Check LocalStorage Cache
+        const cached = localStorage.getItem(`nohello-trans-${lang}`)
+        if (cached) {
+            try {
+                setT(JSON.parse(cached))
+                return
+            } catch (e) {
+                console.error("Cache parse error", e)
+                localStorage.removeItem(`nohello-trans-${lang}`)
+            }
+        }
+
+        // 4. Fallback to API
         setIsTranslating(true)
         try {
             const response = await fetch("/api/translate", {
@@ -112,9 +148,10 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
             })
 
             const data = await response.json()
-            console.log("Translation response:", data)
             if (data.translatedContent) {
                 setT(data.translatedContent)
+                // Save to cache
+                localStorage.setItem(`nohello-trans-${lang}`, JSON.stringify(data.translatedContent))
             } else {
                 console.error("No translatedContent in response", data)
             }

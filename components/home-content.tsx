@@ -7,9 +7,19 @@ import { ConceptExplanation } from "@/components/concept-explanation"
 import { QuizGame } from "@/components/quiz-game"
 import { ShareButton } from "@/components/share-button"
 import { TypingText } from "@/components/typing-text"
+import { motion } from "framer-motion"
 
 export function HomeContent() {
     const { t } = useTranslation()
+
+    const sectionVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.6, ease: "easeOut" }
+        }
+    } as const
 
     return (
         <div className="min-h-screen bg-background relative overflow-hidden selection:bg-primary/20">
@@ -17,21 +27,52 @@ export function HomeContent() {
 
             {/* Background Gradients */}
             <div className="fixed inset-0 z-0 pointer-events-none">
-                <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] rounded-full bg-blue-500/10 blur-[100px]" />
-                <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-purple-500/10 blur-[120px]" />
+                <motion.div
+                    animate={{
+                        scale: [1, 1.1, 1],
+                        opacity: [0.3, 0.5, 0.3]
+                    }}
+                    transition={{
+                        duration: 8,
+                        repeat: Infinity,
+                        repeatType: "reverse"
+                    }}
+                    className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] rounded-full bg-blue-500/10 blur-[100px]"
+                />
+                <motion.div
+                    animate={{
+                        scale: [1, 1.2, 1],
+                        opacity: [0.3, 0.5, 0.3]
+                    }}
+                    transition={{
+                        duration: 10,
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                        delay: 1
+                    }}
+                    className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-purple-500/10 blur-[120px]"
+                />
             </div>
 
             <div className="relative z-10 container mx-auto px-4 pt-16">
                 <main className="space-y-24">
                     {/* Hero Section */}
-                    {/* Hero Section */}
-                    <section className="min-h-[calc(100vh-4rem)] flex items-center justify-center">
+                    <motion.section
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="min-h-[calc(100vh-4rem)] flex items-center justify-center"
+                    >
                         <div className="w-full max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                             {/* Left Column: Chat Simulation */}
                             <div className="flex justify-center lg:justify-end order-1">
-                                <div className="w-full max-w-md transform scale-100 hover:scale-105 transition-transform duration-500">
+                                <motion.div
+                                    whileHover={{ scale: 1.02 }}
+                                    transition={{ type: "spring", stiffness: 300 }}
+                                    className="w-full max-w-md"
+                                >
                                     <ChatSimulation />
-                                </div>
+                                </motion.div>
                             </div>
 
                             {/* Right Column: Text Content */}
@@ -52,7 +93,7 @@ export function HomeContent() {
                                 </p>
                             </div>
                         </div>
-                    </section>
+                    </motion.section>
 
                     {/* Explanation Section */}
                     <section id="explanation" className="scroll-mt-24">
@@ -60,18 +101,31 @@ export function HomeContent() {
                     </section>
 
                     {/* Comparison Section */}
-                    <section className="bg-gradient-to-b from-transparent via-secondary/5 to-transparent py-12 -mx-4 px-4 sm:mx-0 sm:px-0 sm:rounded-3xl">
+                    <motion.section
+                        className="bg-gradient-to-b from-transparent via-secondary/5 to-transparent py-12 -mx-4 px-4 sm:mx-0 sm:px-0 sm:rounded-3xl"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-100px" }}
+                        variants={sectionVariants}
+                    >
                         <div className="text-center mb-12">
                             <h2 className="text-3xl font-bold tracking-tight mb-4">{t.compSectionTitle}</h2>
                             <p className="text-muted-foreground">{t.compSectionDesc}</p>
                         </div>
                         <ComparisonSection />
-                    </section>
+                    </motion.section>
 
                     {/* Quiz Section */}
-                    <section id="quiz" className="py-12 scroll-mt-24">
+                    <motion.section
+                        id="quiz"
+                        className="py-12 scroll-mt-24"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-100px" }}
+                        variants={sectionVariants}
+                    >
                         <QuizGame />
-                    </section>
+                    </motion.section>
 
                     <div className="flex justify-center sm:hidden pb-12">
                         <ShareButton />
