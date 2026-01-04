@@ -10,6 +10,9 @@ export const STATIC_TRANSLATIONS = {
         chatActive: "En ligne",
         chatTyping: "est en train d'écrire",
         chatInterruption: "⚠️ Interruption de concentration en cours...",
+        chatPlaceholder: "Message...",
+        chatImage: "Image",
+        chatDocument: "Document",
 
         conceptTitle: "Pourquoi est-ce contre-productif ?",
 
@@ -39,9 +42,10 @@ export const STATIC_TRANSLATIONS = {
         goodContext: "... le collègue a tout le contexte immédiatement ...",
         goodReply: "Salut ! Oui, absolument. Utilise la commande `clear-cache`.",
 
-        shareBtn: "Partager le concept",
-        shareTitle: "Lien copié !",
-        shareDesc: "L'URL a été copiée dans votre presse-papier.",
+        shareBtn: "Partager",
+        shareMsgCopied: "Message copié !",
+        shareMsgDesc: "Tu peux maintenant le coller dans ta conversation.",
+        shareCustomMsg: "Salut ! Au lieu de juste dire bonjour, pose directement ta question. Ça permet d'économiser du temps pour tout le monde ! Pour en savoir plus : https://nohello.net",
 
         quizTitle: "Entraînez-vous !",
         quizDesc: "Choisissez la meilleure réponse pour chaque situation.",
@@ -56,6 +60,9 @@ export const STATIC_TRANSLATIONS = {
         quizEasy: "Facile",
         quizMedium: "Moyen",
         quizHard: "Difficile",
+
+        navConcept: "Concept",
+        navQuiz: "Quiz",
 
         q1Question: "Vous avez besoin d'aide pour un bug urgent.",
         q1Bad1: "Salut, tu as 5 minutes ?",
@@ -99,6 +106,9 @@ export const STATIC_TRANSLATIONS = {
         chatActive: "Active now",
         chatTyping: "is typing",
         chatInterruption: "⚠️ Focus interruption in progress...",
+        chatPlaceholder: "Message...",
+        chatImage: "Image",
+        chatDocument: "Document",
         conceptTitle: "Why is it counter-productive?",
         conceptProblemTitle: "The Problem",
         conceptProblemBody: "Imagine calling someone on the phone, saying \"Hello!\", and then immediately putting them on hold...",
@@ -119,9 +129,12 @@ export const STATIC_TRANSLATIONS = {
         goodMsg1: "Hi! I have a question about deployment. Should we clear the cache before building? I got this error...",
         goodContext: "... the colleague has all context immediately ...",
         goodReply: "Hi! Yes, absolutely. Use the `clear-cache` command.",
-        shareBtn: "Share concept",
-        shareTitle: "Link copied!",
-        shareDesc: "URL copied to clipboard.",
+        
+        shareBtn: "Share",
+        shareMsgCopied: "Message copied!",
+        shareMsgDesc: "You can now paste it into your conversation.",
+        shareCustomMsg: "Hi! Instead of just saying hello, please ask your question directly. It saves time for everyone! Learn more: https://nohello.net",
+
         quizTitle: "Practice!",
         quizDesc: "Choose the best response for each situation.",
         quizNext: "Next Question",
@@ -135,6 +148,9 @@ export const STATIC_TRANSLATIONS = {
         quizEasy: "Easy",
         quizMedium: "Medium",
         quizHard: "Hard",
+
+        navConcept: "Concept",
+        navQuiz: "Quiz",
 
         q1Question: "You need help with an urgent bug.",
         q1Bad1: "Hi, got 5 minutes?",
@@ -173,6 +189,13 @@ export const STATIC_TRANSLATIONS = {
         chatActive: "En línea",
         chatTyping: "está escribiendo",
         chatInterruption: "⚠️ Interrupción de concentración en curso...",
+        chatPlaceholder: "Mensaje...",
+        chatImage: "Imagen",
+        chatDocument: "Documento",
+        
+        navConcept: "Concepto",
+        navQuiz: "Cuestionario",
+
         conceptTitle: "¿Por qué es contraproducente?",
         conceptProblemTitle: "El Problema",
         conceptProblemBody: "Imagina llamar a alguien por teléfono, decir \"¡Hola!\", y luego ponerlo inmediatamente en espera...",
@@ -193,9 +216,12 @@ export const STATIC_TRANSLATIONS = {
         goodMsg1: "¡Hola! Tengo una pregunta sobre el despliegue. ¿Debemos vaciar la caché antes de construir? Me salió este error...",
         goodContext: "... el colega tiene todo el contexto inmediatamente ...",
         goodReply: "¡Hola! Sí, absolutamente. Usa el comando `clear-cache`.",
-        shareBtn: "Compartir concepto",
-        shareTitle: "¡Enlace copiado!",
-        shareDesc: "URL copiada al portapapeles.",
+        
+        shareBtn: "Compartir",
+        shareMsgCopied: "¡Mensaje copiado!",
+        shareMsgDesc: "Ahora puedes pegarlo en tu conversación.",
+        shareCustomMsg: "¡Hola! En lugar de solo decir hola, haz tu pregunta directamente. ¡Ahorra tiempo para todos! Más información: https://nohello.net",
+
         quizTitle: "¡Practica!",
         quizDesc: "Elige la mejor respuesta para cada situación.",
         quizNext: "Siguiente Pregunta",
@@ -247,6 +273,13 @@ export const STATIC_TRANSLATIONS = {
         chatActive: "Online",
         chatTyping: "schreibt",
         chatInterruption: "⚠️ Konzentrationsunterbrechung läuft...",
+        chatPlaceholder: "Nachricht...",
+        chatImage: "Bild",
+        chatDocument: "Dokument",
+
+        navConcept: "Konzept",
+        navQuiz: "Quiz",
+
         conceptTitle: "Warum ist das kontraproduktiv?",
         conceptProblemTitle: "Das Problem",
         conceptProblemBody: "Stell dir vor, du rufst jemanden an, sagst \"Hallo!\" und legst ihn dann sofort in die Warteschleife...",
@@ -254,7 +287,7 @@ export const STATIC_TRANSLATIONS = {
         conceptConsequenceBody: "Du zwingst deinen Kollegen zu warten, während du deine Frage formulierst, und unterbrichst seine Konzentration unnötig.",
         conceptSolutionTitle: "Die Lösung",
         conceptSolutionBody: "Die beste Praxis ist es, deine Begrüßung UND deine Frage in derselben Nachricht zu senden.",
-        conceptBenefitTitle: "Das Ergebnis",
+        conceptBenefitTitle: "The Result",
         conceptBenefitBody: "Dein Kollege kann antworten, sobald er Zeit hat, mit allem nötigen Kontext.",
         compSectionTitle: "Der Unterschied ist klar",
         compSectionDesc: "Kleine Änderung für große Produktivität.",
@@ -267,9 +300,12 @@ export const STATIC_TRANSLATIONS = {
         goodMsg1: "Hi! Ich habe eine Frage zum Deployment. Müssen wir den Cache vor dem Build leeren? Ich habe diesen Fehler...",
         goodContext: "... der Kollege hat sofort allen Kontext ...",
         goodReply: "Hi! Ja, absolut. Benutze den Befehl `clear-cache`.",
-        shareBtn: "Konzept teilen",
-        shareTitle: "Link kopiert!",
-        shareDesc: "URL in die Zwischenablage kopiert.",
+        
+        shareBtn: "Teilen",
+        shareMsgCopied: "Nachricht kopiert!",
+        shareMsgDesc: "Du kannst ihn jetzt in deine Unterhaltung einfügen.",
+        shareCustomMsg: "Hallo! Anstatt nur Hallo zu sagen, stelle bitte direkt deine Frage. Das spart Zeit für alle! Mehr erfahren: https://nohello.net",
+
         quizTitle: "Üben!",
         quizDesc: "Wähle die beste Antwort für jede Situation.",
         quizNext: "Nächste Frage",
@@ -321,6 +357,13 @@ export const STATIC_TRANSLATIONS = {
         chatActive: "オンライン",
         chatTyping: "入力中...",
         chatInterruption: "⚠️ 集中力が途切れています...",
+        chatPlaceholder: "メッセージ...",
+        chatImage: "画像",
+        chatDocument: "ドキュメント",
+
+        navConcept: "コンセプト",
+        navQuiz: "クイズ",
+
         conceptTitle: "なぜ非効率なのか？",
         conceptProblemTitle: "問題点",
         conceptProblemBody: "電話をかけて「もしもし！」と言った後、すぐに保留にするようなものです...",
@@ -341,9 +384,12 @@ export const STATIC_TRANSLATIONS = {
         goodMsg1: "お疲れ様です！デプロイについて質問があります。ビルド前にキャッシュをクリアすべきですか？このエラーが出ていて...",
         goodContext: "... 同僚はすぐに状況を把握できます ...",
         goodReply: "お疲れ様です！はい、その通りです。`clear-cache`コマンドを使ってください。",
-        shareBtn: "コンセプトを共有",
-        shareTitle: "リンクをコピーしました！",
-        shareDesc: "URLがクリップボードにコピーされました。",
+        
+        shareBtn: "共有",
+        shareMsgCopied: "メッセージをコピーしました！",
+        shareMsgDesc: "会話に貼り付けて使用できます。",
+        shareCustomMsg: "こんにちは！単に挨拶するだけでなく、直接質問をしてください。全員の時間を節約できます！詳細はこちら：https://nohello.net",
+
         quizTitle: "練習しよう！",
         quizDesc: "それぞれの状況に最適な返答を選んでください。",
         quizNext: "次の質問",
@@ -385,4 +431,4 @@ export const STATIC_TRANSLATIONS = {
         footerBy: " デザイン：",
         footerWarning: "注意：このサイトをプロフィールで見かけたら、次の「こんにちは」は無視される準備をしてください！ 👻"
     }
-} as const
+} as const;

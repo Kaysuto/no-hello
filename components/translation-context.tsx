@@ -15,6 +15,11 @@ const defaultTranslations = {
     chatActive: "En ligne",
     chatTyping: "est en train d'écrire",
     chatInterruption: "⚠️ Interruption de concentration en cours...",
+    chatPlaceholder: "Message...",
+    chatImage: "Image",
+    chatDocument: "Document",
+    navConcept: "Concept",
+    navQuiz: "Quiz",
 
     conceptTitle: "Pourquoi est-ce contre-productif ?",
 
@@ -44,9 +49,10 @@ const defaultTranslations = {
     goodContext: "... le collègue a tout le contexte immédiatement ...",
     goodReply: "Salut ! Oui, absolument. Utilise la commande `clear-cache`.",
 
-    shareBtn: "Partager le concept",
-    shareTitle: "Lien copié !",
-    shareDesc: "L'URL a été copiée dans votre presse-papier.",
+    shareBtn: "Partager",
+    shareMsgCopied: "Message copié !",
+    shareMsgDesc: "Tu peux maintenant le coller dans ta conversation.",
+    shareCustomMsg: "Salut ! Au lieu de juste dire bonjour, pose directement ta question. Ça permet d'économiser du temps pour tout le monde ! Pour en savoir plus : https://nohello.net",
 
     quizTitle: "Entraînez-vous !",
     quizDesc: "Choisissez la meilleure réponse pour chaque situation.",

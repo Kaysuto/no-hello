@@ -126,7 +126,7 @@ export function ChatSimulation() {
                             <AvatarImage src="https://api.dicebear.com/7.x/notionists/svg?seed=Bella" />
                             <AvatarFallback>C</AvatarFallback>
                         </Avatar>
-                        <div className="bg-card border border-border/50 px-4 py-3 rounded-[20px] rounded-bl-[4px] shadow-sm flex items-center gap-1 min-w-[3rem]">
+                        <div className="bg-card border border-border/50 px-4 py-3 rounded-[20px] rounded-bl-[4px] shadow-sm flex items-center gap-1 min-w-12">
                             <motion.div
                                 className="w-1.5 h-1.5 bg-muted-foreground/40 rounded-full"
                                 animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
@@ -170,11 +170,11 @@ export function ChatSimulation() {
                     <DropdownMenuContent align="start">
                         <DropdownMenuItem>
                             <ImageIcon className="mr-2 h-4 w-4" />
-                            <span>Image</span>
+                            <span>{t.chatImage}</span>
                         </DropdownMenuItem>
                         <DropdownMenuItem>
                             <FileText className="mr-2 h-4 w-4" />
-                            <span>Document</span>
+                            <span>{t.chatDocument}</span>
                         </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
@@ -184,7 +184,7 @@ export function ChatSimulation() {
                         value={inputValue}
                         onChange={(e) => setInputValue(e.target.value)}
                         onKeyDown={(e) => e.key === "Enter" && handleSend()}
-                        placeholder="Message..."
+                        placeholder={t.chatPlaceholder}
                         className="rounded-full bg-secondary/50 border-transparent focus-visible:ring-0 px-4 h-10 pr-10"
                     />
                     <Button

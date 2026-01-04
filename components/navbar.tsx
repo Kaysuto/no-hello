@@ -6,7 +6,10 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Github } from "lucide-react"
 
+import { useTranslation } from "@/components/translation-context"
+
 export function Navbar() {
+    const { t } = useTranslation()
     const scrollToSection = (id: string) => {
         const element = document.getElementById(id)
         if (element) {
@@ -23,24 +26,24 @@ export function Navbar() {
             <div className="pointer-events-auto flex items-center gap-1 p-2 bg-background/80 backdrop-blur-xl rounded-2xl shadow-[0px_0.6px_0.6px_-1.25px_rgba(0,0,0,0.18),0px_2.3px_2.3px_-2.5px_rgba(0,0,0,0.16),0px_10px_10px_-3.75px_rgba(0,0,0,0.06)] dark:shadow-[0px_0.6px_0.6px_-1.25px_rgba(255,255,255,0.18),0px_2.3px_2.3px_-2.5px_rgba(255,255,255,0.16),0px_10px_10px_-3.75px_rgba(255,255,255,0.06)] border border-white/20">
 
                 {/* Navigation Links */}
-                <div className="flex items-center gap-1 mr-2 hidden sm:flex">
+                <div className="hidden sm:flex items-center gap-1 mr-2">
                     <Button
                         variant="ghost"
                         onClick={() => scrollToSection("explanation")}
                         className="h-9 px-4 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
                     >
-                        Concept
+                        {t.navConcept}
                     </Button>
                     <Button
                         variant="ghost"
                         onClick={() => scrollToSection("quiz")}
                         className="h-9 px-4 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
                     >
-                        Quiz
+                        {t.navQuiz}
                     </Button>
                 </div>
 
-                <div className="h-4 w-[1px] bg-border mx-2 hidden sm:block" />
+                <div className="h-4 w-px bg-border mx-2 hidden sm:block" />
 
                 {/* Actions */}
                 <div className="flex items-center gap-1">
