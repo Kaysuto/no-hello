@@ -10,16 +10,18 @@ import confetti from "canvas-confetti"
 
 export function QuizGame() {
     const { t } = useTranslation()
+    const [difficulty, setDifficulty] = useState<'easy' | 'medium' | 'hard' | null>(null)
     const [currentQuestion, setCurrentQuestion] = useState(0)
     const [score, setScore] = useState(0)
     const [showResult, setShowResult] = useState(false)
     const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
     const [isAnswered, setIsAnswered] = useState(false)
 
-    // Construct questions from valid translation keys
-    const questions = [
+    // Define all available questions
+    const allQuestions = [
         {
             id: 1,
+            difficulty: 'easy',
             question: t.q1Question,
             options: [
                 { id: 1, text: t.q1Bad1, correct: false },
@@ -29,6 +31,7 @@ export function QuizGame() {
         },
         {
             id: 2,
+            difficulty: 'medium',
             question: t.q2Question,
             options: [
                 { id: 1, text: t.q2Good, correct: true },
@@ -38,6 +41,7 @@ export function QuizGame() {
         },
         {
             id: 3,
+            difficulty: 'hard',
             question: t.q3Question,
             options: [
                 { id: 1, text: t.q3Bad1, correct: false },
@@ -45,14 +49,39 @@ export function QuizGame() {
                 { id: 3, text: t.q3Good, correct: true },
             ],
         },
+        {
+            id: 4,
+            difficulty: 'easy',
+            question: t.q4Question,
+            options: [
+                { id: 1, text: t.q4Bad1, correct: false },
+                { id: 2, text: t.q4Bad2, correct: false },
+                { id: 3, text: t.q4Good, correct: true },
+            ],
+        },
+        {
+            id: 5,
+            difficulty: 'medium',
+            question: t.q5Question,
+            options: [
+                { id: 1, text: t.q5Bad1, correct: false },
+                { id: 2, text: t.q5Bad2, correct: false },
+                { id: 3, text: t.q5Good, correct: true },
+            ],
+        },
     ]
+
+    // Filter questions based on difficulty
+    const questions = difficulty 
+        ? allQuestions.filter(q => q.difficulty === difficulty)
+        : []
 
     const handleAnswer = (correct: boolean, index: number) => {
         if (isAnswered) return
         setSelectedAnswer(index)
         setIsAnswered(true)
         if (correct) {
-            setScore(score + 1)
+            setScore(prev => prev + 1)
             confetti({
                 particleCount: 50,
                 spread: 60,
@@ -64,7 +93,7 @@ export function QuizGame() {
 
     const nextQuestion = () => {
         if (currentQuestion < questions.length - 1) {
-            setCurrentQuestion(currentQuestion + 1)
+            setCurrentQuestion(prev => prev + 1)
             setSelectedAnswer(null)
             setIsAnswered(false)
         } else {
@@ -80,6 +109,16 @@ export function QuizGame() {
     }
 
     const resetQuiz = () => {
+        setDifficulty(null)
+        setCurrentQuestion(0)
+        setScore(0)
+        setShowResult(false)
+        setSelectedAnswer(null)
+        setIsAnswered(false)
+    }
+
+    const selectDifficulty = (level: 'easy' | 'medium' | 'hard') => {
+        setDifficulty(level)
         setCurrentQuestion(0)
         setScore(0)
         setShowResult(false)
@@ -89,10 +128,40 @@ export function QuizGame() {
 
     return (
         <Card className="w-full max-w-2xl mx-auto overflow-hidden border-primary/20 bg-card/50 backdrop-blur-sm relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 pointer-events-none" />
+            <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-primary/5 pointer-events-none" />
 
             <div className="p-8 relative z-10">
-                {!showResult ? (
+                {!difficulty ? (
+                    <div className="space-y-8 py-4">
+                        <div className="text-center space-y-2">
+                            <h3 className="text-2xl font-bold">{t.quizDifficultyTitle}</h3>
+                            <p className="text-muted-foreground">{t.quizDesc}</p>
+                        </div>
+                        <div className="grid gap-4 max-w-sm mx-auto">
+                            <Button 
+                                onClick={() => selectDifficulty('easy')}
+                                variant="outline" 
+                                className="h-16 text-lg border-2 hover:border-primary hover:bg-primary/5 transition-all"
+                            >
+                                {t.quizEasy}
+                            </Button>
+                            <Button 
+                                onClick={() => selectDifficulty('medium')}
+                                variant="outline" 
+                                className="h-16 text-lg border-2 hover:border-primary hover:bg-primary/5 transition-all"
+                            >
+                                {t.quizMedium}
+                            </Button>
+                            <Button 
+                                onClick={() => selectDifficulty('hard')}
+                                variant="outline" 
+                                className="h-16 text-lg border-2 hover:border-primary hover:bg-primary/5 transition-all"
+                            >
+                                {t.quizHard}
+                            </Button>
+                        </div>
+                    </div>
+                ) : !showResult ? (
                     <div className="space-y-8">
                         <div className="text-center space-y-2">
                             <h3 className="text-2xl font-bold">{t.quizTitle}</h3>
@@ -155,7 +224,15 @@ export function QuizGame() {
                             </motion.div>
                         </AnimatePresence>
 
-                        <div className="flex justify-end pt-4">
+                        <div className="flex justify-between items-center pt-4">
+                            <Button 
+                                onClick={() => setDifficulty(null)} 
+                                variant="ghost" 
+                                size="sm"
+                                className="text-muted-foreground hover:text-primary"
+                            >
+                                {t.quizRetry}
+                            </Button>
                             <Button
                                 onClick={nextQuestion}
                                 disabled={!isAnswered}

@@ -52,6 +52,10 @@ export const STATIC_TRANSLATIONS = {
         quizGood: "Pas mal, mais vous pouvez faire mieux !",
         quizBad: "Aïe ! Il faut revoir les bases.",
         quizRetry: "Réessayer",
+        quizDifficultyTitle: "Choisissez votre niveau",
+        quizEasy: "Facile",
+        quizMedium: "Moyen",
+        quizHard: "Difficile",
 
         q1Question: "Vous avez besoin d'aide pour un bug urgent.",
         q1Bad1: "Salut, tu as 5 minutes ?",
@@ -67,6 +71,16 @@ export const STATIC_TRANSLATIONS = {
         q3Bad1: "Le doc est où ?",
         q3Bad2: "Salut",
         q3Good: "Salut, je ne trouve pas la spec d'API v2. Est-ce qu'elle est sur le Drive ?",
+
+        q4Question: "Vous voulez remercier un collègue.",
+        q4Bad1: "Merci",
+        q4Bad2: "Hey",
+        q4Good: "Salut ! Merci beaucoup pour ton aide sur la base de données hier, ça m'a sauvé.",
+
+        q5Question: "Vous avez une question sur une tâche Jira.",
+        q5Bad1: "Tu peux m'aider sur Jira ?",
+        q5Bad2: "Salut Sarah",
+        q5Good: "Salut Sarah ! J'ai un doute sur le ticket JIRA-123. Est-ce que le design est validé ?",
 
         footer: "Inspiré par nohello.net • Reconstruit avec Next.js & Shadcn"
     },
@@ -112,6 +126,11 @@ export const STATIC_TRANSLATIONS = {
         quizGood: "Not bad, but you can do better!",
         quizBad: "Ouch! Back to basics.",
         quizRetry: "Retry",
+        quizDifficultyTitle: "Choose your level",
+        quizEasy: "Easy",
+        quizMedium: "Medium",
+        quizHard: "Hard",
+
         q1Question: "You need help with an urgent bug.",
         q1Bad1: "Hi, got 5 minutes?",
         q1Bad2: "Hey!",
@@ -124,6 +143,14 @@ export const STATIC_TRANSLATIONS = {
         q3Bad1: "Where is the doc?",
         q3Bad2: "Hi",
         q3Good: "Hi, I can't find the API v2 spec. Is it on the Drive?",
+        q4Question: "You want to thank a colleague.",
+        q4Bad1: "Thanks",
+        q4Bad2: "Hey",
+        q4Good: "Hi! Thanks a lot for your help with the database yesterday, it saved me.",
+        q5Question: "You have a question about a Jira task.",
+        q5Bad1: "Can you help me on Jira?",
+        q5Bad2: "Hi Sarah",
+        q5Good: "Hi Sarah! I have a doubt about ticket JIRA-123. Is the design validated?",
         footer: "Inspired by nohello.net • Rebuilt with Next.js & Shadcn"
     },
     es: {
@@ -168,8 +195,13 @@ export const STATIC_TRANSLATIONS = {
         quizGood: "¡No está mal, pero puedes mejorar!",
         quizBad: "¡Ay! Hay que repasar lo básico.",
         quizRetry: "Reintentar",
+        quizDifficultyTitle: "Elige tu nivel",
+        quizEasy: "Fácil",
+        quizMedium: "Medio",
+        quizHard: "Difícil",
+
         q1Question: "Necesitas ayuda con un error urgente.",
-        q1Bad1: "Hola, ¿tienes 5 minutos?",
+        q1Bad1: "Hola, ¿tienes 5 minutes?",
         q1Bad2: "¡Buenas!",
         q1Good: "¡Hola! Tengo un error crítico en el login (Error 500). ¿Puedes echar un vistazo?",
         q2Question: "Quieres programar una reunión.",
@@ -180,6 +212,14 @@ export const STATIC_TRANSLATIONS = {
         q3Bad1: "¿Dónde está el doc?",
         q3Bad2: "Hola",
         q3Good: "Hola, no encuentro la especificación de la API v2. ¿Está en el Drive?",
+        q4Question: "Quieres agradecer a un colega.",
+        q4Bad1: "Gracias",
+        q4Bad2: "Hola",
+        q4Good: "¡Hola! Muchas gracias por tu ayuda con la base de datos ayer, me salvó.",
+        q5Question: "Tienes una pregunta sobre una tarea de Jira.",
+        q5Bad1: "¿Puedes ayudarme en Jira?",
+        q5Bad2: "Hola Sarah",
+        q5Good: "¡Hola Sarah! Tengo una duda sobre el ticket JIRA-123. ¿Está validado el diseño?",
         footer: "Inspirado por nohello.net • Reconstruido con Next.js & Shadcn"
     },
     de: {
@@ -224,6 +264,11 @@ export const STATIC_TRANSLATIONS = {
         quizGood: "Nicht schlecht, aber das geht noch besser!",
         quizBad: "Auweia! Zurück zu den Grundlagen.",
         quizRetry: "Erneut versuchen",
+        quizDifficultyTitle: "Wähle deine Stufe",
+        quizEasy: "Einfach",
+        quizMedium: "Mittel",
+        quizHard: "Schwer",
+
         q1Question: "Du brauchst Hilfe bei einem dringenden Bug.",
         q1Bad1: "Hi, hast du 5 Minuten?",
         q1Bad2: "Huhu!",
@@ -236,6 +281,14 @@ export const STATIC_TRANSLATIONS = {
         q3Bad1: "Wo ist das Dok?",
         q3Bad2: "Hi",
         q3Good: "Hi, ich finde die API v2 Spezifikation nicht. Ist sie auf dem Drive?",
+        q4Question: "Du möchtest dich bei einem Kollegen bedanken.",
+        q4Bad1: "Danke",
+        q4Bad2: "Hi",
+        q4Good: "Hi! Vielen Dank für deine Hilfe mit der Datenbank gestern, das hat mir sehr geholfen.",
+        q5Question: "Du hast eine Frage zu einer Jira-Aufgabe.",
+        q5Bad1: "Kannst du mir bei Jira helfen?",
+        q5Bad2: "Hallo Sarah",
+        q5Good: "Hallo Sarah! Ich habe eine Frage zu Ticket JIRA-123. Ist das Design freigegeben?",
         footer: "Inspiriert von nohello.net • Nachgebaut mit Next.js & Shadcn"
     },
     ja: {
@@ -280,6 +333,11 @@ export const STATIC_TRANSLATIONS = {
         quizGood: "悪くないですが、もっと良くできます！",
         quizBad: "あらら！基本からやり直しましょう。",
         quizRetry: "もう一度",
+        quizDifficultyTitle: "難易度を選択",
+        quizEasy: "初級",
+        quizMedium: "中級",
+        quizHard: "上級",
+
         q1Question: "緊急のバグで助けが必要です。",
         q1Bad1: "お疲れ様です、5分いいですか？",
         q1Bad2: "やっほー！",
@@ -292,6 +350,14 @@ export const STATIC_TRANSLATIONS = {
         q3Bad1: "ドキュメントどこ？",
         q3Bad2: "お疲れ様です",
         q3Good: "お疲れ様です、API v2の仕様書が見当たりません。ドライブにありますか？",
+        q4Question: "同僚にお礼を言いたい。",
+        q4Bad1: "ありがとう",
+        q4Bad2: "あ、お疲れ様です",
+        q4Good: "お疲れ様です！昨日はデータベースの件で助けていただき、本当にありがとうございました。",
+        q5Question: "Jiraのタスクについて質問がある。",
+        q5Bad1: "Jiraのこと教えてくれますか？",
+        q5Bad2: "サラさん、お疲れ様です",
+        q5Good: "サラさん、お疲れ様です！チケットJIRA-123について確認ですが、デザインは確定していますか？",
         footer: "nohello.netにインスパイアされました • Next.js & Shadcnで再構築"
     }
 } as const

@@ -6,6 +6,7 @@ import { CookieWidget } from "@/components/cookie-widget";
 import { ExternalLink } from "@/components/external-link";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { AnimatedHeart } from "@/components/animated-heart";
+import { Cursor } from "@/components/cursor";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -67,6 +68,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ScrollProgress />
+          <Cursor />
           {children}
           <CookieWidget />
           <Toaster />

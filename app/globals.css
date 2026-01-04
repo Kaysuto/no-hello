@@ -122,4 +122,11 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Hide system cursor on devices that support hover */
+  @media (hover: hover) and (pointer: fine) {
+    * {
+      cursor: none !important;
+    }
+  }
 }

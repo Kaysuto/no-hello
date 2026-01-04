@@ -57,6 +57,10 @@ const defaultTranslations = {
     quizGood: "Pas mal, mais vous pouvez faire mieux !",
     quizBad: "Aïe ! Il faut revoir les bases.",
     quizRetry: "Réessayer",
+    quizDifficultyTitle: "Choisissez votre niveau",
+    quizEasy: "Facile",
+    quizMedium: "Moyen",
+    quizHard: "Difficile",
 
     q1Question: "Vous avez besoin d'aide pour un bug urgent.",
     q1Bad1: "Salut, tu as 5 minutes ?",
@@ -72,6 +76,16 @@ const defaultTranslations = {
     q3Bad1: "Le doc est où ?",
     q3Bad2: "Salut",
     q3Good: "Salut, je ne trouve pas la spec d'API v2. Est-ce qu'elle est sur le Drive ?",
+
+    q4Question: "Vous voulez remercier un collègue.",
+    q4Bad1: "Merci",
+    q4Bad2: "Hey",
+    q4Good: "Salut ! Merci beaucoup pour ton aide sur la base de données hier, ça m'a sauvé.",
+
+    q5Question: "Vous avez une question sur une tâche Jira.",
+    q5Bad1: "Tu peux m'aider sur Jira ?",
+    q5Bad2: "Salut Sarah",
+    q5Good: "Salut Sarah ! J'ai un doute sur le ticket JIRA-123. Est-ce que le design est validé ?",
 
     footer: "Inspiré par nohello.net • Reconstruit avec Next.js & Shadcn"
 }
