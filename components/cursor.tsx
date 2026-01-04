@@ -11,10 +11,10 @@ export function Cursor() {
     const mouseX = useMotionValue(0)
     const mouseY = useMotionValue(0)
 
-    // Fast config for the dot movement to reduce perceived lag
-    const moveConfig = { damping: 20, stiffness: 300, mass: 0.5 }
-    // Morph config for the snap effect (slightly more cushioned)
-    const morphConfig = { damping: 25, stiffness: 200 }
+    // Higher stiffness and lower damping for extreme responsiveness
+    const moveConfig = { damping: 15, stiffness: 450, mass: 0.1 }
+    // Morph config for the snap effect (more punchy)
+    const morphConfig = { damping: 20, stiffness: 300 }
 
     const x = useSpring(mouseX, moveConfig)
     const y = useSpring(mouseY, moveConfig)
@@ -27,7 +27,15 @@ export function Cursor() {
         const handleMouseMove = (e: MouseEvent) => {
             if (!isVisible) setIsVisible(true)
             
-            if (!isHovered) {
+            if (isHovered && hoveredRect) {
+                // When snapped, allow slight movement towards mouse for a "magnetic" feel
+                const centerX = hoveredRect.left + hoveredRect.width / 2
+                const centerY = hoveredRect.top + hoveredRect.height / 2
+                const deltaX = (e.clientX - centerX) * 0.1
+                const deltaY = (e.clientY - centerY) * 0.1
+                mouseX.set(centerX + deltaX)
+                mouseY.set(centerY + deltaY)
+            } else {
                 mouseX.set(e.clientX)
                 mouseY.set(e.clientY)
             }
@@ -73,11 +81,11 @@ export function Cursor() {
         window.addEventListener("mouseout", handleMouseOut)
 
         return () => {
-            window.addEventListener("mousemove", handleMouseMove)
+            window.removeEventListener("mousemove", handleMouseMove)
             window.removeEventListener("mouseover", handleMouseOver)
             window.removeEventListener("mouseout", handleMouseOut)
         }
-    }, [isHovered, isVisible, mouseX, mouseY, sizeX, sizeY, borderRadius])
+    }, [isHovered, hoveredRect, isVisible, mouseX, mouseY, sizeX, sizeY, borderRadius])
 
     return (
         <AnimatePresence>
