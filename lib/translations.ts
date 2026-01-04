@@ -82,7 +82,12 @@ export const STATIC_TRANSLATIONS = {
         q5Bad2: "Salut Sarah",
         q5Good: "Salut Sarah ! J'ai un doute sur le ticket JIRA-123. Est-ce que le design est validé ?",
 
-        footer: "Inspiré par nohello.net • Reconstruit avec Next.js & Shadcn"
+        footer: "Inspiré par nohello.net • Reconstruit avec Next.js & Shadcn",
+        footerInspiredBy: "Inspiré par ",
+        footerRebuiltWith: " • Reconstruit avec ",
+        footerMadeWith: "Fait avec ",
+        footerBy: " par ",
+        footerWarning: "Attention : Si vous voyez ce site dans une bio, préparez-vous à être ignoré au prochain \"Salut\" ! 👻"
     },
     en: {
         headerPre: "Please, don't just say",
@@ -151,7 +156,12 @@ export const STATIC_TRANSLATIONS = {
         q5Bad1: "Can you help me on Jira?",
         q5Bad2: "Hi Sarah",
         q5Good: "Hi Sarah! I have a doubt about ticket JIRA-123. Is the design validated?",
-        footer: "Inspired by nohello.net • Rebuilt with Next.js & Shadcn"
+        footer: "Inspired by nohello.net • Rebuilt with Next.js & Shadcn",
+        footerInspiredBy: "Inspired by ",
+        footerRebuiltWith: " • Rebuilt with ",
+        footerMadeWith: "Made with ",
+        footerBy: " by ",
+        footerWarning: "Warning: If you see this site in a bio, prepare to be ignored at the next \"Hello\"! 👻"
     },
     es: {
         headerPre: "Por favor, no digas solo",
@@ -220,7 +230,12 @@ export const STATIC_TRANSLATIONS = {
         q5Bad1: "¿Puedes ayudarme en Jira?",
         q5Bad2: "Hola Sarah",
         q5Good: "¡Hola Sarah! Tengo una duda sobre el ticket JIRA-123. ¿Está validado el diseño?",
-        footer: "Inspirado por nohello.net • Reconstruido con Next.js & Shadcn"
+        footer: "Inspirado por nohello.net • Reconstruido con Next.js & Shadcn",
+        footerInspiredBy: "Inspirado por ",
+        footerRebuiltWith: " • Reconstruido con ",
+        footerMadeWith: "Hecho con ",
+        footerBy: " por ",
+        footerWarning: "Atención: ¡Si ves este sitio en una biografía, prepárate para ser ignorado en el próximo \"Hola\"! 👻"
     },
     de: {
         headerPre: "Bitte sag nicht nur",
@@ -289,7 +304,12 @@ export const STATIC_TRANSLATIONS = {
         q5Bad1: "Kannst du mir bei Jira helfen?",
         q5Bad2: "Hallo Sarah",
         q5Good: "Hallo Sarah! Ich habe eine Frage zu Ticket JIRA-123. Ist das Design freigegeben?",
-        footer: "Inspiriert von nohello.net • Nachgebaut mit Next.js & Shadcn"
+        footer: "Inspiriert von nohello.net • Nachgebaut mit Next.js & Shadcn",
+        footerInspiredBy: "Inspiriert von ",
+        footerRebuiltWith: " • Nachgebaut mit ",
+        footerMadeWith: "Erstellt mit ",
+        footerBy: " von ",
+        footerWarning: "Achtung: Wenn du diese Seite in einer Bio siehst, bereite dich darauf vor, beim nächsten \"Hallo\" ignoriert zu werden! 👻"
     },
     ja: {
         headerPre: "ただ",
@@ -358,6 +378,11 @@ export const STATIC_TRANSLATIONS = {
         q5Bad1: "Jiraのこと教えてくれますか？",
         q5Bad2: "サラさん、お疲れ様です",
         q5Good: "サラさん、お疲れ様です！チケットJIRA-123について確認ですが、デザインは確定していますか？",
-        footer: "nohello.netにインスパイアされました • Next.js & Shadcnで再構築"
+        footer: "nohello.netにインスパイアされました • Next.js & Shadcnで再構築",
+        footerInspiredBy: "にインスパイアされました",
+        footerRebuiltWith: "で再構築",
+        footerMadeWith: "制作：",
+        footerBy: " デザイン：",
+        footerWarning: "注意：このサイトをプロフィールで見かけたら、次の「こんにちは」は無視される準備をしてください！ 👻"
     }
 } as const

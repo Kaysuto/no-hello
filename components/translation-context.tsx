@@ -87,7 +87,12 @@ const defaultTranslations = {
     q5Bad2: "Salut Sarah",
     q5Good: "Salut Sarah ! J'ai un doute sur le ticket JIRA-123. Est-ce que le design est validé ?",
 
-    footer: "Inspiré par nohello.net • Reconstruit avec Next.js & Shadcn"
+    footer: "Inspiré par nohello.net • Reconstruit avec Next.js & Shadcn",
+    footerInspiredBy: "Inspiré par ",
+    footerRebuiltWith: " • Reconstruit avec ",
+    footerMadeWith: "Fait avec ",
+    footerBy: " par ",
+    footerWarning: "Attention : Si vous voyez ce site dans une bio, préparez-vous à être ignoré au prochain \"Salut\" ! 👻"
 }
 
 export type TranslationMap = typeof defaultTranslations

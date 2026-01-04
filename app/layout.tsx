@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
+import { TranslationProvider } from "@/components/translation-context";
 import { CookieWidget } from "@/components/cookie-widget";
-import { ExternalLink } from "@/components/external-link";
 import { ScrollProgress } from "@/components/scroll-progress";
-import { AnimatedHeart } from "@/components/animated-heart";
 import { Cursor } from "@/components/cursor";
+import { Footer } from "@/components/footer";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -67,28 +67,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ScrollProgress />
-          <Cursor />
-          {children}
-          <CookieWidget />
-          <Toaster />
-          <footer className="container mx-auto max-w-6xl px-4 py-6 text-center text-sm text-muted-foreground border-t border-border mt-12 space-y-2">
-            <p className="flex items-center justify-center gap-1 flex-wrap">
-              Inspiré par
-              <ExternalLink href="https://nohello.net" label="nohello.net">nohello.net</ExternalLink>
-              • Reconstruit avec
-              <ExternalLink href="https://nextjs.org" label="Next.js">Next.js</ExternalLink>
-              &
-              <ExternalLink href="https://ui.shadcn.com" label="Shadcn/ui">Shadcn</ExternalLink>
-            </p>
-            <p className="text-xs text-muted-foreground/60 italic max-w-md mx-auto mb-4">
-              Attention : Si vous voyez ce site dans une bio, préparez-vous à être ignoré au prochain "Salut" ! 👻
-            </p>
-            <p className="flex items-center justify-center gap-1">
-              Fait avec <AnimatedHeart /> par
-              <ExternalLink href="https://github.com/Kaysuto" label="Kaysuto Kimiya">Kaysuto Kimiya</ExternalLink>
-            </p>
-          </footer>
+          <TranslationProvider>
+            <ScrollProgress />
+            <Cursor />
+            {children}
+            <CookieWidget />
+            <Toaster />
+            <Footer />
+          </TranslationProvider>
         </ThemeProvider>
       </body>
     </html>
