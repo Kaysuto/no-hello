@@ -26,6 +26,10 @@ export const metadata: Metadata = {
   keywords: ["no hello", "communication", "etiquette", "chat", "productivity", "remote work", "slack etiquette", "discord etiquette"],
   authors: [{ name: "Kaysuto Kimiya", url: "https://github.com/Kaysuto" }],
   creator: "Kaysuto Kimiya",
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -60,6 +64,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning
       >
         <ThemeProvider
           attribute="class"
