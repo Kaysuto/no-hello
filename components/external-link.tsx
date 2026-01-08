@@ -10,18 +10,20 @@ import {
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { ExternalLink as LinkIcon } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 interface ExternalLinkProps {
     href: string
     label: string
     children: React.ReactNode
+    className?: string
 }
 
-export function ExternalLink({ href, label, children }: ExternalLinkProps) {
+export function ExternalLink({ href, label, children, className }: ExternalLinkProps) {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <span className="cursor-pointer hover:underline hover:text-foreground transition-colors inline-flex items-center gap-1">
+                <span className={cn("cursor-pointer hover:underline hover:text-foreground transition-colors inline-flex items-center gap-1", className)}>
                     {children}
                 </span>
             </DialogTrigger>

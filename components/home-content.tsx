@@ -5,7 +5,7 @@ import { ChatSimulation } from "@/components/chat-simulation"
 import { ComparisonSection } from "@/components/comparison-section"
 import { ConceptExplanation } from "@/components/concept-explanation"
 import { QuizGame } from "@/components/quiz-game"
-import { ShareButton } from "@/components/share-button"
+
 import { TypingText } from "@/components/typing-text"
 import { motion } from "framer-motion"
 
@@ -78,7 +78,7 @@ export function HomeContent() {
                             {/* Right Column: Text Content */}
                             <div className="space-y-6 text-center lg:text-left order-2">
                                 <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight leading-tight">
-                                    <span className="bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+                                    <span className="bg-linear-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
                                         {t.headerPre}
                                     </span>
                                     <span className="text-primary italic"> "
@@ -102,7 +102,7 @@ export function HomeContent() {
 
                     {/* Comparison Section */}
                     <motion.section
-                        className="bg-gradient-to-b from-transparent via-secondary/5 to-transparent py-12 -mx-4 px-4 sm:mx-0 sm:px-0 sm:rounded-3xl"
+                        className="bg-linear-to-b from-transparent via-secondary/5 to-transparent py-12 -mx-4 px-4 sm:mx-0 sm:px-0 sm:rounded-3xl"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
@@ -127,9 +127,7 @@ export function HomeContent() {
                         <QuizGame />
                     </motion.section>
 
-                    <div className="flex justify-center sm:hidden pb-12">
-                        <ShareButton />
-                    </div>
+
                 </main>
             </div>
         </div>

@@ -3,7 +3,7 @@ import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
 import { useTranslation } from "@/components/translation-context"
 
-export function ShareButton() {
+export function ShareButton({ showLabel = true }: { showLabel?: boolean }) {
     const { t } = useTranslation()
 
     const handleCopyMessage = () => {
@@ -19,10 +19,10 @@ export function ShareButton() {
         <Button
             variant="ghost"
             onClick={handleCopyMessage}
-            className="h-9 px-4 gap-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+            className="h-9 px-4 gap-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors justify-start"
         >
             <Share2 className="h-4 w-4" />
-            <span className="hidden sm:inline">{t.shareBtn}</span>
+            {(showLabel) && <span className={showLabel ? "" : "hidden sm:inline"}>{t.shareBtn}</span>}
         </Button>
     )
 }

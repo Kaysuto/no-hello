@@ -4,16 +4,21 @@ import { ShareButton } from "@/components/share-button"
 import { ExternalLink } from "@/components/external-link"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Github } from "lucide-react"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
+import { Github, Menu, Globe, BookOpen, CircleHelp } from "lucide-react"
 
 import { useTranslation } from "@/components/translation-context"
+import { useState } from "react"
 
 export function Navbar() {
     const { t } = useTranslation()
+    const [open, setOpen] = useState(false)
+
     const scrollToSection = (id: string) => {
         const element = document.getElementById(id)
         if (element) {
             element.scrollIntoView({ behavior: "smooth" })
+            setOpen(false)
         }
     }
 
@@ -21,12 +26,73 @@ export function Navbar() {
         <motion.nav
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="fixed top-6 inset-x-0 z-50 flex justify-center pointer-events-none"
+            className="fixed top-0 md:top-6 inset-x-0 z-50 flex md:justify-center pointer-events-none"
         >
-            <div className="pointer-events-auto flex items-center gap-1 p-2 bg-background/80 backdrop-blur-xl rounded-2xl shadow-[0px_0.6px_0.6px_-1.25px_rgba(0,0,0,0.18),0px_2.3px_2.3px_-2.5px_rgba(0,0,0,0.16),0px_10px_10px_-3.75px_rgba(0,0,0,0.06)] dark:shadow-[0px_0.6px_0.6px_-1.25px_rgba(255,255,255,0.18),0px_2.3px_2.3px_-2.5px_rgba(255,255,255,0.16),0px_10px_10px_-3.75px_rgba(255,255,255,0.06)] border border-white/20">
+            <div className="pointer-events-auto flex items-center gap-1 bg-background/80 backdrop-blur-xl shadow-[0px_0.6px_0.6px_-1.25px_rgba(0,0,0,0.18),0px_2.3px_2.3px_-2.5px_rgba(0,0,0,0.16),0px_10px_10px_-3.75px_rgba(0,0,0,0.06)] dark:shadow-[0px_0.6px_0.6px_-1.25px_rgba(255,255,255,0.18),0px_2.3px_2.3px_-2.5px_rgba(255,255,255,0.16),0px_10px_10px_-3.75px_rgba(255,255,255,0.06)] border-b md:border border-white/20 w-full md:w-auto h-14 md:h-auto px-4 md:p-2 rounded-none md:rounded-2xl">
 
-                {/* Navigation Links */}
-                <div className="hidden sm:flex items-center gap-1 mr-2">
+                {/* Mobile Menu Trigger & Sidebar */}
+                <div className="md:hidden flex items-center justify-end w-full">
+                    <Sheet open={open} onOpenChange={setOpen}>
+                        <SheetTrigger asChild>
+                            <Button variant="ghost" size="icon" className="h-9 w-9">
+                                <Menu className="h-5 w-5" />
+                            </Button>
+                        </SheetTrigger>
+                        <SheetContent side="right" className="w-[300px] sm:w-[400px] pt-12 pb-6">
+                            <SheetTitle className="sr-only">Menu de navigation</SheetTitle>
+                            <div className="flex flex-col h-full">
+                                {/* Navigation Section */}
+                                <div className="flex flex-col gap-1">
+                                    <div className="px-4 pb-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                                        Navigation
+                                    </div>
+                                    <Button
+                                        variant="ghost"
+                                        onClick={() => scrollToSection("explanation")}
+                                        className="justify-start text-base h-12 px-4 w-full gap-3"
+                                    >
+                                        <BookOpen className="h-5 w-5 opacity-70" />
+                                        {t.navConcept}
+                                    </Button>
+                                    <Button
+                                        variant="ghost"
+                                        onClick={() => scrollToSection("quiz")}
+                                        className="justify-start text-base h-12 px-4 w-full gap-3"
+                                    >
+                                        <CircleHelp className="h-5 w-5 opacity-70" />
+                                        {t.navQuiz}
+                                    </Button>
+                                </div>
+                                
+                                {/* Bottom Actions Section */}
+                                <div className="mt-auto flex flex-col gap-1">
+                                    <div className="h-px bg-border my-4 mx-4" />
+                                    
+                                    <div className="w-full">
+                                        <ShareButton showLabel={true} />
+                                    </div>
+                                    <div className="flex items-center h-11 px-4 gap-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">
+                                        <Globe className="h-4 w-4 shrink-0" />
+                                        <TranslationSelector className="w-full h-auto p-0 justify-start" />
+                                    </div>
+                                    <Button
+                                        variant="ghost"
+                                        className="justify-start h-11 px-4 w-full text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors gap-3 no-underline hover:no-underline"
+                                        asChild
+                                    >
+                                        <ExternalLink href="https://github.com/Kaysuto/no-hello" label="GitHub/Kaysuto">
+                                            <Github className="h-4 w-4 shrink-0" />
+                                            Github
+                                        </ExternalLink>
+                                    </Button>
+                                </div>
+                            </div>
+                        </SheetContent>
+                    </Sheet>
+                </div>
+
+                {/* Desktop Navigation Links */}
+                <div className="hidden md:flex items-center gap-1 mr-2">
                     <Button
                         variant="ghost"
                         onClick={() => scrollToSection("explanation")}
@@ -43,10 +109,10 @@ export function Navbar() {
                     </Button>
                 </div>
 
-                <div className="h-4 w-px bg-border mx-2 hidden sm:block" />
+                <div className="h-4 w-px bg-border mx-2 hidden md:block" />
 
-                {/* Actions */}
-                <div className="flex items-center gap-1">
+                {/* Desktop Actions */}
+                <div className="hidden md:flex items-center gap-1">
                     <ShareButton key="share" />
                     <TranslationSelector key="translation" />
 
