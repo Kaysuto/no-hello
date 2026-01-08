@@ -7,6 +7,7 @@ export function Cursor() {
     const [isHovered, setIsHovered] = useState(false)
     const [hoveredRect, setHoveredRect] = useState<DOMRect | null>(null)
     const [isVisible, setIsVisible] = useState(false)
+    const [isTouchDevice, setIsTouchDevice] = useState(false)
 
     const mouseX = useMotionValue(0)
     const mouseY = useMotionValue(0)
@@ -24,6 +25,21 @@ export function Cursor() {
     const borderRadius = useSpring(999, morphConfig)
 
     useEffect(() => {
+        // Check if device has fine pointer (cursor)
+        const checkTouchDevice = () => {
+             const isTouch = window.matchMedia("(pointer: coarse)").matches
+             setIsTouchDevice(isTouch)
+        }
+        
+        checkTouchDevice()
+        window.addEventListener('resize', checkTouchDevice)
+        
+        return () => window.removeEventListener('resize', checkTouchDevice)
+    }, [])
+
+    useEffect(() => {
+        if (isTouchDevice) return
+
         const handleMouseMove = (e: MouseEvent) => {
             if (!isVisible) setIsVisible(true)
             
@@ -89,7 +105,7 @@ export function Cursor() {
 
     return (
         <AnimatePresence>
-            {isVisible && (
+            {!isTouchDevice && isVisible && (
                 <motion.div
                     className="fixed top-0 left-0 pointer-events-none z-9999 mix-blend-difference"
                     style={{

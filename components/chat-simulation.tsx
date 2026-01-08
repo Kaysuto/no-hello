@@ -16,6 +16,9 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { toast } from "sonner"
 
+// Use a seed that has a straight posture (Felix or Alexander tend to be good in Notionists style)
+const AVATAR_URL = "https://api.dicebear.com/7.x/notionists/svg?seed=Bella"
+
 export function ChatSimulation() {
     const { t } = useTranslation()
     const [messages, setMessages] = useState<{ id: number; text: string; sender: "me" | "them" }[]>([])
@@ -67,7 +70,7 @@ export function ChatSimulation() {
             <div className="bg-secondary/10 backdrop-blur-md p-4 border-b border-border/50 flex items-center gap-3 z-10 sticky top-0">
                 <div className="relative">
                     <Avatar className="h-10 w-10 border border-background shadow-sm">
-                        <AvatarImage src="https://api.dicebear.com/7.x/notionists/svg?seed=Bella" />
+                        <AvatarImage src={AVATAR_URL} />
                         <AvatarFallback>C</AvatarFallback>
                     </Avatar>
                     <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-500 border-2 border-background"></span>
@@ -99,7 +102,7 @@ export function ChatSimulation() {
                         >
                             {msg.sender === "them" && (
                                 <Avatar className="h-6 w-6 mt-auto shrink-0 mb-1">
-                                    <AvatarImage src="https://api.dicebear.com/7.x/notionists/svg?seed=Bella" />
+                                    <AvatarImage src={AVATAR_URL} />
                                     <AvatarFallback>C</AvatarFallback>
                                 </Avatar>
                             )}
@@ -120,10 +123,10 @@ export function ChatSimulation() {
                         initial={{ opacity: 0, y: 5 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9 }}
-                        className="flex gap-2 items-end pl-2"
+                        className="flex gap-2 items-end justify-start"
                     >
                         <Avatar className="h-6 w-6 shrink-0 mb-1">
-                            <AvatarImage src="https://api.dicebear.com/7.x/notionists/svg?seed=Bella" />
+                            <AvatarImage src={AVATAR_URL} />
                             <AvatarFallback>C</AvatarFallback>
                         </Avatar>
                         <div className="bg-card border border-border/50 px-4 py-3 rounded-[20px] rounded-bl-[4px] shadow-sm flex items-center gap-1 min-w-12">
