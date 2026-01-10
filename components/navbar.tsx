@@ -26,12 +26,12 @@ export function Navbar() {
         <motion.nav
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="fixed top-0 md:top-6 inset-x-0 z-50 flex md:justify-center pointer-events-none"
+            className="fixed top-0 md:top-6 inset-x-0 z-50 flex justify-end md:justify-center px-4 pt-4 md:p-0 pointer-events-none"
         >
-            <div className="pointer-events-auto flex items-center gap-1 bg-background/80 backdrop-blur-xl shadow-[0px_0.6px_0.6px_-1.25px_rgba(0,0,0,0.18),0px_2.3px_2.3px_-2.5px_rgba(0,0,0,0.16),0px_10px_10px_-3.75px_rgba(0,0,0,0.06)] dark:shadow-[0px_0.6px_0.6px_-1.25px_rgba(255,255,255,0.18),0px_2.3px_2.3px_-2.5px_rgba(255,255,255,0.16),0px_10px_10px_-3.75px_rgba(255,255,255,0.06)] border-b md:border border-white/20 w-full md:w-auto h-14 md:h-auto px-4 md:p-2 rounded-none md:rounded-2xl">
+            <div className="pointer-events-auto flex items-center gap-1 bg-background/80 backdrop-blur-xl shadow-lg border border-white/20 w-auto h-auto p-2 rounded-xl md:rounded-2xl">
 
                 {/* Mobile Menu Trigger & Sidebar */}
-                <div className="md:hidden flex items-center justify-end w-full">
+                <div className="md:hidden">
                     <Sheet open={open} onOpenChange={setOpen}>
                         <SheetTrigger asChild>
                             <Button variant="ghost" size="icon" className="h-9 w-9">
