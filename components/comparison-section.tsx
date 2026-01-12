@@ -48,7 +48,7 @@ export function ComparisonSection() {
                 viewport={{ once: true, margin: "-50px" }}
             >
                 <Card className="p-6 border-red-200 dark:border-red-900/50 bg-red-50/50 dark:bg-red-950/10 h-full">
-                    <div className="flex items-center gap-2 mb-4 text-red-600 dark:text-red-400 font-semibold">
+                    <div className="flex items-center justify-center gap-2 mb-4 text-red-600 dark:text-red-400 font-semibold">
                         <XCircle className="h-5 w-5" />
                         {t.badTitle}
                     </div>
@@ -87,7 +87,7 @@ export function ComparisonSection() {
                 transition={{ delay: 0.2 }}
             >
                 <Card className="p-6 border-green-200 dark:border-green-900/50 bg-green-50/50 dark:bg-green-950/10 h-full">
-                    <div className="flex items-center gap-2 mb-4 text-green-600 dark:text-green-400 font-semibold">
+                    <div className="flex items-center justify-center gap-2 mb-4 text-green-600 dark:text-green-400 font-semibold">
                         <CheckCircle2 className="h-5 w-5" />
                         {t.goodTitle}
                     </div>

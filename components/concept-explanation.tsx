@@ -61,9 +61,9 @@ export function ConceptExplanation() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: idx * 0.1 }}
-                        className={`p-6 rounded-2xl border ${card.border} ${card.bg} hover:scale-105 transition-transform duration-300`}
+                        className={`p-6 rounded-2xl border ${card.border} ${card.bg} hover:scale-105 transition-transform duration-300 flex flex-col items-center text-center`}
                     >
-                        <div className={`h-12 w-12 rounded-xl ${card.bg} flex items-center justify-center mb-4`}>
+                        <div className={`h-12 w-12 rounded-xl ${card.bg} flex items-center justify-center mb-4 mx-auto`}>
                             <card.icon className={`h-6 w-6 ${card.color}`} />
                         </div>
                         <h3 className={`text-lg font-semibold mb-2 ${card.color}`}>

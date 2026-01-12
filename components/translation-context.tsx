@@ -90,7 +90,8 @@ const defaultTranslations = {
     footerRebuiltWith: " • Reconstruit avec ",
     footerMadeWith: "Fait avec ",
     footerBy: " par ",
-    footerWarning: "Attention : Si vous voyez ce site dans une bio, préparez-vous à être ignoré au prochain \"Salut\" ! 👻"
+    footerWarning: "Attention : Si vous voyez ce site dans une bio, préparez-vous à être ignoré au prochain \"Salut\" ! 👻",
+    footerSupport: "Soutenir le projet"
 }
 
 export type TranslationMap = typeof defaultTranslations
@@ -112,11 +113,19 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
     const [t, setT] = useState<TranslationMap>(defaultTranslations)
     const [isTranslating, setIsTranslating] = useState(false)
 
-    // Load initial language from localStorage if available
+    // Load initial language from localStorage or browser if available
     React.useEffect(() => {
         const savedLang = localStorage.getItem("nohello-lang")
-        if (savedLang && savedLang !== "fr") {
-            setLanguage(savedLang)
+        if (savedLang) {
+            if (savedLang !== "fr") {
+                setLanguage(savedLang)
+            }
+        } else {
+            // Auto-detect browser language
+            const browserLang = navigator.language.split("-")[0]
+            if (browserLang && browserLang !== "fr") {
+                setLanguage(browserLang)
+            }
         }
     }, [])
 

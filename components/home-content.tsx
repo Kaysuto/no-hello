@@ -5,6 +5,7 @@ import { useTranslation } from "@/components/translation-context"
 import { ComparisonSection } from "@/components/comparison-section"
 import { ConceptExplanation } from "@/components/concept-explanation"
 import { QuizGame } from "@/components/quiz-game"
+import { KofiWidget } from "@/components/kofi-widget"
 
 import { TypingText } from "@/components/typing-text"
 import { motion } from "framer-motion"
@@ -64,7 +65,7 @@ export function HomeContent() {
                         className="min-h-[calc(100vh-4rem)] flex items-center justify-center"
                     >
                             {/* Text Content */}
-                            <div className="space-y-6 text-center lg:text-center order-1">
+                            <div className="space-y-6 text-center order-1">
                                 <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight leading-tight">
                                     <span className="bg-linear-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
                                         {t.headerPre}
@@ -117,6 +118,7 @@ export function HomeContent() {
 
                 </main>
             </div>
+            <KofiWidget />
         </div>
     );
 }
