@@ -9,15 +9,7 @@ const defaultTranslations = {
     headerItalic: "Bonjour",
     headerDesc: "Pourquoi dire bonjour sans poser votre question est une perte de temps.",
 
-    chatMe: "Salut !",
-    chatColleague: "Sarah",
-    chatDate: "Aujourd'hui 09:41",
-    chatActive: "En ligne",
-    chatTyping: "est en train d'écrire",
-    chatInterruption: "⚠️ Interruption de concentration en cours...",
-    chatPlaceholder: "Message...",
-    chatImage: "Image",
-    chatDocument: "Document",
+
     navConcept: "Concept",
     navQuiz: "Quiz",
 

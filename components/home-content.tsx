@@ -1,7 +1,7 @@
 "use client"
 import { Navbar } from "@/components/navbar"
 import { useTranslation } from "@/components/translation-context"
-import { ChatSimulation } from "@/components/chat-simulation"
+
 import { ComparisonSection } from "@/components/comparison-section"
 import { ConceptExplanation } from "@/components/concept-explanation"
 import { QuizGame } from "@/components/quiz-game"
@@ -63,20 +63,8 @@ export function HomeContent() {
                         transition={{ duration: 0.8 }}
                         className="min-h-[calc(100vh-4rem)] flex items-center justify-center"
                     >
-                        <div className="w-full max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                            {/* Left Column: Chat Simulation */}
-                            <div className="flex justify-center lg:justify-end order-1">
-                                <motion.div
-                                    whileHover={{ scale: 1.02 }}
-                                    transition={{ type: "spring", stiffness: 300 }}
-                                    className="w-full max-w-md"
-                                >
-                                    <ChatSimulation />
-                                </motion.div>
-                            </div>
-
-                            {/* Right Column: Text Content */}
-                            <div className="space-y-6 text-center lg:text-left order-2">
+                            {/* Text Content */}
+                            <div className="space-y-6 text-center lg:text-center order-1">
                                 <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight leading-tight">
                                     <span className="bg-linear-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
                                         {t.headerPre}
@@ -88,11 +76,10 @@ export function HomeContent() {
                                         />"
                                     </span>
                                 </h1>
-                                <p className="text-xl md:text-2xl text-muted-foreground font-light max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                                <p className="text-xl md:text-2xl text-muted-foreground font-light max-w-xl mx-auto leading-relaxed">
                                     {t.headerDesc}
                                 </p>
                             </div>
-                        </div>
                     </motion.section>
 
                     {/* Explanation Section */}

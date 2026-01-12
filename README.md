@@ -6,16 +6,7 @@
 
 > ⚠️ **Note** : Ce projet n'est pas à prendre trop au sérieux ! Cependant, si vous voyez l'URL de ce site dans le statut ou la bio de quelqu'un, **préparez-vous à être ignoré** si vous lui envoyez seulement "Bonjour !". 👻
 
-## ✨ Fonctionnalités
-
--   **⚡ Performance & Optimisation** : Traduction instantanée grâce à un système hybride (Traductions statiques + Cache LocalStorage + Fallback IA).
--   **🌐 Internationalisation** : Support natif de 5 langues (FR, EN, ES, DE, JA) et extension infinie via l'API **Google Gemini**.
--   **💬 Simulation de Chat** : "Sarah", votre collègue virtuelle, vous montre la bonne et la mauvaise façon de communiquer.
--   **🎨 UI/UX Premium** : Animations fluides (Framer Motion), barre de progression de défilement, et design soigné (Shadcn/UI). Avatars par [DiceBear](https://www.dicebear.com/).
--   **🔍 SEO Optimisé** : Métadonnées complètes, OpenGraph, sitemap.xml et robots.txt générés automatiquement.
--   **🎮 Gamification** : Un quiz interactif pour valider vos connaissances.
-
-## 🛠️ Stack Technique
+## ✨ Fonctionnalités & Tech Stack
 
 ![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
@@ -26,11 +17,12 @@
 ![Gemini API](https://img.shields.io/badge/Google%20Gemini-8E75B2?style=for-the-badge&logo=google&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
--   **Framework** : Next.js 16 (App Router)
--   **Style** : Tailwind CSS 4 & Shadcn/ui
--   **Animations** : Framer Motion
--   **IA** : Google Gemini API
--   **Déploiement** : Vercel
+-   **🚀 Fluidité & Performance** : Interface ultra-réactive bâtie avec **Next.js 16**. Les traductions sont quasi instantanées grâce à un mix intelligent de contenu local et d'IA.
+-   **🌍 Internationalisation** : Propulsé par l'**API Google Gemini**, l'app supporte 5 langues natives et offre une puissance de traduction infinie.
+-   **✨ Design Modern** : Une expérience visuelle premium conçue avec **Tailwind CSS 4** et **Shadcn/UI**, sublimée par les animations de **Framer Motion**.
+-   **🎯 SEO Optimisé** : Structure pensée pour le référencement afin que le message du "No Hello" circule partout.
+-   **💡 Quiz Interactif** : Testez vos connaissances de manière ludique et devenez un pro de l'étiquette en ligne.
+-   **🚀 Déploiement** : Hébergé et optimisé sur **Vercel**.
 
 ## 🤝 Open Source
 
