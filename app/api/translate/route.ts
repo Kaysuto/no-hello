@@ -29,7 +29,7 @@ export async function POST(req: Request) {
         const prompt = `You are a professional translator. Translate the following JSON object values to ${targetLanguage}. 
         Keep the keys exactly the same. 
         Maintain the tone (professional, friendly).
-        Do not translate proper nouns like "nohello.net", "Shadcn", "Next.js".
+        Do not translate proper nouns like "nohello.fr", "Shadcn", "Next.js".
         
         Input JSON:
         ${JSON.stringify(content)}

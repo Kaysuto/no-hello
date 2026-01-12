@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://no-hello-wine.vercel.app/'),
+  metadataBase: new URL('https://nohello.fr/'),
   title: "No Hello",
   description: "Stop saying just 'Hello' in chat. Learn why it's counter-productive and how to communicate more effectively.",
   keywords: ["no hello", "communication", "etiquette", "chat", "productivity", "remote work", "slack etiquette", "discord etiquette"],
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://no-hello-wine.vercel.app/",
+    url: "https://nohello.fr/",
     title: "No Hello",
     description: "Stop saying just 'Hello' in chat. Learn why it's counter-productive.",
     siteName: "No Hello",

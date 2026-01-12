@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://no-hello-wine.vercel.app/sitemap.xml',
+        sitemap: 'https://nohello.fr/sitemap.xml',
     }
 }
