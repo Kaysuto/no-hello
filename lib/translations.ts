@@ -87,7 +87,14 @@ export const STATIC_TRANSLATIONS = {
         footerMadeWith: "Fait avec ",
         footerBy: " par ",
         footerWarning: "Attention : Si vous voyez ce site dans une bio, préparez-vous à être ignoré au prochain \"Salut\" ! 👻",
-        kofiSupport: "M'offrir un café"
+        kofiSupport: "M'offrir un café",
+        cookiePrivacy: "Confidentialité",
+        cookieTitle: "Transparence & Données",
+        cookieSection1Title: "Ce que nous collectons :",
+        cookieSection1Body: "Ce site utilise uniquement des cookies techniques nécessaires à votre confort de navigation (préférences de langue et thème sombre/clair). Ces données sont stockées localement sur votre appareil.",
+        cookieSection2Title: "Services Tiers :",
+        cookieSection2Body: "Nous utilisons des services comme Google Gemini (IA) pour la traduction. Bien que nous ne courions pas de publicités, ces services peuvent collecter des données techniques standard conformément à leurs propres politiques.",
+        cookieGooglePolicy: "Voir la Politique de Google"
     },
     en: {
         headerPre: "Please, don't just say",
@@ -163,7 +170,14 @@ export const STATIC_TRANSLATIONS = {
         footerMadeWith: "Made with ",
         footerBy: " by ",
         footerWarning: "Warning: If you see this site in a bio, prepare to be ignored at the next \"Hello\"! 👻",
-        kofiSupport: "Support me on Ko-fi"
+        kofiSupport: "Support me on Ko-fi",
+        cookiePrivacy: "Privacy",
+        cookieTitle: "Transparency & Data",
+        cookieSection1Title: "What we collect:",
+        cookieSection1Body: "This site only uses technical cookies necessary for your browsing comfort (language preferences and dark/light theme). This data is stored locally on your device.",
+        cookieSection2Title: "Third-Party Services:",
+        cookieSection2Body: "We use services like Google Gemini (AI) for translation. While we do not run ads, these services may collect standard technical data in accordance with their own policies.",
+        cookieGooglePolicy: "View Google Policy"
     },
     es: {
         headerPre: "Por favor, no digas solo",
@@ -240,7 +254,14 @@ export const STATIC_TRANSLATIONS = {
         footerMadeWith: "Hecho con ",
         footerBy: " por ",
         footerWarning: "Atención: ¡Si ves este sitio en una biografía, prepárate para ser ignorado en el próximo \"Hola\"! 👻",
-        kofiSupport: "Invítame a un café"
+        kofiSupport: "Invítame a un café",
+        cookiePrivacy: "Privacidad",
+        cookieTitle: "Transparencia y Datos",
+        cookieSection1Title: "Qué recolectamos:",
+        cookieSection1Body: "Este sitio solo utiliza cookies técnicas necesarias para su comodidad de navegación (preferencias de idioma y tema oscuro/claro). Estos datos se almacenan localmente en su dispositivo.",
+        cookieSection2Title: "Servicios de Terceros:",
+        cookieSection2Body: "Utilizamos servicios como Google Gemini (IA) para la traducción. Aunque no mostramos anuncios, estos servicios pueden recopilar datos técnicos estándar de acuerdo con sus propias políticas.",
+        cookieGooglePolicy: "Ver Política de Google"
     },
     de: {
         headerPre: "Bitte sag nicht nur",
@@ -317,7 +338,14 @@ export const STATIC_TRANSLATIONS = {
         footerMadeWith: "Erstellt mit ",
         footerBy: " von ",
         footerWarning: "Achtung: Wenn du diese Seite in einer Bio siehst, bereite dich darauf vor, beim nächsten \"Hallo\" ignoriert zu werden! 👻",
-        kofiSupport: "Gib mir einen Kaffee aus"
+        kofiSupport: "Gib mir einen Kaffee aus",
+        cookiePrivacy: "Datenschutz",
+        cookieTitle: "Transparenz & Daten",
+        cookieSection1Title: "Was wir sammeln:",
+        cookieSection1Body: "Diese Seite verwendet nur technische Cookies, die für Ihren Browse-Komfort erforderlich sind (Sprachpräferenzen und dunkles/helles Design). Diese Daten werden lokal auf Ihrem Gerät gespeichert.",
+        cookieSection2Title: "Drittanbieter-Dienste:",
+        cookieSection2Body: "Wir nutzen Dienste wie Google Gemini (KI) für die Übersetzung. Obwohl wir keine Werbung schalten, können diese Dienste standardmäßige technische Daten gemäß ihren eigenen Richtlinien sammeln.",
+        cookieGooglePolicy: "Google-Richtlinie ansehen"
     },
     ja: {
         headerPre: "ただ",
@@ -394,6 +422,13 @@ export const STATIC_TRANSLATIONS = {
         footerMadeWith: "制作：",
         footerBy: " デザイン：",
         footerWarning: "注意：このサイトをプロフィールで見かけたら、次の「こんにちは」は無視される準備をしてください！ 👻",
-        kofiSupport: "応援する"
+        kofiSupport: "応援する",
+        cookiePrivacy: "プライバシー",
+        cookieTitle: "透明性とデータ",
+        cookieSection1Title: "収集するデータ：",
+        cookieSection1Body: "このサイトでは、ブラウジングの快適さのために必要な技術的なCookie（言語設定やダーク/ライトテーマ）のみを使用しています。これらのデータはお使いのデバイスにローカルに保存されます。",
+        cookieSection2Title: "サードパーティサービス：",
+        cookieSection2Body: "翻訳にはGoogle Gemini（AI）などのサービスを使用しています。広告は掲載していませんが、これらのサービスは独自のポリシーに従って標準的な技術データを収集する場合があります。",
+        cookieGooglePolicy: "Googleのポリシーを表示"
     }
 } as const;

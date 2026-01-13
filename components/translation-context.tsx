@@ -92,7 +92,14 @@ const defaultTranslations = {
     footerBy: " par ",
     footerWarning: "Attention : Si vous voyez ce site dans une bio, préparez-vous à être ignoré au prochain \"Salut\" ! 👻",
     footerSupport: "Soutenir le projet",
-    kofiSupport: "M'offrir un café"
+    kofiSupport: "M'offrir un café",
+    cookiePrivacy: "Confidentialité",
+    cookieTitle: "Transparence & Données",
+    cookieSection1Title: "Ce que nous collectons :",
+    cookieSection1Body: "Ce site utilise uniquement des cookies techniques nécessaires à votre confort de navigation (préférences de langue et thème sombre/clair). Ces données sont stockées localement sur votre appareil.",
+    cookieSection2Title: "Services Tiers :",
+    cookieSection2Body: "Nous utilisons des services comme Google Gemini (IA) pour la traduction. Bien que nous ne courions pas de publicités, ces services peuvent collecter des données techniques standard conformément à leurs propres politiques.",
+    cookieGooglePolicy: "Voir la Politique de Google"
 }
 
 export type TranslationMap = typeof defaultTranslations

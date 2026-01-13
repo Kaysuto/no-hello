@@ -6,10 +6,12 @@ import { useState } from "react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import { useTranslation } from "@/components/translation-context"
 
 export function CookieWidget() {
     const [isHovered, setIsHovered] = useState(false)
     const [isOpen, setIsOpen] = useState(false)
+    const { t } = useTranslation()
 
     return (
         <>
@@ -51,7 +53,7 @@ export function CookieWidget() {
                                     transition={{ duration: 0.2 }}
                                     className="whitespace-nowrap pr-6 text-sm font-medium"
                                 >
-                                    Confidentialité
+                                    {t.cookiePrivacy}
                                 </motion.span>
                             )}
                         </AnimatePresence>
@@ -69,7 +71,7 @@ export function CookieWidget() {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setIsOpen(false)}
-                            className="fixed inset-0 bg-background/80 backdrop-blur-sm z-[60]"
+                            className="fixed inset-0 bg-background/80 backdrop-blur-sm z-60"
                         />
 
                         {/* Modal Content */}
@@ -77,7 +79,7 @@ export function CookieWidget() {
                             initial={{ opacity: 0, scale: 0.95, y: 20 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md p-4 z-[70]"
+                            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md p-4 z-70"
                         >
                             <Card className="p-6 shadow-2xl border-primary/20 bg-card/95 backdrop-blur-xl relative overflow-hidden">
                                 <div className="absolute top-0 right-0 p-4">
@@ -91,24 +93,24 @@ export function CookieWidget() {
                                         <div className="p-2 bg-primary/10 rounded-full">
                                             <ShieldCheck className="h-6 w-6" />
                                         </div>
-                                        <h2 className="text-xl font-bold">Transparence & Données</h2>
+                                        <h2 className="text-xl font-bold">{t.cookieTitle}</h2>
                                     </div>
 
                                     <div className="space-y-3 text-muted-foreground text-sm leading-relaxed">
                                         <p>
-                                            <span className="font-semibold text-foreground">Ce que nous collectons :</span><br />
-                                            Ce site utilise uniquement des cookies techniques nécessaires à votre confort de navigation (préférences de langue et thème sombre/clair). Ces données sont stockées localement sur votre appareil.
+                                            <span className="font-semibold text-foreground">{t.cookieSection1Title}</span><br />
+                                            {t.cookieSection1Body}
                                         </p>
                                         <p>
-                                            <span className="font-semibold text-foreground">Services Tiers :</span><br />
-                                            Nous utilisons des services comme Google Gemini (IA) pour la traduction. Bien que nous ne courions pas de publicités, ces services peuvent collecter des données techniques standard conformément à leurs propres politiques.
+                                            <span className="font-semibold text-foreground">{t.cookieSection2Title}</span><br />
+                                            {t.cookieSection2Body}
                                         </p>
                                     </div>
 
                                     <div className="pt-2">
                                         <Button asChild variant="outline" className="w-full gap-2 hover:bg-primary/5 hover:text-primary border-primary/20">
                                             <a href="https://policies.google.com/technologies/cookies" target="_blank" rel="noopener noreferrer">
-                                                <span>Voir la Politique de Google</span>
+                                                <span>{t.cookieGooglePolicy}</span>
                                                 <ExternalLink className="h-4 w-4" />
                                             </a>
                                         </Button>
