@@ -59,7 +59,7 @@ export function Footer() {
                     >
                         <div className="flex items-center gap-2 bg-[#FF5F5F] hover:bg-[#ff4f4f] text-white px-5 h-11 rounded-full shadow-lg transition-all hover:scale-105 active:scale-95 font-bold">
                             <Coffee className="h-5 w-5" />
-                            <span className="text-sm">Support me on Ko-fi</span>
+                            <span className="text-sm">{t.kofiSupport}</span>
                         </div>
                     </ExternalLink>
                 </div>

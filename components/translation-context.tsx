@@ -91,7 +91,8 @@ const defaultTranslations = {
     footerMadeWith: "Fait avec ",
     footerBy: " par ",
     footerWarning: "Attention : Si vous voyez ce site dans une bio, préparez-vous à être ignoré au prochain \"Salut\" ! 👻",
-    footerSupport: "Soutenir le projet"
+    footerSupport: "Soutenir le projet",
+    kofiSupport: "M'offrir un café"
 }
 
 export type TranslationMap = typeof defaultTranslations

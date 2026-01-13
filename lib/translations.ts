@@ -86,7 +86,8 @@ export const STATIC_TRANSLATIONS = {
         footerRebuiltWith: " • Reconstruit avec ",
         footerMadeWith: "Fait avec ",
         footerBy: " par ",
-        footerWarning: "Attention : Si vous voyez ce site dans une bio, préparez-vous à être ignoré au prochain \"Salut\" ! 👻"
+        footerWarning: "Attention : Si vous voyez ce site dans une bio, préparez-vous à être ignoré au prochain \"Salut\" ! 👻",
+        kofiSupport: "M'offrir un café"
     },
     en: {
         headerPre: "Please, don't just say",
@@ -161,7 +162,8 @@ export const STATIC_TRANSLATIONS = {
         footerRebuiltWith: " • Rebuilt with ",
         footerMadeWith: "Made with ",
         footerBy: " by ",
-        footerWarning: "Warning: If you see this site in a bio, prepare to be ignored at the next \"Hello\"! 👻"
+        footerWarning: "Warning: If you see this site in a bio, prepare to be ignored at the next \"Hello\"! 👻",
+        kofiSupport: "Support me on Ko-fi"
     },
     es: {
         headerPre: "Por favor, no digas solo",
@@ -237,7 +239,8 @@ export const STATIC_TRANSLATIONS = {
         footerRebuiltWith: " • Reconstruido con ",
         footerMadeWith: "Hecho con ",
         footerBy: " por ",
-        footerWarning: "Atención: ¡Si ves este sitio en una biografía, prepárate para ser ignorado en el próximo \"Hola\"! 👻"
+        footerWarning: "Atención: ¡Si ves este sitio en una biografía, prepárate para ser ignorado en el próximo \"Hola\"! 👻",
+        kofiSupport: "Invítame a un café"
     },
     de: {
         headerPre: "Bitte sag nicht nur",
@@ -313,7 +316,8 @@ export const STATIC_TRANSLATIONS = {
         footerRebuiltWith: " • Nachgebaut mit ",
         footerMadeWith: "Erstellt mit ",
         footerBy: " von ",
-        footerWarning: "Achtung: Wenn du diese Seite in einer Bio siehst, bereite dich darauf vor, beim nächsten \"Hallo\" ignoriert zu werden! 👻"
+        footerWarning: "Achtung: Wenn du diese Seite in einer Bio siehst, bereite dich darauf vor, beim nächsten \"Hallo\" ignoriert zu werden! 👻",
+        kofiSupport: "Gib mir einen Kaffee aus"
     },
     ja: {
         headerPre: "ただ",
@@ -389,6 +393,7 @@ export const STATIC_TRANSLATIONS = {
         footerRebuiltWith: "で再構築",
         footerMadeWith: "制作：",
         footerBy: " デザイン：",
-        footerWarning: "注意：このサイトをプロフィールで見かけたら、次の「こんにちは」は無視される準備をしてください！ 👻"
+        footerWarning: "注意：このサイトをプロフィールで見かけたら、次の「こんにちは」は無視される準備をしてください！ 👻",
+        kofiSupport: "応援する"
     }
 } as const;
