@@ -5,7 +5,6 @@ import { Toaster } from "@/components/ui/sonner";
 import { TranslationProvider } from "@/components/translation-context";
 import { CookieWidget } from "@/components/cookie-widget";
 import { ScrollProgress } from "@/components/scroll-progress";
-import { Cursor } from "@/components/cursor";
 import { Footer } from "@/components/footer";
 import "./globals.css";
 
@@ -74,7 +73,6 @@ export default function RootLayout({
         >
           <TranslationProvider>
             <ScrollProgress />
-            <Cursor />
             {children}
             <CookieWidget />
             <Toaster />
