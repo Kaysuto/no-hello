@@ -22,10 +22,10 @@ export function CookieWidget() {
                 className="fixed bottom-6 left-6 z-50"
             >
                 <button
-                    onClick={() => setIsOpen(true)}
+                    onClick={() => { setIsOpen(true); }}
                     className="block focus:outline-none"
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
+                    onMouseEnter={() => { setIsHovered(true); }}
+                    onMouseLeave={() => { setIsHovered(false); }}
                 >
                     <motion.div
                         className={cn(
@@ -70,7 +70,7 @@ export function CookieWidget() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            onClick={() => setIsOpen(false)}
+                            onClick={() => { setIsOpen(false); }}
                             className="fixed inset-0 bg-background/80 backdrop-blur-sm z-60"
                         />
 
@@ -83,7 +83,7 @@ export function CookieWidget() {
                         >
                             <Card className="p-6 shadow-2xl border-primary/20 bg-card/95 backdrop-blur-xl relative overflow-hidden">
                                 <div className="absolute top-0 right-0 p-4">
-                                    <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="rounded-full hover:bg-destructive/10 hover:text-destructive">
+                                    <Button variant="ghost" size="icon" onClick={() => { setIsOpen(false); }} className="rounded-full hover:bg-destructive/10 hover:text-destructive">
                                         <X className="h-4 w-4" />
                                     </Button>
                                 </div>

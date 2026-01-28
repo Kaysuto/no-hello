@@ -48,7 +48,7 @@ export function Navbar() {
                                     </div>
                                     <Button
                                         variant="ghost"
-                                        onClick={() => scrollToSection("explanation")}
+                                        onClick={() => { scrollToSection("explanation"); }}
                                         className="justify-start text-base h-12 px-4 w-full gap-3"
                                     >
                                         <BookOpen className="h-5 w-5 opacity-70" />
@@ -56,7 +56,7 @@ export function Navbar() {
                                     </Button>
                                     <Button
                                         variant="ghost"
-                                        onClick={() => scrollToSection("quiz")}
+                                        onClick={() => { scrollToSection("quiz"); }}
                                         className="justify-start text-base h-12 px-4 w-full gap-3"
                                     >
                                         <CircleHelp className="h-5 w-5 opacity-70" />

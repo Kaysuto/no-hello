@@ -139,21 +139,21 @@ export function QuizGame() {
                         </div>
                         <div className="grid gap-4 max-w-sm mx-auto">
                             <Button 
-                                onClick={() => selectDifficulty('easy')}
+                                onClick={() => { selectDifficulty('easy'); }}
                                 variant="outline" 
                                 className="h-16 text-lg border-2 hover:border-primary hover:bg-primary/5 transition-all"
                             >
                                 {t.quizEasy}
                             </Button>
                             <Button 
-                                onClick={() => selectDifficulty('medium')}
+                                onClick={() => { selectDifficulty('medium'); }}
                                 variant="outline" 
                                 className="h-16 text-lg border-2 hover:border-primary hover:bg-primary/5 transition-all"
                             >
                                 {t.quizMedium}
                             </Button>
                             <Button 
-                                onClick={() => selectDifficulty('hard')}
+                                onClick={() => { selectDifficulty('hard'); }}
                                 variant="outline" 
                                 className="h-16 text-lg border-2 hover:border-primary hover:bg-primary/5 transition-all"
                             >
@@ -197,7 +197,7 @@ export function QuizGame() {
                                     {questions[currentQuestion].options.map((option, idx) => (
                                         <button
                                             key={idx}
-                                            onClick={() => handleAnswer(option.correct, idx)}
+                                            onClick={() => { handleAnswer(option.correct, idx); }}
                                             disabled={isAnswered}
                                             className={`
                                                 w-full p-4 rounded-xl border-2 text-left transition-all relative overflow-hidden group
@@ -226,7 +226,7 @@ export function QuizGame() {
 
                         <div className="flex justify-between items-center pt-4">
                             <Button 
-                                onClick={() => setDifficulty(null)} 
+                                onClick={() => { setDifficulty(null); }}
                                 variant="ghost" 
                                 size="sm"
                                 className="text-muted-foreground hover:text-primary"
