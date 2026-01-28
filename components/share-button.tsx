@@ -8,7 +8,7 @@ export function ShareButton({ showLabel = true }: { showLabel?: boolean }) {
 
     const handleCopyMessage = () => {
         const text = t.shareCustomMsg
-        navigator.clipboard.writeText(text)
+        void navigator.clipboard.writeText(text)
         toast.success(t.shareMsgCopied, {
             description: t.shareMsgDesc,
             duration: 3000,
