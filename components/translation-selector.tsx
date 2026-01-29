@@ -48,7 +48,7 @@ export function TranslationSelector({ className }: { className?: string }) {
                     autoFocus
                     placeholder="Langue (ex: it, pt...)"
                     value={customLang}
-                    onChange={(e) => setCustomLang(e.target.value)}
+                    onChange={(e) => { setCustomLang(e.target.value); }}
                     className="h-9 w-[160px] text-sm"
                 />
                 <Button type="submit" size="sm" className="h-9 px-3" disabled={isTranslating}>
@@ -59,7 +59,7 @@ export function TranslationSelector({ className }: { className?: string }) {
                     variant="ghost" 
                     size="sm" 
                     className="h-9 px-2 text-muted-foreground"
-                    onClick={() => setIsAddingCustom(false)}
+                    onClick={() => { setIsAddingCustom(false); }}
                 >
                     ✕
                 </Button>

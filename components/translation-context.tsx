@@ -126,13 +126,13 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
         const savedLang = localStorage.getItem("nohello-lang")
         if (savedLang) {
             if (savedLang !== "fr") {
-                setLanguage(savedLang)
+                void setLanguage(savedLang)
             }
         } else {
             // Auto-detect browser language
             const browserLang = navigator.language.split("-")[0]
             if (browserLang && browserLang !== "fr") {
-                setLanguage(browserLang)
+                void setLanguage(browserLang)
             }
         }
     }, [])
