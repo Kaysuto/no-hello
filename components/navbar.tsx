@@ -95,14 +95,14 @@ export function Navbar() {
                 <div className="hidden md:flex items-center gap-1 mr-2">
                     <Button
                         variant="ghost"
-                        onClick={() => scrollToSection("explanation")}
+                        onClick={() => { scrollToSection("explanation"); }}
                         className="h-9 px-4 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
                     >
                         {t.navConcept}
                     </Button>
                     <Button
                         variant="ghost"
-                        onClick={() => scrollToSection("quiz")}
+                        onClick={() => { scrollToSection("quiz"); }}
                         className="h-9 px-4 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
                     >
                         {t.navQuiz}
