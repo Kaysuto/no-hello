@@ -3,6 +3,7 @@
 import { useTranslation } from "@/components/translation-context"
 import { motion } from "framer-motion"
 import { PhoneOff, Clock, MessageSquarePlus, CheckCircle2 } from "lucide-react"
+import { conceptCard } from "@/lib/animations"
 
 export function ConceptExplanation() {
     const { t } = useTranslation()
@@ -45,9 +46,10 @@ export function ConceptExplanation() {
     return (
         <div className="max-w-6xl mx-auto px-4">
             <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true }}
+                variants={conceptCard}
                 className="text-3xl md:text-4xl font-bold text-center mb-12 max-w-3xl mx-auto"
             >
                 {t.conceptTitle}
@@ -57,9 +59,10 @@ export function ConceptExplanation() {
                 {cards.map((card, idx) => (
                     <motion.div
                         key={idx}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial="hidden"
+                        whileInView="visible"
                         viewport={{ once: true }}
+                        variants={conceptCard}
                         transition={{ delay: idx * 0.1 }}
                         className={`p-6 rounded-2xl border ${card.border} ${card.bg} hover:scale-105 transition-transform duration-300 flex flex-col items-center text-center`}
                     >

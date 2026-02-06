@@ -7,6 +7,8 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { useTranslation } from "@/components/translation-context"
+import { EXTERNAL_LINKS } from "@/lib/constants"
+import { cookieWidgetInitial, modalBackdrop, modalContent } from "@/lib/animations"
 
 export function CookieWidget() {
     const [isHovered, setIsHovered] = useState(false)
@@ -17,15 +19,16 @@ export function CookieWidget() {
         <>
             {/* Widget Button */}
             <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial="hidden"
+                animate="visible"
+                variants={cookieWidgetInitial}
                 className="fixed bottom-6 left-6 z-50"
             >
                 <button
-                    onClick={() => { setIsOpen(true); }}
+                    onClick={() => setIsOpen(true)}
                     className="block focus:outline-none"
-                    onMouseEnter={() => { setIsHovered(true); }}
-                    onMouseLeave={() => { setIsHovered(false); }}
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
                 >
                     <motion.div
                         className={cn(
@@ -67,23 +70,25 @@ export function CookieWidget() {
                     <>
                         {/* Backdrop */}
                         <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            onClick={() => { setIsOpen(false); }}
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
+                            variants={modalBackdrop}
+                            onClick={() => setIsOpen(false)}
                             className="fixed inset-0 bg-background/80 backdrop-blur-sm z-60"
                         />
 
                         {/* Modal Content */}
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
+                            variants={modalContent}
                             className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md p-4 z-70"
                         >
                             <Card className="p-6 shadow-2xl border-primary/20 bg-card/95 backdrop-blur-xl relative overflow-hidden">
                                 <div className="absolute top-0 right-0 p-4">
-                                    <Button variant="ghost" size="icon" onClick={() => { setIsOpen(false); }} className="rounded-full hover:bg-destructive/10 hover:text-destructive">
+                                    <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="rounded-full hover:bg-destructive/10 hover:text-destructive">
                                         <X className="h-4 w-4" />
                                     </Button>
                                 </div>
@@ -109,7 +114,7 @@ export function CookieWidget() {
 
                                     <div className="pt-2">
                                         <Button asChild variant="outline" className="w-full gap-2 hover:bg-primary/5 hover:text-primary border-primary/20">
-                                            <a href="https://policies.google.com/technologies/cookies" target="_blank" rel="noopener noreferrer">
+                                            <a href={EXTERNAL_LINKS.GOOGLE_COOKIE_POLICY} target="_blank" rel="noopener noreferrer">
                                                 <span>{t.cookieGooglePolicy}</span>
                                                 <ExternalLink className="h-4 w-4" />
                                             </a>

@@ -115,61 +115,63 @@ const TranslationContext = createContext<TranslationContextType | undefined>(und
 
 
 import { STATIC_TRANSLATIONS } from "@/lib/translations"
+import { STORAGE_KEYS, LANGUAGE_CODES } from "@/lib/constants"
+import { SafeStorage } from "@/lib/storage"
+import { toast } from "sonner"
 
 export function TranslationProvider({ children }: { children: ReactNode }) {
     const [language, setInternalLanguage] = useState("fr")
     const [t, setT] = useState<TranslationMap>(defaultTranslations)
     const [isTranslating, setIsTranslating] = useState(false)
 
+    // Type guard to check if a language code is in STATIC_TRANSLATIONS
+    const isStaticLanguage = (lang: string): lang is keyof typeof STATIC_TRANSLATIONS => {
+        return lang in STATIC_TRANSLATIONS
+    }
+
     // Load initial language from localStorage or browser if available
     React.useEffect(() => {
-        const savedLang = localStorage.getItem("nohello-lang")
+        const savedLang = SafeStorage.getItem(STORAGE_KEYS.LANGUAGE)
         if (savedLang) {
-            if (savedLang !== "fr") {
+            if (savedLang !== LANGUAGE_CODES.FRENCH) {
                 void setLanguage(savedLang)
             }
         } else {
             // Auto-detect browser language
             const browserLang = navigator.language.split("-")[0]
-            if (browserLang && browserLang !== "fr") {
+            if (browserLang && browserLang !== LANGUAGE_CODES.FRENCH) {
                 void setLanguage(browserLang)
             }
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const setLanguage = async (lang: string) => {
         if (lang === language) return
 
         setInternalLanguage(lang)
-        localStorage.setItem("nohello-lang", lang)
+        SafeStorage.setItem(STORAGE_KEYS.LANGUAGE, lang)
 
         // 1. Check for 'fr' (default)
-        if (lang === "fr") {
+        if (lang === LANGUAGE_CODES.FRENCH) {
             setT(defaultTranslations)
             return
         }
 
-        // 2. Check Static Translations (Instant)
-        // @ts-ignore - Indexing string into specific keys
-        if (STATIC_TRANSLATIONS[lang as keyof typeof STATIC_TRANSLATIONS]) {
-            // @ts-ignore
-            setT(STATIC_TRANSLATIONS[lang as keyof typeof STATIC_TRANSLATIONS])
+        // 2. Check Static Translations (Instant) - Type-safe with type guard
+        if (isStaticLanguage(lang)) {
+            setT(STATIC_TRANSLATIONS[lang])
             return
         }
 
-        // 3. Check LocalStorage Cache
-        const cached = localStorage.getItem(`nohello-trans-${lang}`)
+        // 3. Check LocalStorage Cache - Type-safe with SafeStorage
+        const cached = SafeStorage.getJSON<TranslationMap>(STORAGE_KEYS.TRANSLATION_CACHE(lang))
         if (cached) {
-            try {
-                setT(JSON.parse(cached))
-                return
-            } catch (e) {
-                console.error("Cache parse error", e)
-                localStorage.removeItem(`nohello-trans-${lang}`)
-            }
+            setT(cached)
+            return
         }
 
-        // 4. Fallback to API
+        // 4. Fallback to API with proper error handling
         setIsTranslating(true)
         try {
             const response = await fetch("/api/translate", {
@@ -181,16 +183,27 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
                 }),
             })
 
+            if (!response.ok) {
+                throw new Error(`Translation API error: ${response.status}`)
+            }
+
             const data = await response.json()
             if (data.translatedContent) {
                 setT(data.translatedContent)
-                // Save to cache
-                localStorage.setItem(`nohello-trans-${lang}`, JSON.stringify(data.translatedContent))
+                // Save to cache with type-safe storage
+                SafeStorage.setJSON(STORAGE_KEYS.TRANSLATION_CACHE(lang), data.translatedContent)
             } else {
-                console.error("No translatedContent in response", data)
+                throw new Error("No translatedContent in response")
             }
         } catch (error) {
             console.error("Translation failed", error)
+            // Show user-friendly error toast
+            toast.error("Translation failed", {
+                description: "Using default language. Please try again later.",
+            })
+            // Fallback to default language
+            setT(defaultTranslations)
+            setInternalLanguage(LANGUAGE_CODES.FRENCH)
         } finally {
             setIsTranslating(false)
         }

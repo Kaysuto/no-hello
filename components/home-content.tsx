@@ -9,18 +9,11 @@ import { KofiWidget } from "@/components/kofi-widget"
 
 import { TypingText } from "@/components/typing-text"
 import { motion } from "framer-motion"
+import { fadeInUp, pulsingBlob, heroAnimation } from "@/lib/animations"
+import { SECTION_IDS } from "@/lib/constants"
 
 export function HomeContent() {
     const { t } = useTranslation()
-
-    const sectionVariants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.6, ease: "easeOut" }
-        }
-    } as const
 
     return (
         <div className="min-h-screen bg-background relative overflow-hidden selection:bg-primary/20">
@@ -29,29 +22,12 @@ export function HomeContent() {
             {/* Background Gradients */}
             <div className="fixed inset-0 z-0 pointer-events-none">
                 <motion.div
-                    animate={{
-                        scale: [1, 1.1, 1],
-                        opacity: [0.3, 0.5, 0.3]
-                    }}
-                    transition={{
-                        duration: 8,
-                        repeat: Infinity,
-                        repeatType: "reverse"
-                    }}
-                    className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] rounded-full bg-blue-500/10 blur-[100px]"
+                    animate={pulsingBlob(8, 0)}
+                    className="absolute top-[-20%] left-[-10%] w-125 h-125 rounded-full bg-blue-500/10 blur-[100px]"
                 />
                 <motion.div
-                    animate={{
-                        scale: [1, 1.2, 1],
-                        opacity: [0.3, 0.5, 0.3]
-                    }}
-                    transition={{
-                        duration: 10,
-                        repeat: Infinity,
-                        repeatType: "reverse",
-                        delay: 1
-                    }}
-                    className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-purple-500/10 blur-[120px]"
+                    animate={pulsingBlob(10, 1)}
+                    className="absolute bottom-[-20%] right-[-10%] w-150 h-150 rounded-full bg-purple-500/10 blur-[120px]"
                 />
             </div>
 
@@ -59,9 +35,9 @@ export function HomeContent() {
                 <main className="space-y-24">
                     {/* Hero Section */}
                     <motion.section
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
+                        initial="hidden"
+                        animate="visible"
+                        variants={heroAnimation}
                         className="min-h-[calc(100vh-4rem)] flex items-center justify-center"
                     >
                             {/* Text Content */}
@@ -70,11 +46,11 @@ export function HomeContent() {
                                     <span className="bg-linear-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
                                         {t.headerPre}
                                     </span>
-                                    <span className="text-primary italic"> "
+                                    <span className="text-primary italic"> &ldquo;
                                         <TypingText
                                             words={["Bonjour", "Hello", "Hola", "Hallo", "Ciao", "Olá", "Namaste", "Salaam", "Konnichiwa", "Ni Hao"]}
                                             className="not-italic"
-                                        />"
+                                        />&rdquo;
                                     </span>
                                 </h1>
                                 <p className="text-xl md:text-2xl text-muted-foreground font-light max-w-xl mx-auto leading-relaxed">
@@ -84,7 +60,7 @@ export function HomeContent() {
                     </motion.section>
 
                     {/* Explanation Section */}
-                    <section id="explanation" className="scroll-mt-24">
+                    <section id={SECTION_IDS.EXPLANATION} className="scroll-mt-24">
                         <ConceptExplanation />
                     </section>
 
@@ -94,7 +70,7 @@ export function HomeContent() {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
-                        variants={sectionVariants}
+                        variants={fadeInUp}
                     >
                         <div className="text-center mb-12">
                             <h2 className="text-3xl font-bold tracking-tight mb-4">{t.compSectionTitle}</h2>
@@ -105,12 +81,12 @@ export function HomeContent() {
 
                     {/* Quiz Section */}
                     <motion.section
-                        id="quiz"
+                        id={SECTION_IDS.QUIZ}
                         className="py-12 scroll-mt-24"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
-                        variants={sectionVariants}
+                        variants={fadeInUp}
                     >
                         <QuizGame />
                     </motion.section>

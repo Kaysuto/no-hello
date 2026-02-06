@@ -13,16 +13,14 @@ import { Loader2, Globe, Plus } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import { STANDARD_LANGUAGES } from "@/lib/constants"
+import { useMounted } from "@/lib/hooks/use-mounted"
 
 export function TranslationSelector({ className }: { className?: string }) {
     const { language, setLanguage, isTranslating } = useTranslation()
-    const [mounted, setMounted] = React.useState(false)
+    const mounted = useMounted()
     const [isAddingCustom, setIsAddingCustom] = React.useState(false)
     const [customLang, setCustomLang] = React.useState("")
-
-    React.useEffect(() => {
-        setMounted(true)
-    }, [])
 
     const handleCustomSubmit = (e: React.FormEvent) => {
         e.preventDefault()
@@ -36,7 +34,7 @@ export function TranslationSelector({ className }: { className?: string }) {
     if (!mounted) {
         return (
             <div className="flex items-center">
-                <div className="w-[120px] h-9 rounded-lg bg-muted/10 animate-pulse" />
+                <div className="w-30 h-9 rounded-lg bg-muted/10 animate-pulse" />
             </div>
         )
     }
@@ -48,8 +46,8 @@ export function TranslationSelector({ className }: { className?: string }) {
                     autoFocus
                     placeholder="Langue (ex: it, pt...)"
                     value={customLang}
-                    onChange={(e) => { setCustomLang(e.target.value); }}
-                    className="h-9 w-[160px] text-sm"
+                    onChange={(e) => setCustomLang(e.target.value)}
+                    className="h-9 w-40 text-sm"
                 />
                 <Button type="submit" size="sm" className="h-9 px-3" disabled={isTranslating}>
                     {isTranslating ? <Loader2 className="h-4 w-4 animate-spin" /> : "OK"}
@@ -59,7 +57,7 @@ export function TranslationSelector({ className }: { className?: string }) {
                     variant="ghost" 
                     size="sm" 
                     className="h-9 px-2 text-muted-foreground"
-                    onClick={() => { setIsAddingCustom(false); }}
+                    onClick={() => setIsAddingCustom(false)}
                 >
                     ✕
                 </Button>
@@ -67,8 +65,7 @@ export function TranslationSelector({ className }: { className?: string }) {
         )
     }
 
-    const standardLanguages = ["fr", "en", "es", "de", "ja"]
-    const isCustom = !standardLanguages.includes(language)
+    const isCustom = !(STANDARD_LANGUAGES as readonly string[]).includes(language)
 
     return (
         <div className="flex items-center">
@@ -83,7 +80,7 @@ export function TranslationSelector({ className }: { className?: string }) {
                 }} 
                 disabled={isTranslating}
             >
-                <SelectTrigger className={cn("w-auto min-w-[120px] h-9 border-none shadow-none bg-transparent hover:bg-muted/50 focus:ring-0 rounded-lg text-muted-foreground hover:text-foreground transition-colors", className)}>
+                <SelectTrigger className={cn("w-auto min-w-30 h-9 border-none shadow-none bg-transparent hover:bg-muted/50 focus:ring-0 rounded-lg text-muted-foreground hover:text-foreground transition-colors", className)}>
                     <div className="flex items-center gap-2">
                         <Globe className="h-4 w-4" />
                         <SelectValue placeholder="Langue" />
