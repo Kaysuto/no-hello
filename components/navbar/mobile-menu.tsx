@@ -24,7 +24,7 @@ export function MobileMenu({ open, onOpenChange, onNavigate }: MobileMenuProps) 
             <Menu className="h-5 w-5" />
           </Button>
         </SheetTrigger>
-        <SheetContent side="right" className="w-[300px] sm:w-[400px] pt-12 pb-6">
+        <SheetContent side="right" className="w-75 sm:w-100 pt-12 pb-6">
           <SheetTitle className="sr-only">Menu de navigation</SheetTitle>
           <div className="flex flex-col h-full">
             {/* Navigation Section */}
