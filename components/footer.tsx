@@ -4,7 +4,6 @@ import { useTranslation } from "@/components/translation-context"
 import { ExternalLink } from "@/components/external-link"
 import { AnimatedHeart } from "@/components/animated-heart"
 import { motion } from "framer-motion"
-import { Coffee } from "lucide-react"
 import { EXTERNAL_LINKS, LANGUAGE_CODES } from "@/lib/constants"
 import { footerAnimation } from "@/lib/animations"
 
@@ -51,19 +50,6 @@ export function Footer() {
                     <ExternalLink href={EXTERNAL_LINKS.GITHUB_PROFILE} label="Kaysuto Kimiya">Kaysuto Kimiya</ExternalLink>
                 </p>
 
-                {/* Native Official-style Ko-fi Button - Now inside the card */}
-                <div className="pt-2">
-                    <ExternalLink
-                        href={EXTERNAL_LINKS.KOFI}
-                        label="Ko-fi (Kaysuto)"
-                        className="hover:no-underline group"
-                    >
-                        <div className="flex items-center gap-2 bg-[#FF5F5F] hover:bg-[#ff4f4f] text-white px-5 h-11 rounded-full shadow-lg transition-all hover:scale-105 active:scale-95 font-bold">
-                            <Coffee className="h-5 w-5" />
-                            <span className="text-sm">{t.kofiSupport}</span>
-                        </div>
-                    </ExternalLink>
-                </div>
             </div>
         </motion.footer>
     )

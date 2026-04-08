@@ -1,10 +1,10 @@
 "use client"
-import { Navbar } from "@/components/navbar"
+import { Navbar } from "@/components/navbar/navbar"
 import { useTranslation } from "@/components/translation-context"
 
 import { ComparisonSection } from "@/components/comparison-section"
 import { ConceptExplanation } from "@/components/concept-explanation"
-import { QuizGame } from "@/components/quiz-game"
+import { QuizGame } from "@/components/quiz/quiz-game"
 import { KofiWidget } from "@/components/kofi-widget"
 
 import { TypingText } from "@/components/typing-text"
