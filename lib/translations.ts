@@ -82,6 +82,36 @@ export const STATIC_TRANSLATIONS = {
         q5Bad2: "Salut Sarah",
         q5Good: "Salut Sarah ! J'ai un doute sur le ticket JIRA-123. Est-ce que le design est validé ?",
 
+        q6Question: "Vous voulez signaler un bug non urgent à votre lead.",
+        q6Bad1: "Hey, j'ai trouvé un bug",
+        q6Bad2: "Salut, t'as 2 min ?",
+        q6Good: "Salut ! J'ai trouvé un bug d'affichage sur la page profil (ticket : BUG-456). Pas urgent, mais à regarder cette semaine ?",
+
+        q7Question: "Vous revenez de congé et voulez vous remettre à niveau.",
+        q7Bad1: "Je reviens, qu'est-ce que j'ai manqué ?",
+        q7Bad2: "Coucou, je suis de retour !",
+        q7Good: "Salut ! Je reviens de congé. Pouvez-vous partager les notes des réunions du 5 et 6 juin ? Je les lirai avant notre sync de demain.",
+
+        q8Question: "Vous voulez demander une revue de votre Pull Request.",
+        q8Bad1: "T'as regardé mon PR ?",
+        q8Bad2: "Hey, mon PR",
+        q8Good: "Salut ! Mon PR #42 est prêt pour review — refacto du module auth, ~200 lignes. Pas urgent, mais idéalement avant vendredi ?",
+
+        q9Question: "La production est en panne depuis 15 minutes.",
+        q9Bad1: "URGENT !!!",
+        q9Bad2: "Hey, ça marche plus ?",
+        q9Good: "[P0] Prod down depuis 14h32. /checkout retourne 503. Logs : DB connection timeout. Besoin d'aide immédiate.",
+
+        q10Question: "Un collègue vous demande de l'aide mais vous êtes en réunion toute l'après-midi.",
+        q10Bad1: "Occupé",
+        q10Bad2: "Pas maintenant",
+        q10Good: "Salut ! Je suis en réunion jusqu'à 17h. Je te reviens dès que je suis libre. Si c'est urgent, ping @lead.",
+
+        q11Question: "Vous bloquez sur un bug depuis 2h et avez besoin d'aide.",
+        q11Bad1: "Je comprends pas ce code",
+        q11Bad2: "T'as une minute ?",
+        q11Good: "Salut ! Je bloque depuis 2h sur `parseDate()`. J'ai essayé UTC et ISO, mais j'ai toujours un décalage de +2h. Voici le code : [snippet]. Une idée ?",
+
         footer: "Inspiré par nohello.net • Reconstruit avec Next.js & Shadcn",
         footerInspiredBy: "Inspiré par ",
         footerRebuiltWith: " • Reconstruit avec ",
@@ -167,6 +197,37 @@ export const STATIC_TRANSLATIONS = {
         q5Bad1: "Can you help me on Jira?",
         q5Bad2: "Hi Sarah",
         q5Good: "Hi Sarah! I have a doubt about ticket JIRA-123. Is the design validated?",
+
+        q6Question: "You want to report a non-urgent bug to your lead.",
+        q6Bad1: "Hey, I found a bug",
+        q6Bad2: "Hi, got 2 min?",
+        q6Good: "Hi! Found a display bug on the profile page (ticket: BUG-456). Not urgent, but worth looking at this week?",
+
+        q7Question: "You're back from leave and need to catch up.",
+        q7Bad1: "I'm back, what did I miss?",
+        q7Bad2: "Hey, I'm back!",
+        q7Good: "Hi! Back from leave. Could you share the meeting notes from June 5 & 6? I'll read through them before tomorrow's sync.",
+
+        q8Question: "You want to request a review for your Pull Request.",
+        q8Bad1: "Did you look at my PR?",
+        q8Bad2: "Hey, my PR",
+        q8Good: "Hi! PR #42 is ready for review — auth module refactor, ~200 lines. No rush, but ideally before Friday?",
+
+        q9Question: "Production has been down for 15 minutes.",
+        q9Bad1: "URGENT!!!",
+        q9Bad2: "Hey, is it broken?",
+        q9Good: "[P0] Prod down since 2:32pm. /checkout returns 503. Logs: DB connection timeout. Need immediate help.",
+
+        q10Question: "A colleague asks for help but you're in meetings all afternoon.",
+        q10Bad1: "Busy",
+        q10Bad2: "Not now",
+        q10Good: "Hi! In meetings until 5pm. I'll get back to you as soon as I'm free. If urgent, ping @lead.",
+
+        q11Question: "You've been stuck on a bug for 2 hours and need help.",
+        q11Bad1: "I don't understand this code",
+        q11Bad2: "Got a minute?",
+        q11Good: "Hi! Stuck 2h on `parseDate()`. Tried UTC and ISO, still getting a +2h offset. Here's the code: [snippet]. Any idea?",
+
         footer: "Inspired by nohello.net • Rebuilt with Next.js & Shadcn",
         footerInspiredBy: "Inspired by ",
         footerRebuiltWith: " • Rebuilt with ",
@@ -253,6 +314,37 @@ export const STATIC_TRANSLATIONS = {
         q5Bad1: "¿Puedes ayudarme en Jira?",
         q5Bad2: "Hola Sarah",
         q5Good: "¡Hola Sarah! Tengo una duda sobre el ticket JIRA-123. ¿Está validado el diseño?",
+
+        q6Question: "Quieres reportar un bug no urgente a tu líder.",
+        q6Bad1: "Hey, encontré un bug",
+        q6Bad2: "Hola, ¿tienes 2 min?",
+        q6Good: "¡Hola! Encontré un bug de visualización en la página de perfil (ticket: BUG-456). No es urgente, ¿pero podrías revisarlo esta semana?",
+
+        q7Question: "Vuelves de vacaciones y necesitas ponerte al día.",
+        q7Bad1: "Vuelvo, ¿qué me perdí?",
+        q7Bad2: "¡Hola, estoy de vuelta!",
+        q7Good: "¡Hola! Vuelvo de vacaciones. ¿Pueden compartirme las notas de las reuniones del 5 y 6 de junio? Las leeré antes del sync de mañana.",
+
+        q8Question: "Quieres pedir una revisión de tu Pull Request.",
+        q8Bad1: "¿Revisaste mi PR?",
+        q8Bad2: "Hey, mi PR",
+        q8Good: "¡Hola! El PR #42 está listo para revisión — refactor del módulo auth, ~200 líneas. Sin prisa, ¿pero idealmente antes del viernes?",
+
+        q9Question: "La producción lleva 15 minutos caída.",
+        q9Bad1: "¡¡¡URGENTE!!!",
+        q9Bad2: "Oye, ¿no funciona?",
+        q9Good: "[P0] Prod caída desde las 14:32. /checkout devuelve 503. Logs: DB connection timeout. Necesito ayuda inmediata.",
+
+        q10Question: "Un compañero te pide ayuda pero tienes reuniones toda la tarde.",
+        q10Bad1: "Ocupado",
+        q10Bad2: "Ahora no",
+        q10Good: "¡Hola! Estoy en reuniones hasta las 17h. Te respondo en cuanto esté libre. Si es urgente, menciona a @lead.",
+
+        q11Question: "Llevas 2 horas atascado con un bug y necesitas ayuda.",
+        q11Bad1: "No entiendo este código",
+        q11Bad2: "¿Tienes un minuto?",
+        q11Good: "¡Hola! Llevo 2h bloqueado con `parseDate()`. Probé UTC e ISO, sigo teniendo un desfase de +2h. Aquí el código: [snippet]. ¿Alguna idea?",
+
         footer: "Inspirado por nohello.net • Reconstruido con Next.js & Shadcn",
         footerInspiredBy: "Inspirado por ",
         footerRebuiltWith: " • Reconstruido con ",
@@ -339,6 +431,37 @@ export const STATIC_TRANSLATIONS = {
         q5Bad1: "Kannst du mir bei Jira helfen?",
         q5Bad2: "Hallo Sarah",
         q5Good: "Hallo Sarah! Ich habe eine Frage zu Ticket JIRA-123. Ist das Design freigegeben?",
+
+        q6Question: "Du möchtest einen nicht dringenden Bug an deinen Lead melden.",
+        q6Bad1: "Hey, ich habe einen Bug gefunden",
+        q6Bad2: "Hallo, hast du 2 Min.?",
+        q6Good: "Hi! Ich habe einen Anzeigefehler auf der Profilseite gefunden (Ticket: BUG-456). Nicht dringend, aber könnten wir das diese Woche anschauen?",
+
+        q7Question: "Du kommst aus dem Urlaub zurück und möchtest dich informieren.",
+        q7Bad1: "Ich bin wieder da, was habe ich verpasst?",
+        q7Bad2: "Hey, ich bin zurück!",
+        q7Good: "Hi! Ich bin aus dem Urlaub zurück. Könntet ihr mir die Meeting-Notizen vom 5. und 6. Juni schicken? Ich lese sie vor unserem morgigen Sync durch.",
+
+        q8Question: "Du möchtest eine Review für deinen Pull Request anfragen.",
+        q8Bad1: "Hast du meinen PR angeschaut?",
+        q8Bad2: "Hey, mein PR",
+        q8Good: "Hi! PR #42 ist bereit für Review — Auth-Modul-Refaktorierung, ~200 Zeilen. Kein Stress, aber idealerweise vor Freitag?",
+
+        q9Question: "Die Produktion ist seit 15 Minuten ausgefallen.",
+        q9Bad1: "DRINGEND!!!",
+        q9Bad2: "Hey, funktioniert was nicht?",
+        q9Good: "[P0] Prod seit 14:32 Uhr down. /checkout gibt 503 zurück. Logs: DB connection timeout. Brauche sofortige Hilfe.",
+
+        q10Question: "Ein Kollege bittet um Hilfe, aber du hast den ganzen Nachmittag Meetings.",
+        q10Bad1: "Beschäftigt",
+        q10Bad2: "Gerade nicht",
+        q10Good: "Hi! Ich bin bis 17 Uhr in Meetings. Ich melde mich, sobald ich frei bin. Wenn es dringend ist, schreib @lead an.",
+
+        q11Question: "Du steckst seit 2 Stunden bei einem Bug fest und brauchst Hilfe.",
+        q11Bad1: "Ich verstehe diesen Code nicht",
+        q11Bad2: "Hast du eine Minute?",
+        q11Good: "Hi! Ich stecke seit 2h bei `parseDate()` fest. Habe UTC und ISO versucht, aber es gibt immer noch einen +2h Versatz. Hier ist der Code: [snippet]. Irgendeine Idee?",
+
         footer: "Inspiriert von nohello.net • Nachgebaut mit Next.js & Shadcn",
         footerInspiredBy: "Inspiriert von ",
         footerRebuiltWith: " • Nachgebaut mit ",
@@ -425,6 +548,37 @@ export const STATIC_TRANSLATIONS = {
         q5Bad1: "Jiraのこと教えてくれますか？",
         q5Bad2: "サラさん、お疲れ様です",
         q5Good: "サラさん、お疲れ様です！チケットJIRA-123について確認ですが、デザインは確定していますか？",
+
+        q6Question: "急ぎではないバグをリードに報告したい。",
+        q6Bad1: "バグ見つけました",
+        q6Bad2: "お疲れ様です、少しいいですか？",
+        q6Good: "お疲れ様です！プロフィールページに表示バグを発見しました（チケット：BUG-456）。急ぎではありませんが、今週中に確認いただけますか？",
+
+        q7Question: "休暇から戻り、情報を把握したい。",
+        q7Bad1: "戻りました、何か見逃しましたか？",
+        q7Bad2: "お疲れ様です、戻りました！",
+        q7Good: "お疲れ様です！休暇から戻りました。6月5日・6日の会議メモを共有いただけますか？明日のsyncの前に確認します。",
+
+        q8Question: "Pull Requestのレビューを依頼したい。",
+        q8Bad1: "PRを見てくれましたか？",
+        q8Bad2: "あ、PRですが",
+        q8Good: "お疲れ様です！PR #42のレビューをお願いしたいです。authモジュールのリファクタで約200行です。急ぎではありませんが、金曜日までにお願いできますか？",
+
+        q9Question: "本番環境が15分間ダウンしています。",
+        q9Bad1: "緊急！！！",
+        q9Bad2: "動いてないですよね？",
+        q9Good: "[P0] 本番が14:32からダウン。/checkoutが503を返す。ログ：DB接続タイムアウト。即刻対応が必要です。",
+
+        q10Question: "同僚から助けを求められたが、午後はずっと会議がある。",
+        q10Bad1: "忙しい",
+        q10Bad2: "今は無理",
+        q10Good: "お疲れ様です！17時まで会議があります。終わり次第連絡します。急ぎの場合は@leadにお知らせください。",
+
+        q11Question: "2時間バグで詰まっていて助けが必要です。",
+        q11Bad1: "このコードがわかりません",
+        q11Bad2: "少しいいですか？",
+        q11Good: "お疲れ様です！`parseDate()`で2時間詰まっています。UTCとISOを試しましたが、+2時間のずれが続いています。コード：[スニペット]。何かアイデアはありますか？",
+
         footer: "nohello.netにインスパイアされました • Next.js & Shadcnで再構築",
         footerInspiredBy: "にインスパイアされました",
         footerRebuiltWith: "で再構築",

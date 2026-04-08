@@ -86,6 +86,36 @@ const defaultTranslations = {
     q5Bad2: "Salut Sarah",
     q5Good: "Salut Sarah ! J'ai un doute sur le ticket JIRA-123. Est-ce que le design est validé ?",
 
+    q6Question: "Vous voulez signaler un bug non urgent à votre lead.",
+    q6Bad1: "Hey, j'ai trouvé un bug",
+    q6Bad2: "Salut, t'as 2 min ?",
+    q6Good: "Salut ! J'ai trouvé un bug d'affichage sur la page profil (ticket : BUG-456). Pas urgent, mais à regarder cette semaine ?",
+
+    q7Question: "Vous revenez de congé et voulez vous remettre à niveau.",
+    q7Bad1: "Je reviens, qu'est-ce que j'ai manqué ?",
+    q7Bad2: "Coucou, je suis de retour !",
+    q7Good: "Salut ! Je reviens de congé. Pouvez-vous partager les notes des réunions du 5 et 6 juin ? Je les lirai avant notre sync de demain.",
+
+    q8Question: "Vous voulez demander une revue de votre Pull Request.",
+    q8Bad1: "T'as regardé mon PR ?",
+    q8Bad2: "Hey, mon PR",
+    q8Good: "Salut ! Mon PR #42 est prêt pour review — refacto du module auth, ~200 lignes. Pas urgent, mais idéalement avant vendredi ?",
+
+    q9Question: "La production est en panne depuis 15 minutes.",
+    q9Bad1: "URGENT !!!",
+    q9Bad2: "Hey, ça marche plus ?",
+    q9Good: "[P0] Prod down depuis 14h32. /checkout retourne 503. Logs : DB connection timeout. Besoin d'aide immédiate.",
+
+    q10Question: "Un collègue vous demande de l'aide mais vous êtes en réunion toute l'après-midi.",
+    q10Bad1: "Occupé",
+    q10Bad2: "Pas maintenant",
+    q10Good: "Salut ! Je suis en réunion jusqu'à 17h. Je te reviens dès que je suis libre. Si c'est urgent, ping @lead.",
+
+    q11Question: "Vous bloquez sur un bug depuis 2h et avez besoin d'aide.",
+    q11Bad1: "Je comprends pas ce code",
+    q11Bad2: "T'as une minute ?",
+    q11Good: "Salut ! Je bloque depuis 2h sur `parseDate()`. J'ai essayé UTC et ISO, mais j'ai toujours un décalage de +2h. Voici le code : [snippet]. Une idée ?",
+
     footer: "Inspiré par nohello.net • Reconstruit avec Next.js & Shadcn",
     footerInspiredBy: "Inspiré par ",
     footerRebuiltWith: " • Reconstruit avec ",
