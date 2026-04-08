@@ -1,6 +1,7 @@
 export const STATIC_TRANSLATIONS = {
     fr: {
-        headerPre: "S'il vous plaît, ne dites pas juste",
+        headerLine1: "S'il vous plaît,",
+        headerLine2: "ne dites pas juste",
         headerItalic: "Bonjour",
         headerDesc: "Pourquoi dire bonjour sans poser votre question est une perte de temps.",
 
@@ -98,7 +99,8 @@ export const STATIC_TRANSLATIONS = {
         cookieGooglePolicy: "Voir la Politique de Google"
     },
     en: {
-        headerPre: "Please, don't just say",
+        headerLine1: "Please,",
+        headerLine2: "don't just say",
         headerItalic: "Hello",
         headerDesc: "Why saying hello without your question is a waste of time.",
 
@@ -182,7 +184,8 @@ export const STATIC_TRANSLATIONS = {
         cookieGooglePolicy: "View Google Policy"
     },
     es: {
-        headerPre: "Por favor, no digas solo",
+        headerLine1: "Por favor,",
+        headerLine2: "no digas solo",
         headerItalic: "Hola",
         headerDesc: "Por qué decir hola sin tu pregunta es una pérdida de tiempo.",
 
@@ -267,7 +270,8 @@ export const STATIC_TRANSLATIONS = {
         cookieGooglePolicy: "Ver Política de Google"
     },
     de: {
-        headerPre: "Bitte sag nicht nur",
+        headerLine1: "Bitte,",
+        headerLine2: "sag nicht nur",
         headerItalic: "Hallo",
         headerDesc: "Warum Hallo sagen ohne Frage Zeitverschwendung ist.",
 
@@ -352,7 +356,8 @@ export const STATIC_TRANSLATIONS = {
         cookieGooglePolicy: "Google-Richtlinie ansehen"
     },
     ja: {
-        headerPre: "ただ",
+        headerLine1: "お願いです、",
+        headerLine2: "ただとは言わないで",
         headerItalic: "こんにちは",
         headerDesc: "挨拶だけで質問を送らないことが、なぜ時間の無駄なのか。",
 

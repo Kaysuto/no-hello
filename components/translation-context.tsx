@@ -5,7 +5,8 @@ import React, { createContext, useContext, useState, ReactNode } from "react"
 
 
 const defaultTranslations = {
-    headerPre: "S'il vous plaît, ne dites pas juste",
+    headerLine1: "S'il vous plaît,",
+    headerLine2: "ne dites pas juste",
     headerItalic: "Bonjour",
     headerDesc: "Pourquoi dire bonjour sans poser votre question est une perte de temps.",
 
