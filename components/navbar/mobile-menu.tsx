@@ -7,6 +7,8 @@ import { Github, Menu, Globe, BookOpen, CircleHelp } from "lucide-react"
 import { useTranslation } from "@/components/translation-context"
 import { SECTION_IDS, EXTERNAL_LINKS } from "@/lib/constants"
 
+const navLinkClass = "text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+
 interface MobileMenuProps {
   open: boolean
   onOpenChange: (open: boolean) => void
@@ -57,13 +59,13 @@ export function MobileMenu({ open, onOpenChange, onNavigate }: MobileMenuProps) 
               <div className="w-full">
                 <ShareButton showLabel={true} />
               </div>
-              <div className="flex items-center h-11 px-4 gap-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors">
+              <div className={`flex items-center h-11 px-4 gap-2 rounded-lg ${navLinkClass}`}>
                 <Globe className="h-4 w-4 shrink-0" />
                 <TranslationSelector className="w-full h-auto p-0 justify-start" />
               </div>
               <Button
                 variant="ghost"
-                className="justify-start h-11 px-4 w-full text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors gap-3 no-underline hover:no-underline"
+                className={`justify-start h-11 px-4 w-full gap-3 no-underline hover:no-underline ${navLinkClass}`}
                 asChild
               >
                 <ExternalLink href={EXTERNAL_LINKS.GITHUB_REPO} label="GitHub/Kaysuto">

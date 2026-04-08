@@ -7,6 +7,8 @@ import { Github } from "lucide-react"
 import { useTranslation } from "@/components/translation-context"
 import { SECTION_IDS, EXTERNAL_LINKS } from "@/lib/constants"
 
+const navLinkClass = "text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+
 interface DesktopNavProps {
   onNavigate: (sectionId: string) => void
 }
@@ -21,14 +23,14 @@ export function DesktopNav({ onNavigate }: DesktopNavProps) {
         <Button
           variant="ghost"
           onClick={() => onNavigate(SECTION_IDS.EXPLANATION)}
-          className="h-9 px-4 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+          className={`h-9 px-4 rounded-lg ${navLinkClass}`}
         >
           {t.navConcept}
         </Button>
         <Button
           variant="ghost"
           onClick={() => onNavigate(SECTION_IDS.QUIZ)}
-          className="h-9 px-4 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+          className={`h-9 px-4 rounded-lg ${navLinkClass}`}
         >
           {t.navQuiz}
         </Button>
@@ -46,7 +48,7 @@ export function DesktopNav({ onNavigate }: DesktopNavProps) {
         <Button
           variant="ghost"
           size="icon"
-          className="h-9 w-9 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+          className={`h-9 w-9 rounded-lg ${navLinkClass}`}
           asChild
         >
           <ExternalLink href={EXTERNAL_LINKS.GITHUB_REPO} label="GitHub/Kaysuto">
