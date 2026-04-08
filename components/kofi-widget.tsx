@@ -4,19 +4,21 @@ import { ExternalLink } from "@/components/external-link"
 import { Coffee } from "lucide-react"
 import { motion } from "framer-motion"
 import { useTranslation } from "@/components/translation-context"
+import { EXTERNAL_LINKS } from "@/lib/constants"
+import { widgetPopIn } from "@/lib/animations"
 
 export function KofiWidget() {
     const { t } = useTranslation()
 
     return (
-        <motion.div 
-            initial={{ scale: 0, opacity: 0, y: 20 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            transition={{ delay: 1, type: "spring", stiffness: 260, damping: 20 }}
+        <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={widgetPopIn}
             className="fixed bottom-6 right-6 z-50"
         >
-            <ExternalLink 
-                href="https://ko-fi.com/kaysuto" 
+            <ExternalLink
+                href={EXTERNAL_LINKS.KOFI} 
                 label="Ko-fi (Kaysuto)"
                 className="hover:no-underline"
             >

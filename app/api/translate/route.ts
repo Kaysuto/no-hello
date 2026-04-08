@@ -43,7 +43,7 @@ export async function POST(req: Request) {
         let translatedContent;
         try {
             translatedContent = JSON.parse(textResponse);
-        } catch (e) {
+        } catch {
             console.error("Failed to parse Gemini response as JSON", textResponse);
             // Fallback: try to find JSON block if markdown is included
             const match = textResponse.match(/\{[\s\S]*\}/);

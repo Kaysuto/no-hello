@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"c:\\\\Users\\\\kaysu\\\\Desktop\\\\no-hello\" diff main --name-only)",
+      "Bash(git -C \"c:\\\\Users\\\\kaysu\\\\Desktop\\\\no-hello\" log --oneline fix-navbar-arrow-functions -n 10)",
+      "Bash(git -C \"c:\\\\Users\\\\kaysu\\\\Desktop\\\\no-hello\" diff main HEAD -- components/navbar.tsx)",
+      "Bash(wc:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npm run build:*)",
+      "Bash(Select-String:*)",
+      "Bash(npm run lint:*)"
+    ]
+  }
+}

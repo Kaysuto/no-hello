@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { motion, useMotionValue, useTransform, animate } from "framer-motion"
+import { motion, useMotionValue, animate } from "framer-motion"
 
 export interface TypingTextProps {
     words: string[]
@@ -11,7 +11,6 @@ export interface TypingTextProps {
 export function TypingText({ words, className }: TypingTextProps) {
     const [index, setIndex] = useState(0)
     const count = useMotionValue(0)
-    const rounded = useTransform(count, (latest) => Math.round(latest))
     const [displayedText, setDisplayedText] = useState("")
 
     const baseText = words[index]
@@ -51,7 +50,7 @@ export function TypingText({ words, className }: TypingTextProps) {
             <motion.span
                 animate={{ opacity: [0, 1, 0] }}
                 transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-                className="inline-block w-[2px] h-[1em] bg-primary ml-1 align-middle"
+                className="inline-block w-0.5 h-[1em] bg-primary ml-1 align-middle"
             />
         </span>
     )
