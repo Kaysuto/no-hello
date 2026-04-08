@@ -73,9 +73,7 @@ export function QuizGame() {
   }
 
   return (
-    <Card className="w-full max-w-2xl mx-auto overflow-hidden border-primary/20 bg-card/50 backdrop-blur-sm relative">
-      <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-primary/5 pointer-events-none" />
-
+    <Card className="w-full max-w-2xl mx-auto overflow-hidden border-primary/20 bg-neutral-50/50 dark:bg-neutral-950/10 relative">
       <div className="p-8 relative z-10">
         {!difficulty ? (
           <DifficultySelector onSelectDifficulty={selectDifficulty} t={t} />

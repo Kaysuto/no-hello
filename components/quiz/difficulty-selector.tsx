@@ -17,7 +17,7 @@ export function DifficultySelector({ onSelectDifficulty, t }: DifficultySelector
   return (
     <div className="space-y-8 py-4">
       <div className="text-center space-y-2">
-        <h3 className="text-2xl font-bold">{t.quizDifficultyTitle}</h3>
+        <h3 className="text-2xl font-bold text-foreground">{t.quizDifficultyTitle}</h3>
         <p className="text-muted-foreground">{t.quizDesc}</p>
       </div>
       <div className="grid gap-4 max-w-sm mx-auto">
