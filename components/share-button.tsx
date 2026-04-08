@@ -1,18 +1,13 @@
 import { Share2 } from "lucide-react"
-import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
 import { useTranslation } from "@/components/translation-context"
+import { copyToClipboard } from "@/lib/clipboard"
 
 export function ShareButton({ showLabel = true }: { showLabel?: boolean }) {
     const { t } = useTranslation()
 
     const handleCopyMessage = () => {
-        const text = t.shareCustomMsg
-        navigator.clipboard.writeText(text)
-        toast.success(t.shareMsgCopied, {
-            description: t.shareMsgDesc,
-            duration: 3000,
-        })
+        void copyToClipboard(t.shareCustomMsg, t.shareMsgCopied, t.shareMsgDesc)
     }
 
     return (
