@@ -1,0 +1,10 @@
+{
+  "name": "no-hello",
+  "docker_image": "warpdotdev/dev-base:latest",
+  "repos": [
+    "Kaysuto/no-hello"
+  ],
+  "setup_commands": [
+    "cd no-hello && npm ci"
+  ]
+}

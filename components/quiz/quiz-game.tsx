@@ -6,9 +6,8 @@
  */
 
 import { useState } from "react"
-import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, RotateCcw } from "lucide-react"
 import { useTranslation } from "@/components/translation-context"
 import { fireCorrectAnswerConfetti, firePerfectScoreConfetti } from "@/lib/confetti"
 import type { QuizDifficulty } from "@/lib/types"
@@ -27,7 +26,6 @@ export function QuizGame() {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
   const [isAnswered, setIsAnswered] = useState(false)
 
-  // Get all questions and filter by difficulty
   const allQuestions = getAllQuizQuestions(t)
   const questions = difficulty ? allQuestions.filter((q) => q.difficulty === difficulty) : []
 
@@ -73,45 +71,51 @@ export function QuizGame() {
   }
 
   return (
-    <Card className="w-full max-w-2xl mx-auto overflow-hidden border-primary/20 bg-neutral-50/50 dark:bg-neutral-950/10 relative">
-      <div className="p-8 relative z-10">
-        {!difficulty ? (
-          <DifficultySelector onSelectDifficulty={selectDifficulty} t={t} />
-        ) : !showResult ? (
-          <div className="space-y-8">
-            <div className="text-center space-y-2">
-              <h3 className="text-2xl font-bold">{t.quizTitle}</h3>
-              <p className="text-muted-foreground">{t.quizDesc}</p>
-              <ProgressIndicator total={questions.length} current={currentQuestion} />
-            </div>
+    <div className="relative w-full max-w-3xl mx-auto">
+      {/* Soft ambient glow behind the quiz — replaces the bordered card */}
+      <div
+        aria-hidden="true"
+        className="absolute -inset-x-6 -inset-y-10 -z-10 bg-primary/5 blur-3xl rounded-[3rem]"
+      />
 
-            <QuestionCard
-              question={questions[currentQuestion]}
-              questionIndex={currentQuestion}
-              isAnswered={isAnswered}
-              selectedAnswer={selectedAnswer}
-              onAnswer={handleAnswer}
-            />
+      {!difficulty ? (
+        <DifficultySelector onSelectDifficulty={selectDifficulty} t={t} questions={allQuestions} />
+      ) : !showResult ? (
+        <div className="space-y-10">
+          <ProgressIndicator total={questions.length} current={currentQuestion} />
 
-            <div className="flex justify-between items-center pt-4">
-              <Button
-                onClick={() => setDifficulty(null)}
-                variant="ghost"
-                size="sm"
-                className="text-muted-foreground hover:text-primary"
-              >
-                {t.quizRetry}
-              </Button>
-              <Button onClick={nextQuestion} disabled={!isAnswered} className="gap-2">
-                {currentQuestion < questions.length - 1 ? t.quizNext : t.quizFinish}
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </div>
+          <QuestionCard
+            question={questions[currentQuestion]}
+            questionIndex={currentQuestion}
+            isAnswered={isAnswered}
+            selectedAnswer={selectedAnswer}
+            onAnswer={handleAnswer}
+          />
+
+          <div className="flex justify-between items-center pt-2">
+            <Button
+              onClick={resetQuiz}
+              variant="ghost"
+              size="sm"
+              className="gap-2 text-muted-foreground hover:text-foreground"
+            >
+              <RotateCcw className="h-3.5 w-3.5" />
+              {t.quizRetry}
+            </Button>
+            <Button
+              onClick={nextQuestion}
+              disabled={!isAnswered}
+              size="lg"
+              className="gap-2 rounded-full px-6"
+            >
+              {currentQuestion < questions.length - 1 ? t.quizNext : t.quizFinish}
+              <ArrowRight className="h-4 w-4" />
+            </Button>
           </div>
-        ) : (
-          <ResultScreen score={score} total={questions.length} onReset={resetQuiz} t={t} />
-        )}
-      </div>
-    </Card>
+        </div>
+      ) : (
+        <ResultScreen score={score} total={questions.length} onReset={resetQuiz} t={t} />
+      )}
+    </div>
   )
 }

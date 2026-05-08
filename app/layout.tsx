@@ -4,7 +4,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { TranslationProvider } from "@/components/translation-context";
 import { CookieWidget } from "@/components/cookie-widget";
-import { ScrollProgress } from "@/components/scroll-progress";
 import { Footer } from "@/components/footer";
 import "./globals.css";
 
@@ -72,7 +71,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <TranslationProvider>
-            <ScrollProgress />
             {children}
             <CookieWidget />
             <Toaster />

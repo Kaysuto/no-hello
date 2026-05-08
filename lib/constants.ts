@@ -5,7 +5,9 @@
 
 // Section IDs used for navigation
 export const SECTION_IDS = {
+  COMPARISON: 'comparison',
   EXPLANATION: 'explanation',
+  USAGE: 'usage',
   QUIZ: 'quiz',
 } as const
 
@@ -68,7 +70,6 @@ export const EXTERNAL_LINKS = {
   GITHUB_REPO: 'https://github.com/Kaysuto/no-hello',
   GITHUB_PROFILE: 'https://github.com/Kaysuto',
   NOHELLO_NET: 'https://nohello.net',
-  KOFI: 'https://ko-fi.com/kaysuto',
   NEXTJS: 'https://nextjs.org',
   SHADCN: 'https://ui.shadcn.com',
   GOOGLE_COOKIE_POLICY: 'https://policies.google.com/technologies/cookies',

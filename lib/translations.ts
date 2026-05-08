@@ -5,7 +5,8 @@ export const STATIC_TRANSLATIONS = {
         headerItalic: "Bonjour",
         headerDesc: "Pourquoi dire bonjour sans poser votre question est une perte de temps.",
 
-
+        heroCtaSeeExample: "Voir un exemple",
+        heroCtaShare: "Copier le message",
 
         conceptTitle: "Pourquoi est-ce contre-productif ?",
 
@@ -24,6 +25,10 @@ export const STATIC_TRANSLATIONS = {
         compSectionTitle: "La différence est claire",
         compSectionDesc: "Un petit changement pour une grande productivité.",
 
+        usageTitle: "Adoptez-le, partagez-le",
+        usageDesc: "Mettez le lien dans votre bio, et partagez ce message aux « Bonjour » solitaires.",
+        usageCopyCta: "Copier le message",
+
         badTitle: "Mauvaise Pratique",
         badMsg1: "Salut",
         badWait: "... le collègue attend que vous écriviez la suite ...",
@@ -38,7 +43,7 @@ export const STATIC_TRANSLATIONS = {
         shareBtn: "Partager",
         shareMsgCopied: "Message copié !",
         shareMsgDesc: "Tu peux maintenant le coller dans ta conversation.",
-        shareCustomMsg: "Salut ! Au lieu de juste dire bonjour, pose directement ta question. Ça permet d'économiser du temps pour tout le monde ! Pour en savoir plus : https://nohello.net",
+        shareCustomMsg: "Salut ! Pour qu'on gagne du temps, pose ta question avec ton bonjour 🙂 Plus d'infos : https://nohello.fr",
 
         quizTitle: "Entraînez-vous !",
         quizDesc: "Choisissez la meilleure réponse pour chaque situation.",
@@ -55,7 +60,16 @@ export const STATIC_TRANSLATIONS = {
         quizHard: "Difficile",
 
         navConcept: "Concept",
+        navExample: "Exemple",
+        navUsage: "Adopter",
         navQuiz: "Quiz",
+
+        themeToggleLight: "Passer en thème clair",
+        themeToggleDark: "Passer en thème sombre",
+
+        menuNavigation: "Navigation",
+        menuPreferences: "Préférences",
+        menuLinks: "Liens",
 
         q1Question: "Vous avez besoin d'aide pour un bug urgent.",
         q1Bad1: "Salut, tu as 5 minutes ?",
@@ -117,9 +131,7 @@ export const STATIC_TRANSLATIONS = {
         footerRebuiltWith: " • Reconstruit avec ",
         footerMadeWith: "Fait avec ",
         footerBy: " par ",
-        footerSupport: "Soutenir le projet",
         footerWarning: "Attention : Si vous voyez ce site dans une bio, préparez-vous à être ignoré au prochain \"Salut\" ! 👻",
-        kofiSupport: "M'offrir un café",
         cookiePrivacy: "Confidentialité",
         cookieTitle: "Transparence & Données",
         cookieSection1Title: "Ce que nous collectons :",
@@ -134,6 +146,9 @@ export const STATIC_TRANSLATIONS = {
         headerItalic: "Hello",
         headerDesc: "Why saying hello without your question is a waste of time.",
 
+        heroCtaSeeExample: "See an example",
+        heroCtaShare: "Copy the message",
+
         conceptTitle: "Why is it counter-productive?",
         conceptProblemTitle: "The Problem",
         conceptProblemBody: "Imagine calling someone on the phone, saying \"Hello!\", and then immediately putting them on hold...",
@@ -143,8 +158,13 @@ export const STATIC_TRANSLATIONS = {
         conceptSolutionBody: "The best practice is to include your greeting AND your question in the same message.",
         conceptBenefitTitle: "The Result",
         conceptBenefitBody: "Your colleague can answer as soon as they are available, with all the necessary context.",
+
         compSectionTitle: "The difference is clear",
         compSectionDesc: "A small change for big productivity.",
+
+        usageTitle: "Adopt it, share it",
+        usageDesc: "Put the link in your bio, and share this message with lonely \"Hi\"s.",
+        usageCopyCta: "Copy the message",
         badTitle: "Bad Practice",
         badMsg1: "Hi",
         badWait: "... the colleague waits for you to type the rest ...",
@@ -158,7 +178,7 @@ export const STATIC_TRANSLATIONS = {
         shareBtn: "Share",
         shareMsgCopied: "Message copied!",
         shareMsgDesc: "You can now paste it into your conversation.",
-        shareCustomMsg: "Hi! Instead of just saying hello, please ask your question directly. It saves time for everyone! Learn more: https://nohello.net",
+        shareCustomMsg: "Hi! To save us time, ask your question along with your hello 🙂 Learn more: https://nohello.fr",
 
         quizTitle: "Practice!",
         quizDesc: "Choose the best response for each situation.",
@@ -175,7 +195,16 @@ export const STATIC_TRANSLATIONS = {
         quizHard: "Hard",
 
         navConcept: "Concept",
+        navExample: "Example",
+        navUsage: "Adopt",
         navQuiz: "Quiz",
+
+        themeToggleLight: "Switch to light theme",
+        themeToggleDark: "Switch to dark theme",
+
+        menuNavigation: "Navigation",
+        menuPreferences: "Preferences",
+        menuLinks: "Links",
 
         q1Question: "You need help with an urgent bug.",
         q1Bad1: "Hi, got 5 minutes?",
@@ -233,9 +262,7 @@ export const STATIC_TRANSLATIONS = {
         footerRebuiltWith: " • Rebuilt with ",
         footerMadeWith: "Made with ",
         footerBy: " by ",
-        footerSupport: "Support the project",
         footerWarning: "Warning: If you see this site in a bio, prepare to be ignored at the next \"Hello\"! 👻",
-        kofiSupport: "Support me on Ko-fi",
         cookiePrivacy: "Privacy",
         cookieTitle: "Transparency & Data",
         cookieSection1Title: "What we collect:",
@@ -250,9 +277,20 @@ export const STATIC_TRANSLATIONS = {
         headerItalic: "Hola",
         headerDesc: "Por qué decir hola sin tu pregunta es una pérdida de tiempo.",
 
-        
+        heroCtaSeeExample: "Ver un ejemplo",
+        heroCtaShare: "Copiar el mensaje",
+
         navConcept: "Concepto",
+        navExample: "Ejemplo",
+        navUsage: "Adoptar",
         navQuiz: "Cuestionario",
+
+        themeToggleLight: "Cambiar a tema claro",
+        themeToggleDark: "Cambiar a tema oscuro",
+
+        menuNavigation: "Navegación",
+        menuPreferences: "Preferencias",
+        menuLinks: "Enlaces",
 
         conceptTitle: "¿Por qué es contraproducente?",
         conceptProblemTitle: "El Problema",
@@ -263,8 +301,13 @@ export const STATIC_TRANSLATIONS = {
         conceptSolutionBody: "La mejor práctica es incluir tu saludo Y tu pregunta en el mismo mensaje.",
         conceptBenefitTitle: "El Resultado",
         conceptBenefitBody: "Tu colega puede responder tan pronto como esté disponible, con todo el contexto necesario.",
+
         compSectionTitle: "La diferencia es clara",
         compSectionDesc: "Un pequeño cambio para una gran productividad.",
+
+        usageTitle: "Adóptalo, compártelo",
+        usageDesc: "Pon el enlace en tu biografía y comparte este mensaje con los «Hola» solitarios.",
+        usageCopyCta: "Copiar el mensaje",
         badTitle: "Mala Práctica",
         badMsg1: "Hola",
         badWait: "... el colega espera a que escribas el resto ...",
@@ -278,7 +321,7 @@ export const STATIC_TRANSLATIONS = {
         shareBtn: "Compartir",
         shareMsgCopied: "¡Mensaje copiado!",
         shareMsgDesc: "Ahora puedes pegarlo en tu conversación.",
-        shareCustomMsg: "¡Hola! En lugar de solo decir hola, haz tu pregunta directamente. ¡Ahorra tiempo para todos! Más información: https://nohello.net",
+        shareCustomMsg: "¡Hola! Para ahorrarnos tiempo, haz tu pregunta junto con tu saludo 🙂 Más info: https://nohello.fr",
 
         quizTitle: "¡Practica!",
         quizDesc: "Elige la mejor respuesta para cada situación.",
@@ -350,9 +393,7 @@ export const STATIC_TRANSLATIONS = {
         footerRebuiltWith: " • Reconstruido con ",
         footerMadeWith: "Hecho con ",
         footerBy: " por ",
-        footerSupport: "Apoyar el proyecto",
         footerWarning: "Atención: ¡Si ves este sitio en una biografía, prepárate para ser ignorado en el próximo \"Hola\"! 👻",
-        kofiSupport: "Invítame a un café",
         cookiePrivacy: "Privacidad",
         cookieTitle: "Transparencia y Datos",
         cookieSection1Title: "Qué recolectamos:",
@@ -367,9 +408,20 @@ export const STATIC_TRANSLATIONS = {
         headerItalic: "Hallo",
         headerDesc: "Warum Hallo sagen ohne Frage Zeitverschwendung ist.",
 
+        heroCtaSeeExample: "Beispiel ansehen",
+        heroCtaShare: "Nachricht kopieren",
 
         navConcept: "Konzept",
+        navExample: "Beispiel",
+        navUsage: "Anwenden",
         navQuiz: "Quiz",
+
+        themeToggleLight: "Zum hellen Theme wechseln",
+        themeToggleDark: "Zum dunklen Theme wechseln",
+
+        menuNavigation: "Navigation",
+        menuPreferences: "Einstellungen",
+        menuLinks: "Links",
 
         conceptTitle: "Warum ist das kontraproduktiv?",
         conceptProblemTitle: "Das Problem",
@@ -378,10 +430,15 @@ export const STATIC_TRANSLATIONS = {
         conceptConsequenceBody: "Du zwingst deinen Kollegen zu warten, während du deine Frage formulierst, und unterbrichst seine Konzentration unnötig.",
         conceptSolutionTitle: "Die Lösung",
         conceptSolutionBody: "Die beste Praxis ist es, deine Begrüßung UND deine Frage in derselben Nachricht zu senden.",
-        conceptBenefitTitle: "The Result",
+        conceptBenefitTitle: "Das Ergebnis",
         conceptBenefitBody: "Dein Kollege kann antworten, sobald er Zeit hat, mit allem nötigen Kontext.",
+
         compSectionTitle: "Der Unterschied ist klar",
         compSectionDesc: "Kleine Änderung für große Produktivität.",
+
+        usageTitle: "Übernimm es, teile es",
+        usageDesc: "Pack den Link in deine Bio und teile diese Nachricht bei einsamen \"Hallo\".",
+        usageCopyCta: "Nachricht kopieren",
         badTitle: "Schlechte Praxis",
         badMsg1: "Hi",
         badWait: "... der Kollege wartet, dass du weiterschreibst ...",
@@ -395,7 +452,7 @@ export const STATIC_TRANSLATIONS = {
         shareBtn: "Teilen",
         shareMsgCopied: "Nachricht kopiert!",
         shareMsgDesc: "Du kannst ihn jetzt in deine Unterhaltung einfügen.",
-        shareCustomMsg: "Hallo! Anstatt nur Hallo zu sagen, stelle bitte direkt deine Frage. Das spart Zeit für alle! Mehr erfahren: https://nohello.net",
+        shareCustomMsg: "Hallo! Damit wir alle Zeit sparen, stell deine Frage direkt mit dem Hallo 🙂 Mehr Infos: https://nohello.fr",
 
         quizTitle: "Üben!",
         quizDesc: "Wähle die beste Antwort für jede Situation.",
@@ -467,9 +524,7 @@ export const STATIC_TRANSLATIONS = {
         footerRebuiltWith: " • Nachgebaut mit ",
         footerMadeWith: "Erstellt mit ",
         footerBy: " von ",
-        footerSupport: "Projekt unterstützen",
         footerWarning: "Achtung: Wenn du diese Seite in einer Bio siehst, bereite dich darauf vor, beim nächsten \"Hallo\" ignoriert zu werden! 👻",
-        kofiSupport: "Gib mir einen Kaffee aus",
         cookiePrivacy: "Datenschutz",
         cookieTitle: "Transparenz & Daten",
         cookieSection1Title: "Was wir sammeln:",
@@ -484,9 +539,20 @@ export const STATIC_TRANSLATIONS = {
         headerItalic: "こんにちは",
         headerDesc: "挨拶だけで質問を送らないことが、なぜ時間の無駄なのか。",
 
+        heroCtaSeeExample: "例を見る",
+        heroCtaShare: "メッセージをコピー",
 
         navConcept: "コンセプト",
+        navExample: "例",
+        navUsage: "活用",
         navQuiz: "クイズ",
+
+        themeToggleLight: "ライトテーマに切り替え",
+        themeToggleDark: "ダークテーマに切り替え",
+
+        menuNavigation: "ナビゲーション",
+        menuPreferences: "設定",
+        menuLinks: "リンク",
 
         conceptTitle: "なぜ非効率なのか？",
         conceptProblemTitle: "問題点",
@@ -497,8 +563,13 @@ export const STATIC_TRANSLATIONS = {
         conceptSolutionBody: "挨拶と質問を「同じメッセージ」にまとめて送るのがベストプラクティスです。",
         conceptBenefitTitle: "結果",
         conceptBenefitBody: "同僚は手が空いた時に、必要な文脈をすべて把握した状態で返信できます。",
+
         compSectionTitle: "違いは歴然",
         compSectionDesc: "小さな変化で、大きな生産性を。",
+
+        usageTitle: "取り入れて、広めよう",
+        usageDesc: "プロフィールにリンクを貼り、孤独な「お疲れ様です」にはこのメッセージで返信。",
+        usageCopyCta: "メッセージをコピー",
         badTitle: "悪い例",
         badMsg1: "お疲れ様です",
         badWait: "... 同僚は続きが来るのを待っています ...",
@@ -512,7 +583,7 @@ export const STATIC_TRANSLATIONS = {
         shareBtn: "共有",
         shareMsgCopied: "メッセージをコピーしました！",
         shareMsgDesc: "会話に貼り付けて使用できます。",
-        shareCustomMsg: "こんにちは！単に挨拶するだけでなく、直接質問をしてください。全員の時間を節約できます！詳細はこちら：https://nohello.net",
+        shareCustomMsg: "こんにちは！お互いの時間を節約するため、ご挨拶と一緒にご質問もどうぞ 🙂 詳細：https://nohello.fr",
 
         quizTitle: "練習しよう！",
         quizDesc: "それぞれの状況に最適な返答を選んでください。",
@@ -584,9 +655,7 @@ export const STATIC_TRANSLATIONS = {
         footerRebuiltWith: "で再構築",
         footerMadeWith: "制作：",
         footerBy: " デザイン：",
-        footerSupport: "プロジェクトを支援する",
         footerWarning: "注意：このサイトをプロフィールで見かけたら、次の「こんにちは」は無視される準備をしてください！ 👻",
-        kofiSupport: "応援する",
         cookiePrivacy: "プライバシー",
         cookieTitle: "透明性とデータ",
         cookieSection1Title: "収集するデータ：",
