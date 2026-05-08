@@ -3,8 +3,10 @@
  * Displays quiz completion results and score
  */
 
+"use client"
+
 import { motion } from "framer-motion"
-import { Trophy, RefreshCcw } from "lucide-react"
+import { RefreshCcw, Trophy, ThumbsUp, Frown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { quizResultAnimation } from "@/lib/animations"
 import type { TranslationMap } from "@/components/translation-context"
@@ -17,31 +19,39 @@ interface ResultScreenProps {
 }
 
 export function ResultScreen({ score, total, onReset, t }: ResultScreenProps) {
-  const getScoreMessage = () => {
-    if (score === total) return t.quizPerfect
-    if (score === 0) return t.quizBad
-    return t.quizGood
-  }
+  const ratio = total > 0 ? score / total : 0
+  const isPerfect = ratio === 1
+  const isBad = ratio === 0
+
+  const message = isPerfect ? t.quizPerfect : isBad ? t.quizBad : t.quizGood
+  const Icon = isPerfect ? Trophy : isBad ? Frown : ThumbsUp
+  const iconAccent = isPerfect ? "text-amber-500" : isBad ? "text-rose-500" : "text-primary"
 
   return (
     <motion.div
       initial="hidden"
       animate="visible"
       variants={quizResultAnimation}
-      className="text-center space-y-8 py-8"
+      className="text-center space-y-10 py-8"
     >
-      <div className="inline-block p-6 rounded-full bg-primary/10 mb-4">
-        <Trophy className="h-16 w-16 text-primary" />
+      <div className="flex flex-col items-center gap-3">
+        <Icon className={`h-14 w-14 ${iconAccent}`} strokeWidth={1.5} />
+        <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">
+          {t.quizScore}
+        </p>
+        <div className="flex items-baseline gap-2">
+          <span className="text-7xl md:text-8xl font-black tabular-nums bg-linear-to-br from-foreground to-foreground/50 bg-clip-text text-transparent">
+            {score}
+          </span>
+          <span className="text-3xl text-muted-foreground tabular-nums">/ {total}</span>
+        </div>
       </div>
 
-      <div className="space-y-2">
-        <h3 className="text-3xl font-bold">
-          {t.quizScore} {score} / {total}
-        </h3>
-        <p className="text-xl text-muted-foreground">{getScoreMessage()}</p>
-      </div>
+      <p className="text-lg md:text-xl text-muted-foreground max-w-md mx-auto">
+        {message}
+      </p>
 
-      <Button onClick={onReset} variant="outline" size="lg" className="gap-2">
+      <Button onClick={onReset} variant="outline" size="lg" className="gap-2 rounded-full px-6">
         <RefreshCcw className="h-4 w-4" />
         {t.quizRetry}
       </Button>

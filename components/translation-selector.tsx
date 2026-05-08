@@ -87,7 +87,7 @@ export function TranslationSelector({ className }: { className?: string }) {
                     </div>
                     {isTranslating && <Loader2 className="ml-2 h-3 w-3 animate-spin" />}
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent position="popper" align="end" sideOffset={8} className="min-w-40">
                     <SelectItem value="fr">Français</SelectItem>
                     <SelectItem value="en">English</SelectItem>
                     <SelectItem value="es">Español</SelectItem>

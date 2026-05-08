@@ -10,9 +10,20 @@ const defaultTranslations = {
     headerItalic: "Bonjour",
     headerDesc: "Pourquoi dire bonjour sans poser votre question est une perte de temps.",
 
+    heroCtaSeeExample: "Voir un exemple",
+    heroCtaShare: "Copier le message",
 
     navConcept: "Concept",
+    navExample: "Exemple",
+    navUsage: "Adopter",
     navQuiz: "Quiz",
+
+    themeToggleLight: "Passer en thème clair",
+    themeToggleDark: "Passer en thème sombre",
+
+    menuNavigation: "Navigation",
+    menuPreferences: "Préférences",
+    menuLinks: "Liens",
 
     conceptTitle: "Pourquoi est-ce contre-productif ?",
 
@@ -31,6 +42,10 @@ const defaultTranslations = {
     compSectionTitle: "La différence est claire",
     compSectionDesc: "Un petit changement pour une grande productivité.",
 
+    usageTitle: "Adoptez-le, partagez-le",
+    usageDesc: "Mettez le lien dans votre bio, et partagez ce message aux « Bonjour » solitaires.",
+    usageCopyCta: "Copier le message",
+
     badTitle: "Mauvaise Pratique",
     badMsg1: "Salut",
     badWait: "... le collègue attend que vous écriviez la suite ...",
@@ -45,7 +60,7 @@ const defaultTranslations = {
     shareBtn: "Partager",
     shareMsgCopied: "Message copié !",
     shareMsgDesc: "Tu peux maintenant le coller dans ta conversation.",
-    shareCustomMsg: "Salut ! Au lieu de juste dire bonjour, pose directement ta question. Ça permet d'économiser du temps pour tout le monde ! Pour en savoir plus : https://nohello.net",
+    shareCustomMsg: "Salut ! Pour qu'on gagne du temps, pose ta question avec ton bonjour 🙂 Plus d'infos : https://nohello.fr",
 
     quizTitle: "Entraînez-vous !",
     quizDesc: "Choisissez la meilleure réponse pour chaque situation.",
@@ -122,8 +137,6 @@ const defaultTranslations = {
     footerMadeWith: "Fait avec ",
     footerBy: " par ",
     footerWarning: "Attention : Si vous voyez ce site dans une bio, préparez-vous à être ignoré au prochain \"Salut\" ! 👻",
-    footerSupport: "Soutenir le projet",
-    kofiSupport: "M'offrir un café",
     cookiePrivacy: "Confidentialité",
     cookieTitle: "Transparence & Données",
     cookieSection1Title: "Ce que nous collectons :",

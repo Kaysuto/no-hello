@@ -33,7 +33,7 @@ export function ComparisonSection() {
     const { t } = useTranslation()
 
     return (
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-10 max-w-7xl mx-auto">
             {/* Bad Practice */}
             <motion.div
                 variants={cardFadeInUp}

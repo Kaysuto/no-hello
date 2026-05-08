@@ -3,6 +3,8 @@
  * Displays a quiz question with answer options
  */
 
+"use client"
+
 import { motion, AnimatePresence } from "framer-motion"
 import { CheckCircle2, XCircle } from "lucide-react"
 import { slideInRight } from "@/lib/animations"
@@ -31,38 +33,47 @@ export function QuestionCard({
         animate="visible"
         exit="exit"
         variants={slideInRight}
-        className="space-y-6"
+        className="space-y-8"
       >
-        <h4 className="text-xl font-medium text-center">{question.question}</h4>
+        <h4 className="text-2xl md:text-3xl font-semibold leading-snug text-balance">
+          {question.question}
+        </h4>
 
-        <div className="grid gap-4">
-          {question.options.map((option, idx) => (
-            <button
-              key={idx}
-              onClick={() => onAnswer(option.correct, idx)}
-              disabled={isAnswered}
-              className={`
-                w-full p-4 rounded-xl border-2 text-left transition-all relative overflow-hidden group
-                ${
-                  isAnswered && option.correct
-                    ? "border-green-500 bg-green-500/10 text-green-700 dark:text-green-300"
-                    : isAnswered && selectedAnswer === idx && !option.correct
-                      ? "border-red-500 bg-red-500/10 text-red-700 dark:text-red-300 opacity-50"
-                      : "border-border hover:border-primary/50 hover:bg-secondary/50"
-                }
-              `}
-            >
-              <div className="flex items-center justify-between">
-                <span>{option.text}</span>
-                {isAnswered && option.correct && (
-                  <CheckCircle2 className="h-5 w-5 text-green-500" />
-                )}
-                {isAnswered && selectedAnswer === idx && !option.correct && (
-                  <XCircle className="h-5 w-5 text-red-500" />
-                )}
-              </div>
-            </button>
-          ))}
+        <div className="grid gap-3">
+          {question.options.map((option, idx) => {
+            const isCorrect = isAnswered && option.correct
+            const isWrongPick = isAnswered && selectedAnswer === idx && !option.correct
+
+            return (
+              <motion.button
+                key={idx}
+                onClick={() => onAnswer(option.correct, idx)}
+                disabled={isAnswered}
+                whileHover={!isAnswered ? { x: 4 } : undefined}
+                whileTap={!isAnswered ? { scale: 0.99 } : undefined}
+                className={`
+                  w-full p-5 rounded-2xl text-left transition-all relative
+                  ${
+                    isCorrect
+                      ? "bg-emerald-500/10 ring-2 ring-emerald-500/40 text-emerald-700 dark:text-emerald-300"
+                      : isWrongPick
+                        ? "bg-rose-500/10 ring-2 ring-rose-500/40 text-rose-700 dark:text-rose-300 opacity-60"
+                        : "bg-card/40 hover:bg-card ring-1 ring-border/40 hover:ring-primary/40 cursor-pointer disabled:cursor-default"
+                  }
+                `}
+              >
+                <div className="flex items-center justify-between gap-4">
+                  <span className="text-base md:text-[1.05rem] leading-relaxed">{option.text}</span>
+                  {isCorrect && (
+                    <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-500" />
+                  )}
+                  {isWrongPick && (
+                    <XCircle className="h-5 w-5 shrink-0 text-rose-500" />
+                  )}
+                </div>
+              </motion.button>
+            )
+          })}
         </div>
       </motion.div>
     </AnimatePresence>
