@@ -23,9 +23,7 @@ type Level = {
   count: number
   icon: typeof Sparkles
   accent: string
-  bgFrom: string
-  bgTo: string
-  ring: string
+  accentBg: string
 }
 
 export function DifficultySelector({ onSelectDifficulty, t, questions }: DifficultySelectorProps) {
@@ -42,9 +40,7 @@ export function DifficultySelector({ onSelectDifficulty, t, questions }: Difficu
       count: counts.easy,
       icon: Sparkles,
       accent: "text-emerald-500",
-      bgFrom: "from-emerald-500/10",
-      bgTo: "to-emerald-500/0",
-      ring: "hover:ring-emerald-500/40",
+      accentBg: "bg-emerald-500/10",
     },
     {
       value: QUIZ_DIFFICULTY.MEDIUM,
@@ -52,9 +48,7 @@ export function DifficultySelector({ onSelectDifficulty, t, questions }: Difficu
       count: counts.medium,
       icon: Flame,
       accent: "text-amber-500",
-      bgFrom: "from-amber-500/10",
-      bgTo: "to-amber-500/0",
-      ring: "hover:ring-amber-500/40",
+      accentBg: "bg-amber-500/10",
     },
     {
       value: QUIZ_DIFFICULTY.HARD,
@@ -62,9 +56,7 @@ export function DifficultySelector({ onSelectDifficulty, t, questions }: Difficu
       count: counts.hard,
       icon: Skull,
       accent: "text-rose-500",
-      bgFrom: "from-rose-500/10",
-      bgTo: "to-rose-500/0",
-      ring: "hover:ring-rose-500/40",
+      accentBg: "bg-rose-500/10",
     },
   ]
 
@@ -87,9 +79,9 @@ export function DifficultySelector({ onSelectDifficulty, t, questions }: Difficu
               transition={{ delay: idx * 0.08, duration: 0.4 }}
               whileHover={{ y: -4 }}
               whileTap={{ scale: 0.98 }}
-              className={`group relative p-6 rounded-2xl text-left bg-gradient-to-br ${level.bgFrom} ${level.bgTo} ring-1 ring-border/40 ${level.ring} hover:ring-2 transition-all cursor-pointer overflow-hidden`}
+              className={`group relative p-6 rounded-2xl text-left bg-card ring-1 ring-foreground/5 hover:ring-2 hover:ring-ring/30 transition-all cursor-pointer overflow-hidden`}
             >
-              <div className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-background/60 backdrop-blur-sm ${level.accent}`}>
+              <div className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl ${level.accentBg} ${level.accent}`}>
                 <Icon className="h-6 w-6" />
               </div>
               <div className="flex items-baseline justify-between">

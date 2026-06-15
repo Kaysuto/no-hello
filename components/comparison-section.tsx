@@ -2,7 +2,6 @@
 
 import React from "react"
 import { XCircle, CheckCircle2 } from "lucide-react"
-import { Card } from "@/components/ui/card"
 import { useTranslation } from "@/components/translation-context"
 import { motion } from "framer-motion"
 import { staggerContainer, staggerItem, cardFadeInUp } from "@/lib/animations"
@@ -19,11 +18,11 @@ function MessageBubble({ time, author, children, align }: {
             variants={staggerItem}
             className={
                 isRight
-                    ? "bg-background/80 p-3 rounded-lg rounded-bl-none shadow-sm dark:bg-card ml-auto max-w-[90%] border"
-                    : "bg-primary/10 p-3 rounded-lg rounded-br-none shadow-sm dark:bg-primary/20 mr-auto max-w-[90%]"
+                    ? "bg-secondary/60 p-3 rounded-2xl rounded-tr-sm shadow-none ml-auto max-w-[90%] ring-1 ring-foreground/5"
+                    : "bg-card p-3 rounded-2xl rounded-tl-sm shadow-none mr-auto max-w-[90%] ring-1 ring-foreground/5"
             }
         >
-            <div className="text-xs text-muted-foreground mb-1">{time} - {author}</div>
+            <div className="text-xs text-muted-foreground mb-1">{time} · {author}</div>
             {children}
         </motion.div>
     )
@@ -33,7 +32,7 @@ export function ComparisonSection() {
     const { t } = useTranslation()
 
     return (
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-10 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-7xl mx-auto">
             {/* Bad Practice */}
             <motion.div
                 variants={cardFadeInUp}
@@ -41,26 +40,32 @@ export function ComparisonSection() {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
             >
-                <Card className="p-6 border-red-200 dark:border-red-900/50 bg-red-50/50 dark:bg-red-950/10 h-full">
-                    <div className="flex items-center justify-center gap-2 mb-4 text-red-600 dark:text-red-400 font-semibold">
-                        <XCircle className="h-5 w-5" />
-                        {t.badTitle}
+                <div className="rounded-[min(var(--radius-4xl),24px)] ring-1 ring-foreground/5 bg-card overflow-hidden h-full">
+                    <div className="flex items-center gap-2.5 px-5 py-4 border-b border-border/60 bg-red-50/60 dark:bg-red-950/20">
+                        <span className="flex items-center justify-center h-6 w-6 rounded-full bg-red-100 dark:bg-red-900/40">
+                            <XCircle className="h-3.5 w-3.5 text-red-600 dark:text-red-400" />
+                        </span>
+                        <span className="text-sm font-semibold text-red-700 dark:text-red-300">{t.badTitle}</span>
                     </div>
-                    <motion.div
-                        className="space-y-4 text-sm"
-                        variants={staggerContainer}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                    >
-                        <MessageBubble time="10:00" author="Vous" align="right">{t.badMsg1}</MessageBubble>
-                        <motion.div variants={staggerItem} className="text-center text-xs text-muted-foreground italic py-2">
-                            {t.badWait}
+                    <div className="p-5">
+                        <motion.div
+                            className="space-y-4 text-sm"
+                            variants={staggerContainer}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                        >
+                            <MessageBubble time="10:00" author="Vous" align="right">{t.badMsg1}</MessageBubble>
+                            <motion.div variants={staggerItem} className="text-center text-xs text-muted-foreground italic py-2 flex items-center gap-3">
+                                <div className="flex-1 h-px bg-border" />
+                                {t.badWait}
+                                <div className="flex-1 h-px bg-border" />
+                            </motion.div>
+                            <MessageBubble time="10:05" author="Collègue" align="left">{t.badReply}</MessageBubble>
+                            <MessageBubble time="10:06" author="Vous" align="right">{t.badMsg2}</MessageBubble>
                         </motion.div>
-                        <MessageBubble time="10:05" author="Collègue" align="left">{t.badReply}</MessageBubble>
-                        <MessageBubble time="10:06" author="Vous" align="right">{t.badMsg2}</MessageBubble>
-                    </motion.div>
-                </Card>
+                    </div>
+                </div>
             </motion.div>
 
             {/* Good Practice */}
@@ -69,27 +74,33 @@ export function ComparisonSection() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: 0.2 }}
+                transition={{ delay: 0.15 }}
             >
-                <Card className="p-6 border-green-200 dark:border-green-900/50 bg-green-50/50 dark:bg-green-950/10 h-full">
-                    <div className="flex items-center justify-center gap-2 mb-4 text-green-600 dark:text-green-400 font-semibold">
-                        <CheckCircle2 className="h-5 w-5" />
-                        {t.goodTitle}
+                <div className="rounded-[min(var(--radius-4xl),24px)] ring-1 ring-foreground/5 bg-card overflow-hidden h-full">
+                    <div className="flex items-center gap-2.5 px-5 py-4 border-b border-border/60 bg-green-50/60 dark:bg-green-950/20">
+                        <span className="flex items-center justify-center h-6 w-6 rounded-full bg-green-100 dark:bg-green-900/40">
+                            <CheckCircle2 className="h-3.5 w-3.5 text-green-600 dark:text-green-400" />
+                        </span>
+                        <span className="text-sm font-semibold text-green-700 dark:text-green-300">{t.goodTitle}</span>
                     </div>
-                    <motion.div
-                        className="space-y-4 text-sm h-full"
-                        variants={staggerContainer}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                    >
-                        <MessageBubble time="10:00" author="Vous" align="right">{t.goodMsg1}</MessageBubble>
-                        <motion.div variants={staggerItem} className="text-center text-xs text-muted-foreground italic py-2">
-                            {t.goodContext}
+                    <div className="p-5">
+                        <motion.div
+                            className="space-y-4 text-sm h-full"
+                            variants={staggerContainer}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                        >
+                            <MessageBubble time="10:00" author="Vous" align="right">{t.goodMsg1}</MessageBubble>
+                            <motion.div variants={staggerItem} className="text-center text-xs text-muted-foreground italic py-2 flex items-center gap-3">
+                                <div className="flex-1 h-px bg-border" />
+                                {t.goodContext}
+                                <div className="flex-1 h-px bg-border" />
+                            </motion.div>
+                            <MessageBubble time="10:01" author="Collègue" align="left">{t.goodReply}</MessageBubble>
                         </motion.div>
-                        <MessageBubble time="10:01" author="Collègue" align="left">{t.goodReply}</MessageBubble>
-                    </motion.div>
-                </Card>
+                    </div>
+                </div>
             </motion.div>
         </div>
     )

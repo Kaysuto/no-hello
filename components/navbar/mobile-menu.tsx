@@ -4,7 +4,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import { ExternalLink } from "@/components/external-link"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
-import { Github, Menu, Globe, BookOpen, CircleHelp, MessagesSquare, Rocket } from "lucide-react"
+import { Github, Menu, Globe, BookOpen, CircleHelp, MessagesSquare } from "lucide-react"
 import { useTranslation } from "@/components/translation-context"
 import { SECTION_IDS, EXTERNAL_LINKS } from "@/lib/constants"
 import { useActiveSection } from "@/lib/hooks/use-active-section"
@@ -12,7 +12,6 @@ import { useActiveSection } from "@/lib/hooks/use-active-section"
 const TRACKED_SECTIONS = [
   SECTION_IDS.COMPARISON,
   SECTION_IDS.EXPLANATION,
-  SECTION_IDS.USAGE,
   SECTION_IDS.QUIZ,
 ] as const
 
@@ -32,7 +31,6 @@ export function MobileMenu({ open, onOpenChange, onNavigate }: MobileMenuProps) 
   const sections = [
     { id: SECTION_IDS.COMPARISON,  label: t.navExample, Icon: MessagesSquare },
     { id: SECTION_IDS.EXPLANATION, label: t.navConcept, Icon: BookOpen       },
-    { id: SECTION_IDS.USAGE,       label: t.navUsage,   Icon: Rocket         },
     { id: SECTION_IDS.QUIZ,        label: t.navQuiz,    Icon: CircleHelp     },
   ]
 
