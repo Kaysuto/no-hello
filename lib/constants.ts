@@ -69,6 +69,7 @@ export const API_ROUTES = {
 export const EXTERNAL_LINKS = {
   GITHUB_REPO: 'https://github.com/Kaysuto/no-hello',
   GITHUB_PROFILE: 'https://github.com/Kaysuto',
+  AUTHOR_WEBSITE: 'https://kaysuto.fr',
   NOHELLO_NET: 'https://nohello.net',
   NEXTJS: 'https://nextjs.org',
   SHADCN: 'https://ui.shadcn.com',

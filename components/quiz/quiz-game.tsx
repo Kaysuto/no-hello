@@ -106,7 +106,7 @@ export function QuizGame() {
               onClick={nextQuestion}
               disabled={!isAnswered}
               size="lg"
-              className="gap-2 rounded-full px-6"
+              className="gap-2 px-6"
             >
               {currentQuestion < questions.length - 1 ? t.quizNext : t.quizFinish}
               <ArrowRight className="h-4 w-4" />

@@ -58,7 +58,7 @@ export function QuestionCard({
                       ? "bg-emerald-500/10 ring-2 ring-emerald-500/40 text-emerald-700 dark:text-emerald-300"
                       : isWrongPick
                         ? "bg-rose-500/10 ring-2 ring-rose-500/40 text-rose-700 dark:text-rose-300 opacity-60"
-                        : "bg-card/40 hover:bg-card ring-1 ring-border/40 hover:ring-primary/40 cursor-pointer disabled:cursor-default"
+                        : "bg-card/40 hover:bg-card ring-1 ring-border/40 hover:ring-ring/40 cursor-pointer disabled:cursor-default"
                   }
                 `}
               >

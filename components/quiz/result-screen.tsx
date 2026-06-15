@@ -51,7 +51,7 @@ export function ResultScreen({ score, total, onReset, t }: ResultScreenProps) {
         {message}
       </p>
 
-      <Button onClick={onReset} variant="outline" size="lg" className="gap-2 rounded-full px-6">
+      <Button onClick={onReset} variant="outline" size="lg" className="gap-2 px-6">
         <RefreshCcw className="h-4 w-4" />
         {t.quizRetry}
       </Button>

@@ -22,8 +22,10 @@ export function UsageSection() {
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeInUp}
         >
-            <div className="relative overflow-hidden rounded-3xl border border-primary/15 bg-linear-to-br from-primary/5 via-transparent to-purple-500/5 p-8 md:p-10 lg:p-12">
-                <div className="grid md:grid-cols-[1fr_auto] gap-6 md:gap-10 items-center">
+            <div className="relative overflow-hidden rounded-[min(var(--radius-4xl),24px)] ring-1 ring-foreground/5 bg-card p-8 md:p-10 lg:p-12">
+                {/* Subtle accent gradient overlay */}
+                <div className="absolute inset-0 pointer-events-none rounded-[min(var(--radius-4xl),24px)] bg-linear-to-br from-foreground/[0.03] via-transparent to-transparent" />
+                <div className="relative grid md:grid-cols-[1fr_auto] gap-6 md:gap-10 items-center">
                     <div className="space-y-3">
                         <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
                             {t.usageTitle}
@@ -36,7 +38,7 @@ export function UsageSection() {
                     <Button
                         size="lg"
                         onClick={handleCopy}
-                        className="gap-2 rounded-full shadow-lg hover:shadow-xl transition-all md:px-8 md:h-14 self-stretch md:self-auto"
+                        className="gap-2 self-stretch md:self-auto"
                     >
                         <Copy className="h-4 w-4" />
                         {t.usageCopyCta}
