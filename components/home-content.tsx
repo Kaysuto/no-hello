@@ -55,10 +55,6 @@ export function HomeContent() {
                             </span>
                         </h1>
 
-                        <p className="text-base md:text-lg text-muted-foreground font-normal max-w-xl mx-auto leading-relaxed">
-                            {t.headerDesc}
-                        </p>
-
                         {/* CTAs */}
                         <motion.div
                             initial={{ opacity: 0, y: 10 }}
