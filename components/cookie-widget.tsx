@@ -1,13 +1,12 @@
 "use client"
 
-import { Cookie, X, ExternalLink, ShieldCheck } from "lucide-react"
+import { Cookie, X, ShieldCheck } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { useTranslation } from "@/components/translation-context"
-import { EXTERNAL_LINKS } from "@/lib/constants"
 import { cookieWidgetInitial, modalBackdrop, modalContent } from "@/lib/animations"
 
 export function CookieWidget() {
@@ -110,15 +109,6 @@ export function CookieWidget() {
                                             <span className="font-semibold text-foreground">{t.cookieSection2Title}</span><br />
                                             {t.cookieSection2Body}
                                         </p>
-                                    </div>
-
-                                    <div className="pt-2">
-                                        <Button asChild variant="outline" className="w-full gap-2 hover:bg-primary/5 hover:text-primary border-primary/20">
-                                            <a href={EXTERNAL_LINKS.GOOGLE_COOKIE_POLICY} target="_blank" rel="noopener noreferrer">
-                                                <span>{t.cookieGooglePolicy}</span>
-                                                <ExternalLink className="h-4 w-4" />
-                                            </a>
-                                        </Button>
                                     </div>
                                 </div>
                             </Card>

@@ -137,8 +137,7 @@ export const STATIC_TRANSLATIONS = {
         cookieSection1Title: "Ce que nous collectons :",
         cookieSection1Body: "Ce site utilise uniquement des cookies techniques nécessaires à votre confort de navigation (préférences de langue et thème sombre/clair). Ces données sont stockées localement sur votre appareil.",
         cookieSection2Title: "Services Tiers :",
-        cookieSection2Body: "Nous utilisons des services comme Google Gemini (IA) pour la traduction. Bien que nous ne courions pas de publicités, ces services peuvent collecter des données techniques standard conformément à leurs propres politiques.",
-        cookieGooglePolicy: "Voir la Politique de Google"
+        cookieSection2Body: "Aucun. Pas de publicité, pas de pistage, pas de mesure d'audience : rien n'est envoyé à un service externe.",
     },
     en: {
         headerLine1: "Please,",
@@ -268,8 +267,7 @@ export const STATIC_TRANSLATIONS = {
         cookieSection1Title: "What we collect:",
         cookieSection1Body: "This site only uses technical cookies necessary for your browsing comfort (language preferences and dark/light theme). This data is stored locally on your device.",
         cookieSection2Title: "Third-Party Services:",
-        cookieSection2Body: "We use services like Google Gemini (AI) for translation. While we do not run ads, these services may collect standard technical data in accordance with their own policies.",
-        cookieGooglePolicy: "View Google Policy"
+        cookieSection2Body: "None. No ads, no tracking, no analytics: nothing is sent to an external service.",
     },
     es: {
         headerLine1: "Por favor,",
@@ -399,8 +397,7 @@ export const STATIC_TRANSLATIONS = {
         cookieSection1Title: "Qué recolectamos:",
         cookieSection1Body: "Este sitio solo utiliza cookies técnicas necesarias para su comodidad de navegación (preferencias de idioma y tema oscuro/claro). Estos datos se almacenan localmente en su dispositivo.",
         cookieSection2Title: "Servicios de Terceros:",
-        cookieSection2Body: "Utilizamos servicios como Google Gemini (IA) para la traducción. Aunque no mostramos anuncios, estos servicios pueden recopilar datos técnicos estándar de acuerdo con sus propias políticas.",
-        cookieGooglePolicy: "Ver Política de Google"
+        cookieSection2Body: "Ninguno. Sin publicidad, sin rastreo, sin analíticas: no se envía nada a ningún servicio externo.",
     },
     de: {
         headerLine1: "Bitte,",
@@ -530,8 +527,7 @@ export const STATIC_TRANSLATIONS = {
         cookieSection1Title: "Was wir sammeln:",
         cookieSection1Body: "Diese Seite verwendet nur technische Cookies, die für Ihren Browse-Komfort erforderlich sind (Sprachpräferenzen und dunkles/helles Design). Diese Daten werden lokal auf Ihrem Gerät gespeichert.",
         cookieSection2Title: "Drittanbieter-Dienste:",
-        cookieSection2Body: "Wir nutzen Dienste wie Google Gemini (KI) für die Übersetzung. Obwohl wir keine Werbung schalten, können diese Dienste standardmäßige technische Daten gemäß ihren eigenen Richtlinien sammeln.",
-        cookieGooglePolicy: "Google-Richtlinie ansehen"
+        cookieSection2Body: "Keine. Keine Werbung, kein Tracking, keine Analyse: Es wird nichts an externe Dienste gesendet.",
     },
     ja: {
         headerLine1: "お願いです、",
@@ -661,7 +657,6 @@ export const STATIC_TRANSLATIONS = {
         cookieSection1Title: "収集するデータ：",
         cookieSection1Body: "このサイトでは、ブラウジングの快適さのために必要な技術的なCookie（言語設定やダーク/ライトテーマ）のみを使用しています。これらのデータはお使いのデバイスにローカルに保存されます。",
         cookieSection2Title: "サードパーティサービス：",
-        cookieSection2Body: "翻訳にはGoogle Gemini（AI）などのサービスを使用しています。広告は掲載していませんが、これらのサービスは独自のポリシーに従って標準的な技術データを収集する場合があります。",
-        cookieGooglePolicy: "Googleのポリシーを表示"
+        cookieSection2Body: "ありません。広告、トラッキング、アクセス解析は一切なく、外部サービスには何も送信されません。",
     }
 } as const;

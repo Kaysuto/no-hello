@@ -14,7 +14,6 @@ export const SECTION_IDS = {
 // LocalStorage keys
 export const STORAGE_KEYS = {
   LANGUAGE: 'nohello-lang',
-  TRANSLATION_CACHE: (lang: string) => `nohello-trans-${lang}`,
 } as const
 
 // Quiz difficulty levels
@@ -35,16 +34,6 @@ export const LANGUAGE_CODES = {
   JAPANESE: 'ja',
 } as const
 
-export const STANDARD_LANGUAGES = [
-  LANGUAGE_CODES.FRENCH,
-  LANGUAGE_CODES.ENGLISH,
-  LANGUAGE_CODES.SPANISH,
-  LANGUAGE_CODES.GERMAN,
-  LANGUAGE_CODES.JAPANESE,
-] as const
-
-export type LanguageCode = typeof STANDARD_LANGUAGES[number]
-
 // Confetti configurations
 export const CONFETTI_CONFIG = {
   CORRECT_ANSWER: {
@@ -60,11 +49,6 @@ export const CONFETTI_CONFIG = {
   },
 }
 
-// API endpoints
-export const API_ROUTES = {
-  TRANSLATE: '/api/translate',
-} as const
-
 // External links
 export const EXTERNAL_LINKS = {
   GITHUB_REPO: 'https://github.com/Kaysuto/no-hello',
@@ -73,7 +57,6 @@ export const EXTERNAL_LINKS = {
   NOHELLO_NET: 'https://nohello.net',
   NEXTJS: 'https://nextjs.org',
   SHADCN: 'https://ui.shadcn.com',
-  GOOGLE_COOKIE_POLICY: 'https://policies.google.com/technologies/cookies',
 } as const
 
 // Toast durations (in milliseconds)
