@@ -4,7 +4,8 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import { ExternalLink } from "@/components/external-link"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
-import { Github, Menu, Globe, BookOpen, CircleHelp, MessagesSquare } from "lucide-react"
+import { Menu, Globe, BookOpen, CircleHelp, MessagesSquare } from "lucide-react"
+import { GithubIcon } from "@/components/github-icon"
 import { useTranslation } from "@/components/translation-context"
 import { SECTION_IDS, EXTERNAL_LINKS } from "@/lib/constants"
 import { useActiveSection } from "@/lib/hooks/use-active-section"
@@ -89,7 +90,7 @@ export function MobileMenu({ open, onOpenChange, onNavigate }: MobileMenuProps) 
                 asChild
               >
                 <ExternalLink href={EXTERNAL_LINKS.GITHUB_REPO} label="GitHub/Kaysuto">
-                  <Github className="h-5 w-5 shrink-0 opacity-70" />
+                  <GithubIcon className="h-5 w-5 shrink-0 opacity-70" />
                   GitHub
                 </ExternalLink>
               </Button>

@@ -8,7 +8,8 @@ import { EXTERNAL_LINKS, SECTION_IDS } from "@/lib/constants"
 import { footerAnimation } from "@/lib/animations"
 import { useScrollToSection } from "@/lib/hooks/use-scroll-to-section"
 import Image from "next/image"
-import { Github, MessagesSquare, BookOpen, CircleHelp } from "lucide-react"
+import { MessagesSquare, BookOpen, CircleHelp } from "lucide-react"
+import { GithubIcon } from "@/components/github-icon"
 
 export function Footer() {
     const { t } = useTranslation()
@@ -55,7 +56,7 @@ export function Footer() {
                     label="GitHub"
                     className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors no-underline hover:no-underline"
                 >
-                    <Github className="h-4 w-4" />
+                    <GithubIcon className="h-4 w-4" />
                     GitHub
                 </ExternalLink>
             </div>
